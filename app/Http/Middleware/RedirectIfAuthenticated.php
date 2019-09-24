@@ -17,8 +17,19 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        switch ($guard) {
+            case "convini":
+                // dd(1);
+                $redir = '/convini/home';
+                break;
+            default:
+                // dd(2);
+                $redir = '/home';
+                break;
+        }
+
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            return redirect($redir)->with('flash_message', __('一度ログアウトしてください'));
         }
 
         return $next($request);

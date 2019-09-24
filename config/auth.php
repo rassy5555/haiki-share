@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -46,6 +46,14 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'convini' => [ 
+            'driver' => 'session', 
+            'provider' => 'convinis', 
+        ],
     ],
 
     /*
@@ -70,7 +78,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        'convinis' => [ 
+            'driver' => 'eloquent',
+            'model' => App\Convini::class, 
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -98,6 +109,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+        'convinis' => [ 
+            'provider' => 'convinis', 
+            'table' => 'password_resets', 
+            'expire' => 60, 
+        ],
+        
     ],
 
 ];
