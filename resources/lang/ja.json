@@ -1,0 +1,14 @@
+{
+    "Login": "ログイン",
+    "Register": "新規登録",
+    "User": "ユーザーの方はこちら",
+    "Name": "名前", 
+    "Convini": "コンビニの方はこちら",
+    "Convini_name": "コンビニ名",
+    "Branch_name": "支店名",
+    "Prefectures": "都道府県",
+    "Address":"住所",
+    "E-mail":"メールアドレス",
+    "Password":"パスワード",
+    "Confirm Password":"パスワード（再入力)"
+}

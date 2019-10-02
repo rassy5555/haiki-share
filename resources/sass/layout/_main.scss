@@ -1,0 +1,13 @@
+.l-container {
+  width: 980px;
+  @include mq($breakpoint: md) {
+    width: 90%;
+  }
+}
+
+.l-page__wrapper {
+  width: 760px;
+  @include mq($breakpoint: md) {
+    width: 100%;
+  }
+}

@@ -82,7 +82,7 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request)
-    {
+    {   
         $this->validator($request->all())->validate();
         event(new Registered($convini = $this->create($request->all())));
 

@@ -1,0 +1,11 @@
+.c-button {
+    line-height: 1.6;
+    width: 80px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3490dc;
+    padding: 5px;
+    @include mq($breakpoint: md) {
+        width: 80px;
+    }
+}

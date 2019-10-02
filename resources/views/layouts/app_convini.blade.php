@@ -21,61 +21,45 @@
     <style>body{background-color: tomato;}</style>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('convini.login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('convini.register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->branch_name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('convini.logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('convini.logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+<header class="l-header p-header js-float-menu">
+        <h1 class="p-header__title">haiki share</h1>
+        <div class="p-header__menu-trigger js-toggle-sp-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="l-header__menu p-header__menu js-toggle-sp-menu-target">
+            <ul>
+                @guest
+                    <li ><a class="p-menu" href="{{ route('convini.login')}}">{{  __('Login') }}</a></li>
+                    <li ><a class="p-menu" href="{{ route('convini.register') }}">{{ __('Register') }}</a></li>
+                    <li ><a class="p-menu" href="{{ route('login') }}">{{ __('User') }}</a></li>
+                @else
+                    <li ><a class="p-menu" href="{{ route('home') }}">{{ Auth::user()->name }}</a></li>
+                    <li class="p-menu">
+                        <div aria-labelledby="navbarDropdown">
+                            <a class="p-menu" class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('convini.logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                         </div>
+                    </li>
+                @endguest
+          </ul>
+        </nav> 
+    </header>
+        <!-- フラッシュメッセージ -->
+        @if (session('flash_message'))
+            <div class="alert alert-primary text-center" role="alert">
+                {{ session('flash_message') }}
             </div>
-        </nav>
-
-        <main class="py-4">
+        @endif
+        <main>
             @yield('content')
         </main>
-    </div>
 </body>
 </html>

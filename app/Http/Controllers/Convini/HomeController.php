@@ -27,4 +27,8 @@ class HomeController extends Controller
     {
         return view('convini.home');
     }
+
+    public function profileEditShow(){
+        return view('convini.profileEdit');
+    }
 }

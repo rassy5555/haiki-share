@@ -55,4 +55,5 @@ Route::group(['prefix' => 'convini','middleware'=>'guest:convini','middleware'=>
 Route::group(['prefix' => 'convini', 'middleware' => 'auth:convini'], function() {
     Route::post('logout',   'Convini\LoginController@logout')->name('convini.logout');
     Route::get('home',      'Convini\HomeController@index')->name('convini.home');
+    Route::get('profileEdit', 'Convini\HomeController@profileEditShow')->name('convini.home');
 });

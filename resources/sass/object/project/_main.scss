@@ -1,0 +1,13 @@
+.p-container {
+    margin: 0 auto;
+    @include mq($breakpoint: md) {
+        padding-top: 80px;
+    }
+}
+
+.p-page__wrapper {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
+    margin: 0 auto;
+}

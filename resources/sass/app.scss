@@ -6,3 +6,31 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+/* Foundation ------------ */
+@import "foundation/_reset";
+@import "foundation/_variables";
+@import "foundation/_mixin";
+@import "foundation/_base"; 
+
+/* Layout ------------ */
+@import "layout/_header";
+@import "layout/_main";
+
+//
+//
+
+/* component ------------ */
+@import "object/component/_button.scss";
+@import "object/component/_page-title.scss";
+@import "object/component/_form.scss";
+
+
+/* Project ------------ */
+@import "object/project/_main";
+
+
+/* Utility ------------ */
+@import "object/utility/_margin.scss";
+@import "object/utility/_padding.scss";

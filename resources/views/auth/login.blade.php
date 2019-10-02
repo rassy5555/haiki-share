@@ -1,6 +1,70 @@
 @extends('layouts.app')
 
 @section('content')
+<section class="main">
+    <div class="l-container p-container">
+        <div class="l-page__wrapper p-page__wrapper">
+            <h2 class="c-page__title">{{ __('Login')}}</h2>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+                <div class="c-form__group">
+                    <label class="c-form__label">{{ __('E-Mail Address') }}</label>
+
+                    <div class="c-form__item">
+                        <input id="email" type="email" class="c-form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="c-form__group">
+                    <label class="c-form__label">{{ __('Password') }}</label>
+
+                    <div class="c-form__item">
+                        <input id="password" type="password" class="c-form__input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="c-form__group">
+                    <div class="c-form-check">
+                        <input class="c-form-check__input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                        <label class="c-form-check__label" for="remember">
+                            {{ __('Remember Me') }}
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="c-form__group">
+                    <div class="c-form__button">
+                        <button type="submit" class="c-button">
+                            {{ __('Login') }}
+                        </button>
+
+                        @if (Route::has('password.request'))
+                            <a class="c-form__forget" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        @endif
+                    </div>
+                </div>
+            </form>        
+        </div>
+
+    </div>
+</section>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
