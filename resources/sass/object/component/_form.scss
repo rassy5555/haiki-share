@@ -14,6 +14,7 @@
     text-align: right;
     display: block;
     width: 30%;
+    line-height: 40px;
     @include mq($breakpoint: md) {
         text-align: left;
         width: 100%;
@@ -42,10 +43,7 @@
 }
 
 .c-form__button {
-    margin-left: 185px;
-    @include mq($breakpoint: md) {
-        margin-left: 0;
-    }
+    margin: 0 auto;
 }
 
 .c-form__forget {
@@ -53,4 +51,39 @@
         display: block;
         margin-top: 10px;
     }
+}
+
+.c-invalid__feedback {
+    font-size: $font-size_s;
+    margin-top: 5px;
+    color: $red;
+    display: block;
+}
+
+.c-is-invalid {
+    border-color: $red;
+}
+
+.c-profile_pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.c-image__group {
+    width: 140px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.c-pic__label {
+    width: 140px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
 }

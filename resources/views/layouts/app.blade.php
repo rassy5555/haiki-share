@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+<div id="app">
     <header class="l-header p-header js-float-menu">
         <h1 class="p-header__title">haiki share</h1>
         <div class="p-header__menu-trigger js-toggle-sp-menu">
@@ -34,7 +35,7 @@
                     <li><a class="p-menu" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     <li><a class="p-menu" href="{{ route('convini.login') }}">{{ __('Convini') }}</a></li>
                 @else
-                    <li><a class="p-menu" href="{{ route('home') }}">{{ Auth::user()->name }}</a></li>
+                    <li><a class="p-menu" href="{{ route('profileEdit') }}">{{ __('Profile Edit') }}</a></li>
                     <li>
                         <div aria-labelledby="navbarDropdown">
                             <a class="p-menu"  class="dropdown-item" href="{{ route('logout') }}"
@@ -58,8 +59,9 @@
             </div>
         @endif
         
-        <main >
+        <main>
             @yield('content')
         </main>
+</div>
 </body>
 </html>

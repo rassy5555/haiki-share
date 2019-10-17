@@ -52,8 +52,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'convini_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'convini_name' => ['required', 'string', 'max:20'],
+            'branch_name' => ['required', 'string', 'max:20'],
+            'prefectures' => ['required'],
+            'address' => ['required', 'string', 'max:20'],
+            'email' => ['required', 'string', 'email:rfc,filter', 'max:100', 'unique:convinis'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -73,6 +76,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'convini_pic' => 'no-image.png',
         ]);
     }
 
@@ -85,7 +89,6 @@ class RegisterController extends Controller
     {   
         $this->validator($request->all())->validate();
         event(new Registered($convini = $this->create($request->all())));
-
         $this->guard()->login($convini);
 
         return $this->registered($request, $convini)

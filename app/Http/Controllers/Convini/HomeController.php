@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Convini;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\EditRequest;
 
 
 class HomeController extends Controller
@@ -26,9 +30,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('convini.home');
-    }
-
-    public function profileEditShow(){
-        return view('convini.profileEdit');
     }
 }

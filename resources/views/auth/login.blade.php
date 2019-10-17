@@ -9,13 +9,13 @@
                 @csrf
 
                 <div class="c-form__group">
-                    <label class="c-form__label">{{ __('E-Mail Address') }}</label>
+                    <label class="c-form__label">{{ __('E-Mail') }}</label>
 
                     <div class="c-form__item">
-                        <input id="email" type="email" class="c-form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="email" type="email" class="c-form__input @error('email') c-is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
                         @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="c-invalid__feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -26,10 +26,10 @@
                     <label class="c-form__label">{{ __('Password') }}</label>
 
                     <div class="c-form__item">
-                        <input id="password" type="password" class="c-form__input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                        <input id="password" type="password" class="c-form__input @error('password') c-is-invalid @enderror" name="password"  autocomplete="current-password">
 
                         @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="c-invalid__feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -79,10 +79,10 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') c-is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="c-invalid__feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -93,10 +93,10 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') c-is-invalid @enderror" name="password"  autocomplete="current-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="c-invalid__feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror

@@ -17,6 +17,7 @@
 /* Layout ------------ */
 @import "layout/_header";
 @import "layout/_main";
+@import "layout/_message";
 
 //
 //
@@ -25,10 +26,12 @@
 @import "object/component/_button.scss";
 @import "object/component/_page-title.scss";
 @import "object/component/_form.scss";
+@import "object/component/_pic.scss";
 
 
 /* Project ------------ */
 @import "object/project/_main";
+@import "object/project/_message";
 
 
 /* Utility ------------ */

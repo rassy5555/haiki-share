@@ -11015,21 +11015,23 @@ img {
   }
 }
 
+.l-message {
+  width: 100%;
+  height: 160px;
+}
+
 /* component ------------ */
 
 .c-button {
+  display: block;
   line-height: 1.6;
-  width: 80px;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
   border-radius: 5px;
   color: white;
   background-color: #3490dc;
   padding: 5px;
-}
-
-@media screen and (max-width: 768px) {
-  .c-button {
-    width: 80px;
-  }
 }
 
 .c-page__title {
@@ -11057,6 +11059,7 @@ img {
   text-align: right;
   display: block;
   width: 30%;
+  line-height: 40px;
 }
 
 @media screen and (max-width: 768px) {
@@ -11094,13 +11097,7 @@ img {
 }
 
 .c-form__button {
-  margin-left: 185px;
-}
-
-@media screen and (max-width: 768px) {
-  .c-form__button {
-    margin-left: 0;
-  }
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -11108,6 +11105,47 @@ img {
     display: block;
     margin-top: 10px;
   }
+}
+
+.c-invalid__feedback {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #e3342f;
+  display: block;
+}
+
+.c-is-invalid {
+  border-color: #e3342f;
+}
+
+.c-profile_pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.c-image__group {
+  width: 140px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.c-pic__label {
+  width: 140px;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.c-pic {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
 }
 
 /* Project ------------ */
@@ -11127,6 +11165,14 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   margin: 0 auto;
+}
+
+.p-message {
+  background-color: #38c172;
+  padding-top: 80px;
+  text-align: center;
+  line-height: 80px;
+  color: white;
 }
 
 /* Utility ------------ */

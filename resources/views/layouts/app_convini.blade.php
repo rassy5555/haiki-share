@@ -21,6 +21,7 @@
     <style>body{background-color: tomato;}</style>
 </head>
 <body>
+<div id="app">
 <header class="l-header p-header js-float-menu">
         <h1 class="p-header__title">haiki share</h1>
         <div class="p-header__menu-trigger js-toggle-sp-menu">
@@ -35,10 +36,11 @@
                     <li ><a class="p-menu" href="{{ route('convini.register') }}">{{ __('Register') }}</a></li>
                     <li ><a class="p-menu" href="{{ route('login') }}">{{ __('User') }}</a></li>
                 @else
-                    <li ><a class="p-menu" href="{{ route('home') }}">{{ Auth::user()->name }}</a></li>
+                    <li ><a class="p-menu" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
+                    <li ><a class="p-menu" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
                     <li class="p-menu">
                         <div aria-labelledby="navbarDropdown">
-                            <a class="p-menu" class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="p-menu dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -54,12 +56,13 @@
     </header>
         <!-- フラッシュメッセージ -->
         @if (session('flash_message'))
-            <div class="alert alert-primary text-center" role="alert">
+            <div class="l-message p-message" role="alert">
                 {{ session('flash_message') }}
             </div>
         @endif
         <main>
             @yield('content')
         </main>
+</div>
 </body>
 </html>

@@ -34,7 +34,7 @@ return [
     'date'                 => ':attributeには有効な日付を指定してください。',
     'date_equals'          => ':attributeには、:dateと同じ日付けを指定してください。',
     'date_format'          => ':attributeは:format形式で指定してください。',
-    'different'            => ':attributeと:otherには、異なった内容を指定してください。',
+    'different'            => ':otherとは、異なった内容を指定してください。',
     'digits'               => ':attributeは:digits桁で指定してください。',
     'digits_between'       => ':attributeは:min桁から:max桁の間で指定してください。',
     'dimensions'           => ':attributeの図形サイズが正しくありません。',
@@ -101,7 +101,7 @@ return [
     'required_with_all'    => ':valuesを指定する場合は、:attributeも指定してください。',
     'required_without'     => ':valuesを指定しない場合は、:attributeを指定してください。',
     'required_without_all' => ':valuesのどれも指定しない場合は、:attributeを指定してください。',
-    'same'                 => ':attributeと:otherには同じ値を指定してください。',
+    'same'                 => 'パスワードと同じ値を入力してください',
     'size'                 => [
         'numeric' => ':attributeは:sizeを指定してください。',
         'file'    => ':attributeのファイルは、:sizeキロバイトでなくてはなりません。',
@@ -110,11 +110,11 @@ return [
     ],
     'string'               => ':attributeは文字列を指定してください。',
     'timezone'             => ':attributeには、有効なゾーンを指定してください。',
-    'unique'               => ':attributeの値は既に存在しています。',
+    'unique'               => 'この:attributeの値は既に存在しています。',
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeに正しい形式を指定してください。',
     'uuid'                 => ':attributeに有効なUUIDを指定してください。',
-
+    'password_hash_check'         => ':attributeと一致しません', 
     /*
     |--------------------------------------------------------------------------
     | Custom バリデーション言語行
@@ -143,6 +143,16 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'E-mail',
+        'password' => 'パスワード',
+        'convini_name' => 'コンビニ名',
+        'branch_name' => '支店名',
+        'prefectures' => '都道府県',
+        'address' => '住所',
+        'old_password' => '現在のパスワード',
+        'password' => 'パスワード',
+        'convini_pic' => 'プロフィール写真'
+    ],
 
 ];

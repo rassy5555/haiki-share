@@ -4,11 +4,16 @@
     "User": "ユーザーの方はこちら",
     "Name": "名前", 
     "Convini": "コンビニの方はこちら",
-    "Convini_name": "コンビニ名",
-    "Branch_name": "支店名",
+    "Convini Name": "コンビニ名",
+    "Branch Name": "支店名",
     "Prefectures": "都道府県",
     "Address":"住所",
-    "E-mail":"メールアドレス",
+    "E-Mail":"メールアドレス",
     "Password":"パスワード",
-    "Confirm Password":"パスワード（再入力)"
+    "Confirm Password":"パスワード（再入力)",
+    "Profile Pic":"プロフィール写真",
+    "Profile Edit":"プロフィール",
+    "Edit": "編集する",
+    "Edited": "プロフィールを編集しました",
+    "Product Register": "商品登録"
 }

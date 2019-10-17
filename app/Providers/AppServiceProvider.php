@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Validator;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Hash ;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Debugbar::addMessage(1);
+        Validator::extend('password_hash_check', function($attribute, $value, $parameters, $validator) {
+            \Debugbar::addMessage($parameters);
+            return Hash::check($value , $parameters[0]) ;
+        });    
     }
 }
