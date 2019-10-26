@@ -1,0 +1,21 @@
+.p-pagination {
+    display: flex;
+    padding-left: 0;
+    width: 100px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    border-radius: 4px;
+    li {
+    }
+}
+
+.p-page__item {
+    
+    padding: 6px;
+    border: 1px solid #ddd;
+    &.active {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #337ab7;
+    }
+}

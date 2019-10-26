@@ -1,0 +1,47 @@
+<template>
+    <div>
+        <h2 class="c-page__title">{{ product.product_name }}</h2>
+        <div class="c-image__group">
+            <img class="p-pic" v-bind:src="'/storage/' + product.product_pic">
+        </div>
+        <p><span>¥</span>{{ product.price | number_format }}</p>
+        <p>{{ product.expiration_date| date_time }}</p>
+        <div class="c-form__button">
+            <button type="submit" class="c-button" v-on:click="productEdit"  v-if="product.convini_id == convini.id">
+                編集する
+            </button>
+        </div>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="http://127.0.0.1:8000/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
+    </div>
+</template>
+<script>
+    const moment = require('moment');
+    Vue.filter('number_format', function(val){
+        return val.toLocaleString();
+    });
+
+    Vue.filter('date_time', function(val){
+        return moment(val).format('YY/MM/DD HH:mm');
+    });
+
+    export default {
+        props:['categories','product','convini'],
+        data: function() {
+            return { 
+            }
+        },
+        methods: {
+            //プロフィール画面へ遷移
+            productEdit: function(e){
+                location.href = '../../convini/productEdit/' + this.product.id;
+            }
+        },
+        computed: {
+            tweetMessage: function(){
+                var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
+                console.log(message);
+                return message;
+            }
+        },
+    }
+</script>

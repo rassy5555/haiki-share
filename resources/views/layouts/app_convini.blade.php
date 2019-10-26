@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>body{background-color: tomato;}</style>
 </head>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <body>
 <div id="app">
 <header class="l-header p-header js-float-menu">

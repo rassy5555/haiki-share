@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.c-itemlist {
+	list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	max-width: 1110px;
+	margin: 0 auto;
+	padding: 0;
+}
+.c-card {
+    max-width: 220px;
+    height: 400px;
+	flex: 220px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.c-card__description {
+    margin-top: 3px;
+	font-size:  14px;
+}

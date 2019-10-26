@@ -2,8 +2,8 @@
     <div>
         <form method="POST" enctype="multipart/form-data">
             <div class="c-image__group">
-                <img class="c-profile_pic" :src="preview_image" v-if="preview_image">
-                <img class="c-profile_pic" v-bind:src="'/storage/' + convini.convini_pic" v-else>
+                <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
+                <img class="p-pic__profile" v-bind:src="'/storage/' + convini.convini_pic" v-else>
                 <label class="c-pic__label">画像を変更
                     <input type="file" v-on:change="file_selected" name="convini_pic" style="display:none">
                 </label>
@@ -107,8 +107,6 @@
                     password_confirm:'',
                 } ,           
             }
-
-         
         },
         methods: {
             profileEdit: function(e){

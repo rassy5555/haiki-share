@@ -7,7 +7,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
 /* Foundation ------------ */
 @import "foundation/_reset";
 @import "foundation/_variables";
@@ -26,12 +25,15 @@
 @import "object/component/_button.scss";
 @import "object/component/_page-title.scss";
 @import "object/component/_form.scss";
-@import "object/component/_pic.scss";
-
+@import "object/component/_card.scss";
 
 /* Project ------------ */
 @import "object/project/_main";
 @import "object/project/_message";
+@import "object/project/_pic";
+@import "object/project/_button";
+@import "object/project/_card";
+@import "object/project/_paginate";
 
 
 /* Utility ------------ */

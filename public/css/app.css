@@ -10996,22 +10996,22 @@ img {
 }
 
 .l-container {
-  width: 980px;
-}
-
-@media screen and (max-width: 768px) {
-  .l-container {
-    width: 90%;
-  }
-}
-
-.l-page__wrapper {
   width: 760px;
 }
 
 @media screen and (max-width: 768px) {
-  .l-page__wrapper {
+  .l-container {
     width: 100%;
+  }
+}
+
+.l-container__large {
+  width: 1100px;
+}
+
+@media screen and (max-width: 768px) {
+  .l-container__large {
+    width: 90%;
   }
 }
 
@@ -11118,7 +11118,7 @@ img {
   border-color: #e3342f;
 }
 
-.c-profile_pic {
+.c-pic {
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -11126,7 +11126,7 @@ img {
 }
 
 .c-image__group {
-  width: 140px;
+  width: 300px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -11134,6 +11134,7 @@ img {
 .c-pic__label {
   width: 140px;
   height: 40px;
+  margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid;
@@ -11142,15 +11143,35 @@ img {
   line-height: 40px;
 }
 
-.c-pic {
-  width: 300px;
-  height: 200px;
+.c-itemlist {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1110px;
   margin: 0 auto;
+  padding: 0;
+}
+
+.c-card {
+  max-width: 220px;
+  height: 400px;
+  flex: 220px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.c-card__description {
+  margin-top: 3px;
+  font-size: 14px;
 }
 
 /* Project ------------ */
 
 .p-container {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 0.25rem;
   margin: 0 auto;
 }
 
@@ -11160,19 +11181,75 @@ img {
   }
 }
 
-.p-page__wrapper {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  margin: 0 auto;
-}
-
 .p-message {
   background-color: #38c172;
   padding-top: 80px;
   text-align: center;
   line-height: 80px;
   color: white;
+}
+
+.p-pic {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.p-pic__profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.p-pic__card {
+  width: 200px;
+  height: 150px;
+}
+
+.p-button__small {
+  width: 120px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.p-button_saled {
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+.p-card__name {
+  margin-top: 5px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+
+.p-card__price {
+  font-size: 20px;
+  text-align: center;
+}
+
+.p-pagination {
+  display: flex;
+  padding-left: 0;
+  width: 100px;
+  margin: 20px auto;
+  padding-bottom: 20px;
+  border-radius: 4px;
+}
+
+.p-page__item {
+  padding: 6px;
+  border: 1px solid #ddd;
+}
+
+.p-page__item.active {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
 
 /* Utility ------------ */

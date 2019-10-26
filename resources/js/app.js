@@ -22,6 +22,12 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('user_profile-component', require('./components/UserProfileComponent.vue').default);
 Vue.component('convini_profile-component', require('./components/ConviniProfileComponent.vue').default);
+Vue.component('product_register-component', require('./components/ProductRegisterComponent.vue').default);
+Vue.component('product_edit-component', require('./components/ProductEditComponent.vue').default);
+Vue.component('convini_product_detail-component', require('./components/ConviniProductDetailComponent.vue').default);
+Vue.component('user_product_detail-component', require('./components/UserProductDetailComponent.vue').default);
+Vue.component('listing_list-component', require('./components/ListingListComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

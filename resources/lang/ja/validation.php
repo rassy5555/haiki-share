@@ -33,7 +33,7 @@ return [
     'confirmed'            => ':attributeと、確認フィールドとが、一致していません。',
     'date'                 => ':attributeには有効な日付を指定してください。',
     'date_equals'          => ':attributeには、:dateと同じ日付けを指定してください。',
-    'date_format'          => ':attributeは:format形式で指定してください。',
+    'date_format'          => ':attributeは:日時で指定してください。',
     'different'            => ':otherとは、異なった内容を指定してください。',
     'digits'               => ':attributeは:digits桁で指定してください。',
     'digits_between'       => ':attributeは:min桁から:max桁の間で指定してください。',
@@ -152,7 +152,14 @@ return [
         'address' => '住所',
         'old_password' => '現在のパスワード',
         'password' => 'パスワード',
-        'convini_pic' => 'プロフィール写真'
+        'convini_pic' => 'プロフィール写真',
+        'product_name' => '商品名',
+        'category' => 'カテゴリー',
+        'category_id' => 'カテゴリー',
+        'expiration_date' => '賞味期限',
+        'price' => '価格',
+        'comment' => 'コメント',
+        'product_pic' => '商品画像',
     ],
 
 ];

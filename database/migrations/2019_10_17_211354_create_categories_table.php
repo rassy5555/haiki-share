@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserPicToUsersTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddUserPicToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->string('user_pic')->after('email_verified_at')->nullable();
+        Schema::create('categories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('category_name');
+            $table->boolean('delete_flg');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +28,6 @@ class AddUserPicToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->dropColumn('user_pic');
-        });
+        Schema::dropIfExists('categories');
     }
 }

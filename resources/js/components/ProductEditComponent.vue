@@ -36,7 +36,7 @@
         <div class="c-form__group">
             <label class="c-form__label">賞味期限</label>
             <div class="c-form__item">
-                <datetime format="YYYY-MM-DD H:i" width="200px" name="expiration_date" v-model="product.expiration_date"></datetime>
+                <datetime format="YYYY-MM-DD H:i" width="200px" name="expiration_date" v-bind:value="this.product.expiration_date"></datetime>
                 <div v-if="errors.expiration_date" class="c-invalid__feedback">{{ errors.expiration_date }}</div>
             </div>
         </div>
@@ -48,26 +48,25 @@
             </div>
         </div>
         <div class="c-form__button">
-            <button type="submit" class="c-button"  v-on:click="productRegister">
-                登録する
+            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.product.saled_flg }" v-on:click.prevent="productRegister">
+                編集する
+            </button>
+        </div>
+        <div class="c-form__button">
+            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.product.saled_flg }"  v-on:click.prevent="productDelete">
+                削除する
             </button>
         </div>
     </div>
 </template>
 <script>
     import datetime from 'vuejs-datetimepicker';
+    const moment = require('moment');
     export default {
-        props: ['categories'],
+        props: ['categories','product'],
         data: function(){
             return{
-                product: {
-                    product_name:'',
-                    price: '',
-                    category_id:'',
-                    expiration_date: '',
-                    comment: '',
-                    product_pic:'',
-                },
+                expiration_date: moment(this.product.expiration_date).format( "YYYY-MM-DD HH:mm:ss"),
                 errors: {
                     product_name:'',
                     price: '',
@@ -93,9 +92,9 @@
                 formData.append('expiration_date',this.product.expiration_date),
                 formData.append('comment',this.product.comment),
                 formData.append('product_pic',this.file_info),
-                axios.post('/convini/productRegister',formData
+                axios.post('/convini/productEdit/' + this.product.id ,formData
                 ).then(function(){
-                    self.erros = [];
+                    self.errors = [];
                 }).catch(function(error){
                     console.log(error.response);
                     for(var key in error.response.data.errors) {
@@ -103,6 +102,12 @@
                     }
                 });
             },
+            productDelete: function(e) {
+                axios.post('/convini/productDelete/' + this.product.id ,
+                ).then(function(){
+                }).catch(function(error){
+                });           
+             },
             file_selected(event){
                 this.file_info = event.target.files[0];
                 if(this.file_info){

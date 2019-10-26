@@ -35,8 +35,10 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/profileEdit', 'ProfileController@profileEditShow')->name('profileEdit');
     Route::post('/profileEdit', 'ProfileController@profileEdit');
     Route::post('/changePassword', 'ProfileController@changePassword');
-
-
+    Route::get('/productDetail/{product_id}', 'ProductController@productDetailShow')->name('productDetailShow');
+    Route::post('/productPurchase/{product_id}', 'ProductController@productPurchase');
+    Route::post('/productCancel/{product_id}', 'ProductController@productCancel');
+    Route::get('/productList', 'ProductController@productListShow')->name('productListShow');
 });
  
 /*
@@ -45,11 +47,11 @@ Route::group(['middleware' => 'auth:user'], function() {
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix' => 'convini','middleware'=>'guest:convini','middleware'=>'guest:user'], function() {
-    Route::get('/',         function () { return redirect('/convini/home'); });
-    Route::get('login',     'Convini\LoginController@showLoginForm')->name('convini.login');
-    Route::post('login',    'Convini\LoginController@login');
-    Route::get('register',     'Convini\RegisterController@showRegister')->name('convini.register');
-    Route::post('register',    'Convini\RegisterController@register');
+    Route::get('/',function () { return redirect('/convini/home'); });
+    Route::get('login','Convini\LoginController@showLoginForm')->name('convini.login');
+    Route::post('login','Convini\LoginController@login');
+    Route::get('register','Convini\RegisterController@showRegister')->name('convini.register');
+    Route::post('register','Convini\RegisterController@register');
 });
  
 /*
@@ -65,4 +67,11 @@ Route::group(['prefix' => 'convini', 'middleware' => 'auth:convini'], function()
     Route::post('changePassword', 'Convini\ProfileController@changePassword');
     Route::get('profileEdit', 'Convini\ProfileController@profileEditShow')->name('convini.profileEdit');
     Route::get('productRegister','Convini\ProductController@productRegisterShow')->name('convini.productRegister');
+    Route::post('productRegister','Convini\ProductController@productRegister');
+    Route::get('productEdit/{product_id}','Convini\ProductController@productEditShow')->name('convini.productEdit');
+    Route::post('productEdit/{product_id}','Convini\ProductController@productEdit');
+    Route::post('productDelete/{product_id}','Convini\ProductController@productDelete');
+    Route::get('productDetail/{product_id}','Convini\ProductController@productDetailShow')->name('convini.productDetail');
+    Route::get('listingList/{convini_id}','Convini\ProductController@listingListShow')->name('convini.listingList');
+    Route::get('back','Convini\ProductController@back');
 });

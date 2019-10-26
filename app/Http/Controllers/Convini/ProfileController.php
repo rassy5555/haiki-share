@@ -60,7 +60,6 @@ class ProfileController extends Controller
 
     //プロフィール編集
     public function profileEdit (Request $request) {
-        \Debugbar::addMessage($request);
         //画像がPOST送信されていなければ画像を除いてバリデーション
         if(empty($request->convini_pic)){
             $this->profileValidator($request->except(['convini_pic']))->validate();

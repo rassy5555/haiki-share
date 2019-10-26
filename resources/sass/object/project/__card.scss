@@ -1,0 +1,13 @@
+.p-card__name {
+    margin-top: 5px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	font-weight: 700;
+}
+
+.p-card__price {
+    font-size: 20px;
+    text-align: center;
+}
