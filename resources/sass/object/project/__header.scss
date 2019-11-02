@@ -1,8 +1,8 @@
 .p-header {
-  padding-right: $space_xxl;
-  padding-left: $space_xxl;
-  color: $main-color;
-  background-color: #f4f8fa;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: $font-color_sub;
+  background-color: $main-color;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,12 +11,13 @@
 
   @include mq($breakpoint: md) {
     height: 60px;
-    padding-right: $space_l;
-    padding-left: $space_l;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
 .p-header__title {
+  color: $font-color_sub;
   font-size: $font-size_xxl;
   font-family: $font-family_corp;
   font-weight: bold;
@@ -26,14 +27,12 @@
 // menu
 // ==================================
 .p-menu {
-    color: $main-color;
+    color: $font-color_sub;
     font-weight: 800;
-    margin-right: $space_s;
+    margin-right: 5px;
     @include mq($breakpoint: md){
       color: $font-color_default;
       font-size: $font-size_xl;
-      text-align: center;
-      margin-bottom: $space_xxl;
     }
 }
 
@@ -42,6 +41,8 @@
       display: inline-block;
       @include mq($breakpoint: md){
         display: block;
+        text-align: center;
+        margin-bottom: 30px;
       }
     }
     @include mq($breakpoint: md){

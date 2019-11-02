@@ -1,32 +1,29 @@
 .p-container {
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 0.25rem;
-    margin: 0 auto;
-    @include mq($breakpoint: md) {
-        padding-top: 80px;
-    }
-
-
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  @include mq($breakpoint: md) {
+      padding-top: 80px;
+  }
 }
 
-// .p-page__wrapper {
-//     background-color: white;
-//     border: 1px solid rgba(0,0,0,0.125);
-//     border-radius: 0.25rem;
-//     margin: 0 auto;
-// }
+.p-page__wrapper {
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 0.25rem;
+  margin: 0 auto;
+}
 
 .p-container {
-    margin: 0 auto;
-    padding-top: 150px;  
-  }
-  
-  .p-section__title {
-    font-size: $font-size_xxl;
-    margin-bottom: $space_xl;
-  }
+  margin: 0 auto;
+  padding-top: 150px;  
+}
 
-  .p-productList {
-    display: flex;
-  }
+.p-section__title {
+  font-size: $font-size_xxl;
+  margin-bottom: $space_xl;
+}
+
+.p-productList {
+  display: flex;
+}

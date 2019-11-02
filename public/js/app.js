@@ -1935,8 +1935,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2215,8 +2213,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _master_prefectures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../master/prefectures */ "./resources/js/master/prefectures.js");
-//
-//
 //
 //
 //
@@ -2876,8 +2872,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3261,8 +3255,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -59643,18 +59635,16 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__group" }, [
-      _c("div", { staticClass: "c-form__button" }, [
-        _c(
-          "button",
-          {
-            staticClass: "c-button",
-            attrs: { type: "submit" },
-            on: { click: _vm.login }
-          },
-          [_vm._v("\n                ログイン\n            ")]
-        )
-      ])
+    _c("div", { staticClass: "c-form__button" }, [
+      _c(
+        "button",
+        {
+          staticClass: "c-button",
+          attrs: { type: "submit" },
+          on: { click: _vm.login }
+        },
+        [_vm._v("\n            ログイン\n        ")]
+      )
     ])
   ])
 }
@@ -60409,7 +60399,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
       _c("label", { staticClass: "c-form__label" }, [
-        _vm._v("新しいパスワード（再入力）")
+        _vm._v("パスワード（再入力）")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
@@ -60447,18 +60437,16 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__group" }, [
-      _c("div", { staticClass: "c-form__button" }, [
-        _c(
-          "button",
-          {
-            staticClass: "c-button",
-            attrs: { type: "submit" },
-            on: { click: _vm.login }
-          },
-          [_vm._v("\n                新規登録\n            ")]
-        )
-      ])
+    _c("div", { staticClass: "c-form__button" }, [
+      _c(
+        "button",
+        {
+          staticClass: "c-button",
+          attrs: { type: "submit" },
+          on: { click: _vm.login }
+        },
+        [_vm._v("\n            新規登録\n        ")]
+      )
     ])
   ])
 }
@@ -61437,18 +61425,16 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__group" }, [
-      _c("div", { staticClass: "c-form__button" }, [
-        _c(
-          "button",
-          {
-            staticClass: "c-button",
-            attrs: { type: "submit" },
-            on: { click: _vm.login }
-          },
-          [_vm._v("\n                ログイン\n            ")]
-        )
-      ])
+    _c("div", { staticClass: "c-form__button" }, [
+      _c(
+        "button",
+        {
+          staticClass: "c-button",
+          attrs: { type: "submit" },
+          on: { click: _vm.login }
+        },
+        [_vm._v("\n            ログイン\n        ")]
+      )
     ])
   ])
 }
@@ -62199,7 +62185,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
       _c("label", { staticClass: "c-form__label" }, [
-        _vm._v("新しいパスワード（再入力）")
+        _vm._v("パスワード（再入力)")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
@@ -62238,18 +62224,16 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__group" }, [
-      _c("div", { staticClass: "c-form__button" }, [
-        _c(
-          "button",
-          {
-            staticClass: "c-button",
-            attrs: { type: "submit" },
-            on: { click: _vm.login }
-          },
-          [_vm._v("\n                新規登録\n            ")]
-        )
-      ])
+    _c("div", { staticClass: "c-form__button" }, [
+      _c(
+        "button",
+        {
+          staticClass: "c-button",
+          attrs: { type: "submit" },
+          on: { click: _vm.login }
+        },
+        [_vm._v("\n            新規登録\n        ")]
+      )
     ])
   ])
 }

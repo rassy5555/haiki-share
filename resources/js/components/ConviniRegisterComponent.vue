@@ -45,18 +45,16 @@
             </div>
         </div> 
         <div class="c-form__group">
-            <label class="c-form__label">新しいパスワード（再入力）</label>
+            <label class="c-form__label">パスワード（再入力）</label>
             <div class="c-form__item">
                 <input id="password_confirm" type="password" class="c-form__input" name="password_confirm" v-model="password_confirm">
                 <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
             </div>
         </div>  
-        <div class="c-form__group">
-            <div class="c-form__button">
-                <button type="submit" class="c-button" v-on:click="login">
-                    新規登録
-                </button>
-            </div>
+        <div class="c-form__button">
+            <button type="submit" class="c-button" v-on:click="login">
+                新規登録
+            </button>
         </div>
     </div>
 </template>
