@@ -31,7 +31,7 @@
             }
         },
         methods: {
-            //プロフィール画面へ遷移
+            //商品編集画面へ遷移
             productEdit: function(e){
                 location.href = '../../convini/productEdit/' + this.product.id;
             }

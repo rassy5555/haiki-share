@@ -50,14 +50,14 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        return Validator::make($data, [
+    {       return Validator::make($data, [
             'convini_name' => ['required', 'string', 'max:20'],
             'branch_name' => ['required', 'string', 'max:20'],
-            'prefectures' => ['required'],
+            'prefecture' => ['required'],
             'address' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email:rfc,filter', 'max:100', 'unique:convinis'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
+            'password_confirm' =>['same:password'],
         ]);
     }
 
@@ -72,7 +72,7 @@ class RegisterController extends Controller
         return Convini::create([
             'convini_name' => $data['convini_name'],
             'branch_name' => $data['branch_name'],
-            'prefectures' => $data['prefectures'],
+            'prefectures' => $data['prefecture'],
             'address' => $data['address'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -87,7 +87,9 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {   
+        \Debugbar::addMessage($request);
         $this->validator($request->all())->validate();
+        \Debugbar::addMessage(2);
         event(new Registered($convini = $this->create($request->all())));
         $this->guard()->login($convini);
 

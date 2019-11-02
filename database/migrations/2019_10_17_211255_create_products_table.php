@@ -15,8 +15,8 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('convini_id');
-            $table->integer('user_id')->nullable();
+            $table->unsignedBigInteger('convini_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('product_name');
             $table->integer('price');
             $table->integer('category_id');
@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->boolean('saled_flg');
             $table->boolean('delete_flg');
             $table->timestamps();
+            // $table->foreign('convini_id')->references('id')->on('convinis');
         });
     }
 

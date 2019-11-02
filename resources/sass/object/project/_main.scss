@@ -16,3 +16,17 @@
 //     border-radius: 0.25rem;
 //     margin: 0 auto;
 // }
+
+.p-container {
+    margin: 0 auto;
+    padding-top: 150px;  
+  }
+  
+  .p-section__title {
+    font-size: $font-size_xxl;
+    margin-bottom: $space_xl;
+  }
+
+  .p-productList {
+    display: flex;
+  }

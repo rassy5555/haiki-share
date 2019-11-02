@@ -5,7 +5,8 @@
     <div class="l-container p-container">
         <div class="l-page__wrapper p-page__wrapper">
             <h2 class="c-page__title">{{ __('Register')}}</h2>
-            <form method="POST" action="{{ route('register') }}" >
+            <user_register-component></user_register-component>
+            <!-- <form method="POST" action="{{ route('register') }}" >
                 @csrf
                 <div class="c-form__group">
                     <label class="c-form__label">{{ __('Name') }}</label>
@@ -60,7 +61,7 @@
                         </button>
                     </div>
                 </div>
-            </form>        
+            </form>         -->
         </div>
 
     </div>

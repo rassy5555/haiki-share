@@ -1,23 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+<section class="main">  
+    <div class="l-container__large p-container">
+        <h2 class="c-page__title">{{ __('My Page')}}</h2>
+        <user_home-component user_id="{{ $user_id }}"　:purchased_list="{{ $purchased_list }}"></user_home-component>
     </div>
-</div>
+</section>
 @endsection

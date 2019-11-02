@@ -9,9 +9,6 @@
                     <button class="c-button p-button__small" v-on:click="productDetail(product.id)">
                         詳細をみる
                     </button>
-                    <button type="submit" class="c-button p-button__small" v-on:click="productEdit(product.id)"  v-if="product.saled_flg == false">
-                        編集する
-                    </button>
             </li>
         </ul>
         <paginate
@@ -31,10 +28,10 @@ import Paginate from 'vuejs-paginate'
 Vue.component('paginate', Paginate)
 
 export default {
-    props: ['listing_list'],
+    props: ['saled_list'],
     data: function(){
         return{
-            items: this.listing_list,
+            items: this.saled_list,
             parPage: 10,//1ページあたりの表示商品数
             currentPage: 1
         }
@@ -43,10 +40,6 @@ export default {
         //商品詳細画面へ遷移
         productDetail: function(id){
             location.href = '../../convini/productDetail/' + id;
-        },
-        //商品編集画面へ遷移
-        productEdit: function(id){
-            location.href = '../../convini/productEdit/' + id;
         },
         //現在のページ数を取得（ページネーション用)
         clickCallback: function (pageNum) {

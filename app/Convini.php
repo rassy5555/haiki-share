@@ -36,4 +36,10 @@ class Convini extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // protected $primaryKey = "convini_id";
+
+    public function products() {
+        return $this->hasMany('App\product');
+    }
 }

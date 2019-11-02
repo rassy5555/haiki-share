@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\User;
 namespace App\Http\Controllers;
 
+use App\Product;
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -25,6 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $purchased_list = Product::where('user_id',$user->id)->where('delete_flg',false)->get();
+
+        return view('home',['user_id'=>$user->id,'purchased_list'=>$purchased_list]);
     }
 }

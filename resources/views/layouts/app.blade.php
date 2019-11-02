@@ -36,6 +36,7 @@
                     <li><a class="p-menu" href="{{ route('convini.login') }}">{{ __('Convini') }}</a></li>
                 @else
                     <li><a class="p-menu" href="{{ route('profileEdit') }}">{{ __('Profile Edit') }}</a></li>
+                    <li><a class="p-menu" href="{{ route('productList') }}">{{ __('Product List') }}</a></li>
                     <li>
                         <div aria-labelledby="navbarDropdown">
                             <a class="p-menu"  class="dropdown-item" href="{{ route('logout') }}"

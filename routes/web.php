@@ -35,10 +35,10 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/profileEdit', 'ProfileController@profileEditShow')->name('profileEdit');
     Route::post('/profileEdit', 'ProfileController@profileEdit');
     Route::post('/changePassword', 'ProfileController@changePassword');
-    Route::get('/productDetail/{product_id}', 'ProductController@productDetailShow')->name('productDetailShow');
+    Route::get('/productDetail/{product_id}', 'ProductController@productDetailShow')->name('productDetail');
     Route::post('/productPurchase/{product_id}', 'ProductController@productPurchase');
-    Route::post('/productCancel/{product_id}', 'ProductController@productCancel');
-    Route::get('/productList', 'ProductController@productListShow')->name('productListShow');
+    Route::post('/productCancell/{product_id}', 'ProductController@productCancell');
+    Route::get('/productList', 'ProductController@productListShow')->name('productList');
 });
  
 /*
@@ -73,5 +73,6 @@ Route::group(['prefix' => 'convini', 'middleware' => 'auth:convini'], function()
     Route::post('productDelete/{product_id}','Convini\ProductController@productDelete');
     Route::get('productDetail/{product_id}','Convini\ProductController@productDetailShow')->name('convini.productDetail');
     Route::get('listingList/{convini_id}','Convini\ProductController@listingListShow')->name('convini.listingList');
+    Route::get('saledList/{convini_id}','Convini\ProductController@saledListShow')->name('convini.saledList');
     Route::get('back','Convini\ProductController@back');
 });

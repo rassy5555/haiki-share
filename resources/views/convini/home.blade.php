@@ -1,23 +1,10 @@
 @extends('layouts.app_convini')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+<section class="main">  
+    <div class="l-container__large p-container">
+        <h2 class="c-page__title">{{ __('My Page')}}</h2>
+        <convini_home-component  convini_id="{{ $convini_id }}" :saled_list="{{ $saled_list }}" :listing_list="{{ $listing_list}}" ></convini_home-component>
     </div>
-</div>
+</section>
 @endsection

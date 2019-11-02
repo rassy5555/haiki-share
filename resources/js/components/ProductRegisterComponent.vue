@@ -19,7 +19,7 @@
         <div class="c-form__group">
             <label class="c-form__label">カテゴリー</label>
             <div class="c-form__item">
-                <select id="category" type="text" class="c-form__input" name="category" v-model:value="product.category_id" autocomplete="prefectures">
+                <select id="category" type="text" class="c-form__input" name="category" v-model:value="product.category_id">
                     <option disabled selected value>選択してください</option>
                     <option v-for="(category,index) in categories" v-bind:value="category.id">{{ category.category_name }}</option>
                 </select>

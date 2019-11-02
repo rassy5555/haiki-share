@@ -26,7 +26,7 @@
             <div class="c-form__group">
                 <label class="c-form__label">都道府県</label>
                 <div class="c-form__item">
-                    <select id="prefectures" type="text" class="c-form__input" name="prefectures" v-model:value="convini.prefectures" autocomplete="prefectures"  >
+                    <select id="prefectures" type="text" class="c-form__input" name="prefectures" v-model:value="convini.prefectures" autocomplete="prefectures" >
                         <option v-for="(prefecture,index) in prefectures" :value="index" v-text="prefecture"></option>
                     </select> 
                     <div v-if="errors.prefectures" class="c-invalid__feedback">{{ errors.prefectures }}</div>

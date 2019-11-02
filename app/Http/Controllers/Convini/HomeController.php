@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Convini;
 
+use App\Convini;
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\EditRequest;
 
 
@@ -29,6 +29,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('convini.home');
+        $convini = Auth::user();
+        $listing_list = Product::where('convini_id',$convini->id)->where('delete_flg',false)->get();
+        $saled_list = Product::where('convini_id',$convini->id)->where('saled_flg',true)->where('delete_flg',false)->get();
+        return view('convini.home',['convini_id'=>$convini->id,'listing_list'=>$listing_list,'saled_list'=>$saled_list]);
     }
 }

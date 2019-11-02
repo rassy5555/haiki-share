@@ -36,14 +36,14 @@
         <div class="c-form__group">
             <label class="c-form__label">賞味期限</label>
             <div class="c-form__item">
-                <datetime format="YYYY-MM-DD H:i" width="200px" name="expiration_date" v-bind:value="this.product.expiration_date"></datetime>
+                <datetime format="YYYY-MM-DD H:i" width="200px" name="expiration_date" v-model="expiration_date"></datetime>
                 <div v-if="errors.expiration_date" class="c-invalid__feedback">{{ errors.expiration_date }}</div>
             </div>
         </div>
         <div class="c-form__group">
             <label class="c-form__label">コメント</label>
             <div class="c-form__item">
-                <textarea id="comment" type="text" class="c-form__input" name="comment" v-model:value="product.comment"></textarea>
+                <textarea id="comment" type="text" class="c-form__input" name="comment" v-model="product.comment"></textarea>
                 <div v-if="errors.comment" class="c-invalid__feedback">{{ errors.comment }}</div>
             </div>
         </div>
@@ -66,7 +66,7 @@
         props: ['categories','product'],
         data: function(){
             return{
-                expiration_date: moment(this.product.expiration_date).format( "YYYY-MM-DD HH:mm:ss"),
+                expiration_date: moment(this.product.expiration_date).format( "YYYY-MM-DD HH:mm"),
                 errors: {
                     product_name:'',
                     price: '',
@@ -89,7 +89,7 @@
                 formData.append('product_name',this.product.product_name),
                 formData.append('category_id',this.product.category_id),
                 formData.append('price',this.product.price),
-                formData.append('expiration_date',this.product.expiration_date),
+                formData.append('expiration_date',this.expiration_date),
                 formData.append('comment',this.product.comment),
                 formData.append('product_pic',this.file_info),
                 axios.post('/convini/productEdit/' + this.product.id ,formData

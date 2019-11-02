@@ -63,7 +63,19 @@ class ProductController extends Controller
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
         $product->saled_flg = $request->saled_flg;
-        $product->user_id  = $request->user_id;
+        if($product->saled_flg){
+            $product->user_id  = $request->user_id;
+        } else {
+            $product->user_id = null;   
+        }
         $product->save();
+    }
+
+    //商品一覧画面へ遷移
+    public function productListShow(){
+        $categories = Category::all();
+        $product_list = Product::where('delete_flg',false)->join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')
+        ->get();
+        return view('productList',['categories'=>$categories,'product_list'=>$product_list]);
     }
 }
