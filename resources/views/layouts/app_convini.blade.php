@@ -18,13 +18,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>body{background-color: tomato;}</style>
 </head>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <body>
 <div id="app">
 <header class="l-header p-header js-float-menu">
-        <h1 class="p-header__title">haiki share</h1>
+        @guest
+            <a class="p-header__title" href="/convini/login">haiki share</a>
+        @else
+            <a class="p-header__title" href="/convini/home">haiki share</a>
+        @endguest        
         <div class="p-header__menu-trigger js-toggle-sp-menu">
             <span></span>
             <span></span>

@@ -22,7 +22,11 @@
 <body>
 <div id="app">
     <header class="l-header p-header js-float-menu">
-        <h1 class="p-header__title">haiki share</h1>
+        @guest
+            <a class="p-header__title" href="/login">haiki share</a>
+        @else
+            <a class="p-header__title" href="/home">haiki share</a>
+        @endguest
         <div class="p-header__menu-trigger js-toggle-sp-menu">
             <span></span>
             <span></span>
@@ -38,16 +42,14 @@
                     <li><a class="p-menu" href="{{ route('profileEdit') }}">{{ __('Profile Edit') }}</a></li>
                     <li><a class="p-menu" href="{{ route('productList') }}">{{ __('Product List') }}</a></li>
                     <li>
-                        <div aria-labelledby="navbarDropdown">
-                            <a class="p-menu"  class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                         </div>
+                        <a class="p-menu" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 @endguest
           </ul>
