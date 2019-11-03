@@ -11163,6 +11163,10 @@ img {
   transform: translateY(-15px) rotate(45deg);
 }
 
+.main {
+  background-color: #f4f8fa;
+}
+
 .p-container {
   margin: 0 auto;
   border-radius: 0.25rem;

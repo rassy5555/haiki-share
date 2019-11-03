@@ -8,7 +8,7 @@
                 出品する
             </button> 
         </div>
-        <h3　class="c-page__subtitle">出品した商品一覧</h3>
+        <h3 class="c-page__subtitle">出品した商品一覧</h3>
         <a　v-bind:href="'/convini/listingList/' + convini_id">全件表示</a>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in listing_list">
