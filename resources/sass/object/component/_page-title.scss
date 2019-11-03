@@ -1,5 +1,11 @@
 .c-page__title {
-    margin: $space_xxl 0;
+    margin: 30px 0;
     font-size: $font-size_xxl;
+    text-align: center;
+}
+
+.c-page__subtitle {
+    margin: 30px 0;
+    font-size: $font-size_xl;
     text-align: center;
 }

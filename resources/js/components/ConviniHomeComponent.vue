@@ -1,11 +1,15 @@
 <template>
     <div>
-        <button type="submit" class="c-button" v-on:click="profileEdit">
-            プロフィール編集
-        </button>    
-        <button type="submit" class="c-button" v-on:click="productRegister">
-            出品する
-        </button> 
+        <div class="p-button__wrapper">
+            <button type="submit" class="c-button p-button__flex" v-on:click="profileEdit">
+                プロフィール編集
+            </button>    
+            <button type="submit" class="c-button p-button__flex" v-on:click="productRegister">
+                出品する
+            </button> 
+        </div>
+        <h3　class="c-page__subtitle">出品した商品一覧</h3>
+        <a　v-bind:href="'/convini/listingList/' + convini_id">全件表示</a>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in listing_list">
                     <img class="p-pic__card" v-bind:src="'/storage/' + product.product_pic"  alt="" width="300" height="200">
@@ -20,6 +24,7 @@
                     </button>
             </li>
         </ul>
+        <h3　class="c-page__subtitle">売れた商品一覧</h3>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in saled_list">
                     <img class="p-pic__card" v-bind:src="'/storage/' + product.product_pic"  alt="" width="300" height="200">
@@ -60,4 +65,5 @@
             },
         },
     }
+
 </script>

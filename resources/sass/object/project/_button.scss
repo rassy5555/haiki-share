@@ -8,3 +8,16 @@
     background-color: #ccc;
     pointer-events: none;
 }
+
+.p-button__flex {
+    margin-right: 10px;
+    margin-left: 10px;
+	@include mq($breakpoint: md) {
+        width: 120px;
+	}
+}
+
+.p-button__wrapper {
+    display: flex;
+    justify-content: center;
+}

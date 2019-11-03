@@ -15,6 +15,12 @@
 	flex: 220px;
 	padding: 10px;
 	box-sizing: border-box;
+	@include mq($breakpoint: md) {
+		margin: 0 auto;
+		margin-bottom: 30px;
+		border: 1px solid rgba(0,0,0,0.125);
+		border-radius: 5px;
+	}
 }
 
 .c-card__description {
