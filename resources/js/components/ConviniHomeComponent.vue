@@ -24,7 +24,7 @@
                     </button>
             </li>
         </ul>
-        <h3　class="c-page__subtitle">売れた商品一覧</h3>
+        <h3　class="c-page__subtitle">購入済商品一覧</h3>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in saled_list">
                     <img class="p-pic__card" v-bind:src="'/storage/' + product.product_pic"  alt="" width="300" height="200">

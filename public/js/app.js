@@ -59508,7 +59508,7 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("h3", { staticClass: "c-page__subtitle" }, [_vm._v("売れた商品一覧")]),
+    _c("h3", { staticClass: "c-page__subtitle" }, [_vm._v("購入済商品一覧")]),
     _vm._v(" "),
     _c(
       "ul",
