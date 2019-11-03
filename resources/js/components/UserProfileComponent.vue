@@ -1,7 +1,9 @@
 <template>
     <div>
-        <h2 class="c-page__title" v-on:click="profile_mode">プロフィール編集</h2>
-        <h2 class="c-page__title" v-on:click="password_mode">パスワード変更</h2>
+        <div>
+            <h2 class="c-page__title" v-on:click="profile_mode">プロフィール編集</h2>
+            <h2 class="c-page__title" v-on:click="password_mode">パスワード変更</h2>
+        </div>
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
                 <img class="p-pic__profile" :src="preview_image" v-if="preview_image">

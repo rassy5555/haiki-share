@@ -3190,6 +3190,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['props_user'],
@@ -61907,17 +61909,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "h2",
-      { staticClass: "c-page__title", on: { click: _vm.profile_mode } },
-      [_vm._v("プロフィール編集")]
-    ),
-    _vm._v(" "),
-    _c(
-      "h2",
-      { staticClass: "c-page__title", on: { click: _vm.password_mode } },
-      [_vm._v("パスワード変更")]
-    ),
+    _c("div", [
+      _c(
+        "h2",
+        { staticClass: "c-page__title", on: { click: _vm.profile_mode } },
+        [_vm._v("プロフィール編集")]
+      ),
+      _vm._v(" "),
+      _c(
+        "h2",
+        { staticClass: "c-page__title", on: { click: _vm.password_mode } },
+        [_vm._v("パスワード変更")]
+      )
+    ]),
     _vm._v(" "),
     _vm.edit_mode == "profile"
       ? _c(
