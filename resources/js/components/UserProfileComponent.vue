@@ -1,6 +1,8 @@
 <template>
     <div>
-        <form method="POST" enctype="multipart/form-data">
+        <h2 class="c-page__title" v-on:click="profile_mode">プロフィール編集</h2>
+        <h2 class="c-page__title" v-on:click="password_mode">パスワード変更</h2>
+        <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
                 <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
                 <img class="p-pic__profile" v-bind:src="'/storage/' + user.user_pic" v-else>
@@ -27,7 +29,7 @@
                 編集する
             </button>
         </form>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
                 <label class="c-form__label">現在のパスワード</label>
                 <div class="c-form__item">
@@ -67,6 +69,7 @@
         data: function(){
             return{
                 user: this.props_user,
+                edit_mode: 'profile',
                 old_password:'',
                 password_confirm:'',
                 file_info:'',
@@ -130,7 +133,13 @@
                         self.errors[key] = error.response.data.errors[key][0];
                     }
                 });
-            }
+            },
+            profile_mode: function(e){
+                this.edit_mode = 'profile';
+            },
+            password_mode: function(e){
+                this.edit_mode = 'password';
+            },        
         },        
     }
 </script>

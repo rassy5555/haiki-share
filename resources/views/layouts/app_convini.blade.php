@@ -43,16 +43,14 @@
                     <li ><a class="p-menu" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
                     <li ><a class="p-menu" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
                     <li class="p-menu">
-                        <div aria-labelledby="navbarDropdown">
-                            <a class="p-menu dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('convini.logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                         </div>
+                        <a class="p-menu" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('convini.logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 @endguest
           </ul>

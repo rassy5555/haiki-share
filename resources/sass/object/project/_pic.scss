@@ -6,10 +6,12 @@
 }
 
 .p-pic__profile {
+    display: inline-block;
     width: 140px;
     height: 140px;
     border-radius: 50%;
     margin: 0 auto;
+    text-align: center;
 }
 
 .p-pic__card {

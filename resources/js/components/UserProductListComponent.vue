@@ -1,15 +1,18 @@
 <template>
     <div>
-        <select id="prefectures" type="text" class="c-form__input" name="prefectures" v-model="selectPrefecture">
-            <option selected v-bind:value="0">未選択</option>
-            <option v-for="(prefecture,index) in prefectures" v-bind:value="Number(index)" v-text="prefecture"></option>
-        </select> 
-        <input id="price" type="number" class="c-form__input" v-model:value="budget">
-        <label><input type="checkbox" v-model="showExpiration">賞味期限以内のもの</label>
-        <select id="category" type="text" class="c-form__input" v-model="selectCategory" >
-            <option selected v-bind:value="0">未選択</option>
-            <option v-for="(category,index) in categories" v-bind:value="category.id">{{ category.category_name }}</option>
-        </select>
+        <div class="p-filter__wrapper">
+            <select id="prefectures" class="p-filter__item" type="text" name="prefectures" v-model="selectPrefecture">
+                <option selected v-bind:value="0">都道府県　未選択</option>
+                <option v-for="(prefecture,index) in prefectures" v-bind:value="Number(index)" v-text="prefecture"></option>
+            </select> 
+            <select id="category" class="p-filter__item" type="text" v-model="selectCategory" >
+                <option selected v-bind:value="0">カテゴリ　未選択</option>
+                <option v-for="(category,index) in categories" v-bind:value="category.id">{{ category.category_name }}</option>
+            </select>
+            <label class="p-filter__item"><input id="price" type="number" v-model:value="budget" style="width:100px">円以下の商品</label>
+            <label class="p-filter__item"><input type="checkbox" v-model="showExpiration">賞味期限以内のもの</label>
+
+        </div>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in filterdList">
                     <img class="p-pic__card" v-bind:src="'/storage/' + product.product_pic"  alt="" width="300" height="200">

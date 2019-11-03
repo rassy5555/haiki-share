@@ -6,6 +6,12 @@
 
 .c-page__subtitle {
     margin: 30px 0;
+    line-height: 40px;
     font-size: $font-size_xl;
     text-align: center;
+}
+
+.c-more{
+    font-size: $font-size_m;
+    margin-left: 10px;
 }

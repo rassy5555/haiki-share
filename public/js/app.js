@@ -1880,6 +1880,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['convini_id', 'listing_list', 'saled_list'],
@@ -2821,6 +2822,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user_id', 'purchased_list'],
@@ -2831,6 +2837,10 @@ __webpack_require__.r(__webpack_exports__);
     //プロフィール画面へ遷移
     profileEdit: function profileEdit(e) {
       location.href = '../../profileEdit/';
+    },
+    //商品詳細画面へ遷移
+    productDetail: function productDetail(id) {
+      location.href = '../../productDetail/' + id;
     },
     //購入をキャンセルする
     productCansell: function productCansell(product_id) {
@@ -2984,6 +2994,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _master_prefectures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../master/prefectures */ "./resources/js/master/prefectures.js");
 /* harmony import */ var vuejs_paginate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuejs-paginate */ "./node_modules/vuejs-paginate/dist/index.js");
 /* harmony import */ var vuejs_paginate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuejs_paginate__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
 //
 //
 //
@@ -3175,12 +3188,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['props_user'],
   data: function data() {
     return {
       user: this.props_user,
+      edit_mode: 'profile',
       old_password: '',
       password_confirm: '',
       file_info: '',
@@ -3245,6 +3261,12 @@ __webpack_require__.r(__webpack_exports__);
           self.errors[key] = error.response.data.errors[key][0];
         }
       });
+    },
+    profile_mode: function profile_mode(e) {
+      this.edit_mode = 'profile';
+    },
+    password_mode: function password_mode(e) {
+      this.edit_mode = 'password';
     }
   }
 });
@@ -59438,11 +59460,35 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("h3", { staticClass: "c-page__subtitle" }, [_vm._v("出品した商品一覧")]),
-    _vm._v(" "),
-    _c("a", { attrs: { href: "/convini/listingList/" + _vm.convini_id } }, [
-      _vm._v("全件表示")
+    _c("h3", { staticClass: "c-page__subtitle" }, [
+      _vm._v("出品した商品一覧"),
+      _c("label", [
+        _c(
+          "a",
+          {
+            staticClass: "c-more",
+            attrs: { href: "/convini/listingList/" + _vm.convini_id }
+          },
+          [_vm._v("全件表示")]
+        )
+      ])
     ]),
+    _vm._v(" "),
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.listing_list.length == 0,
+            expression: "listing_list.length==0"
+          }
+        ],
+        staticClass: "p-message_no-product"
+      },
+      [_vm._v("対象商品は現在ありません")]
+    ),
     _vm._v(" "),
     _c(
       "ul",
@@ -59485,7 +59531,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                    詳細をみる\n                ")]
+            [_vm._v("\n                詳細をみる\n            ")]
           ),
           _vm._v(" "),
           product.saled_flg == false
@@ -59500,7 +59546,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n                    編集する\n                ")]
+                [_vm._v("\n                編集する\n            ")]
               )
             : _vm._e()
         ])
@@ -59508,7 +59554,35 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("h3", { staticClass: "c-page__subtitle" }, [_vm._v("購入済商品一覧")]),
+    _c("h3", { staticClass: "c-page__subtitle" }, [
+      _vm._v("購入済商品一覧"),
+      _c("label", [
+        _c(
+          "a",
+          {
+            staticClass: "c-more",
+            attrs: { href: "/convini/saledList/" + _vm.convini_id }
+          },
+          [_vm._v("全件表示")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.saled_list.length == 0,
+            expression: "saled_list.length==0"
+          }
+        ],
+        staticClass: "p-message_no-product"
+      },
+      [_vm._v("対象商品は現在ありません")]
+    ),
     _vm._v(" "),
     _c(
       "ul",
@@ -61299,6 +61373,24 @@ var render = function() {
       [_vm._v("\n        プロフィール編集\n    ")]
     ),
     _vm._v(" "),
+    _c("h3", { staticClass: "c-page__subtitle" }, [_vm._v("購入した商品一覧")]),
+    _vm._v(" "),
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.purchased_list.length == 0,
+            expression: "purchased_list.length==0"
+          }
+        ],
+        staticClass: "p-message_no-product"
+      },
+      [_vm._v("対象商品は現在ありません")]
+    ),
+    _vm._v(" "),
     _c(
       "ul",
       { staticClass: "c-itemlist" },
@@ -61334,6 +61426,19 @@ var render = function() {
             "button",
             {
               staticClass: "c-button p-button__small",
+              on: {
+                click: function($event) {
+                  return _vm.productDetail(product.id)
+                }
+              }
+            },
+            [_vm._v("\n                詳細をみる\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "c-button p-button__small",
               attrs: { type: "submit" },
               on: {
                 click: function($event) {
@@ -61341,7 +61446,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n                購入をキャンセルする\n            ")]
+            [_vm._v("\n               キャンセル\n            ")]
           )
         ])
       }),
@@ -61553,158 +61658,163 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selectPrefecture,
-              expression: "selectPrefecture"
-            }
-          ],
-          staticClass: "c-form__input",
-          attrs: { id: "prefectures", type: "text", name: "prefectures" },
-          on: {
-            change: function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.selectPrefecture = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            }
-          }
-        },
-        [
-          _c("option", { attrs: { selected: "" }, domProps: { value: 0 } }, [
-            _vm._v("未選択")
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.prefectures, function(prefecture, index) {
-            return _c("option", {
-              domProps: {
-                value: Number(index),
-                textContent: _vm._s(prefecture)
-              }
-            })
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
+      _c("div", { staticClass: "p-filter__wrapper" }, [
+        _c(
+          "select",
           {
-            name: "model",
-            rawName: "v-model:value",
-            value: _vm.budget,
-            expression: "budget",
-            arg: "value"
-          }
-        ],
-        staticClass: "c-form__input",
-        attrs: { id: "price", type: "number" },
-        domProps: { value: _vm.budget },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.budget = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.showExpiration,
-              expression: "showExpiration"
-            }
-          ],
-          attrs: { type: "checkbox" },
-          domProps: {
-            checked: Array.isArray(_vm.showExpiration)
-              ? _vm._i(_vm.showExpiration, null) > -1
-              : _vm.showExpiration
-          },
-          on: {
-            change: function($event) {
-              var $$a = _vm.showExpiration,
-                $$el = $event.target,
-                $$c = $$el.checked ? true : false
-              if (Array.isArray($$a)) {
-                var $$v = null,
-                  $$i = _vm._i($$a, $$v)
-                if ($$el.checked) {
-                  $$i < 0 && (_vm.showExpiration = $$a.concat([$$v]))
-                } else {
-                  $$i > -1 &&
-                    (_vm.showExpiration = $$a
-                      .slice(0, $$i)
-                      .concat($$a.slice($$i + 1)))
-                }
-              } else {
-                _vm.showExpiration = $$c
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.selectPrefecture,
+                expression: "selectPrefecture"
+              }
+            ],
+            staticClass: "p-filter__item",
+            attrs: { id: "prefectures", type: "text", name: "prefectures" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.selectPrefecture = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
               }
             }
-          }
-        }),
-        _vm._v("賞味期限以内のもの")
-      ]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.selectCategory,
-              expression: "selectCategory"
-            }
+          },
+          [
+            _c("option", { attrs: { selected: "" }, domProps: { value: 0 } }, [
+              _vm._v("都道府県　未選択")
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.prefectures, function(prefecture, index) {
+              return _c("option", {
+                domProps: {
+                  value: Number(index),
+                  textContent: _vm._s(prefecture)
+                }
+              })
+            })
           ],
-          staticClass: "c-form__input",
-          attrs: { id: "category", type: "text" },
-          on: {
-            change: function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.selectCategory = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.selectCategory,
+                expression: "selectCategory"
+              }
+            ],
+            staticClass: "p-filter__item",
+            attrs: { id: "category", type: "text" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.selectCategory = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
             }
-          }
-        },
-        [
-          _c("option", { attrs: { selected: "" }, domProps: { value: 0 } }, [
-            _vm._v("未選択")
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.categories, function(category, index) {
-            return _c("option", { domProps: { value: category.id } }, [
-              _vm._v(_vm._s(category.category_name))
-            ])
-          })
-        ],
-        2
-      ),
+          },
+          [
+            _c("option", { attrs: { selected: "" }, domProps: { value: 0 } }, [
+              _vm._v("カテゴリ　未選択")
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.categories, function(category, index) {
+              return _c("option", { domProps: { value: category.id } }, [
+                _vm._v(_vm._s(category.category_name))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "p-filter__item" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model:value",
+                value: _vm.budget,
+                expression: "budget",
+                arg: "value"
+              }
+            ],
+            staticStyle: { width: "100px" },
+            attrs: { id: "price", type: "number" },
+            domProps: { value: _vm.budget },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.budget = $event.target.value
+              }
+            }
+          }),
+          _vm._v("円以下の商品")
+        ]),
+        _vm._v(" "),
+        _c("label", { staticClass: "p-filter__item" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.showExpiration,
+                expression: "showExpiration"
+              }
+            ],
+            attrs: { type: "checkbox" },
+            domProps: {
+              checked: Array.isArray(_vm.showExpiration)
+                ? _vm._i(_vm.showExpiration, null) > -1
+                : _vm.showExpiration
+            },
+            on: {
+              change: function($event) {
+                var $$a = _vm.showExpiration,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.showExpiration = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.showExpiration = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.showExpiration = $$c
+                }
+              }
+            }
+          }),
+          _vm._v("賞味期限以内のもの")
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "ul",
@@ -61797,280 +61907,302 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("form", { attrs: { method: "POST", enctype: "multipart/form-data" } }, [
-      _c("div", { staticClass: "c-image__group" }, [
-        _vm.preview_image
-          ? _c("img", {
-              staticClass: "p-pic__profile",
-              attrs: { src: _vm.preview_image }
-            })
-          : _c("img", {
-              staticClass: "p-pic__profile",
-              attrs: { src: "/storage/" + _vm.user.user_pic }
-            }),
-        _vm._v(" "),
-        _c("label", { staticClass: "c-pic__label" }, [
-          _vm._v("画像を変更\n                "),
-          _c("input", {
-            staticStyle: { display: "none" },
-            attrs: { type: "file", name: "user_pic" },
-            on: { change: _vm.file_selected }
-          })
-        ]),
-        _vm._v(" "),
-        _vm.errors.user_pic
-          ? _c("div", { staticClass: "c-invalid__feedback" }, [
-              _vm._v(_vm._s(_vm.errors.user_pic))
-            ])
-          : _vm._e()
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("label", { staticClass: "c-form__label" }, [_vm._v("名前")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "c-form__item" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model:value",
-                value: _vm.user.name,
-                expression: "user.name",
-                arg: "value"
-              }
-            ],
-            staticClass: "c-form__input",
-            attrs: {
-              id: "name",
-              type: "text",
-              name: "name",
-              autocomplete: "name"
-            },
-            domProps: { value: _vm.user.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.user, "name", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("div", { staticClass: "c-invalid__feedback" }, [
-                _vm._v(_vm._s(_vm.errors.name))
-              ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("label", { staticClass: "c-form__label" }, [_vm._v("Eメール")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "c-form__item" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model:value",
-                value: _vm.user.email,
-                expression: "user.email",
-                arg: "value"
-              }
-            ],
-            staticClass: "c-form__input",
-            attrs: {
-              id: "email",
-              type: "text",
-              name: "email",
-              autocomplete: "email"
-            },
-            domProps: { value: _vm.user.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.user, "email", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm.errors.email
-            ? _c("div", { staticClass: "c-invalid__feedback" }, [
-                _vm._v(_vm._s(_vm.errors.email))
-              ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.profileEdit($event)
-            }
-          }
-        },
-        [_vm._v("\n            編集する\n        ")]
-      )
-    ]),
+    _c(
+      "h2",
+      { staticClass: "c-page__title", on: { click: _vm.profile_mode } },
+      [_vm._v("プロフィール編集")]
+    ),
     _vm._v(" "),
-    _c("form", { attrs: { method: "POST", enctype: "multipart/form-data" } }, [
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("label", { staticClass: "c-form__label" }, [
-          _vm._v("現在のパスワード")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "c-form__item" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model:value",
-                value: _vm.old_password,
-                expression: "old_password",
-                arg: "value"
-              }
-            ],
-            staticClass: "c-form__input",
-            attrs: {
-              id: "old_password",
-              type: "password",
-              name: "old_password",
-              autocomplete: "password"
-            },
-            domProps: { value: _vm.old_password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.old_password = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm.errors.old_password
-            ? _c("div", { staticClass: "c-invalid__feedback" }, [
-                _vm._v(_vm._s(_vm.errors.old_password))
+    _c(
+      "h2",
+      { staticClass: "c-page__title", on: { click: _vm.password_mode } },
+      [_vm._v("パスワード変更")]
+    ),
+    _vm._v(" "),
+    _vm.edit_mode == "profile"
+      ? _c(
+          "form",
+          { attrs: { method: "POST", enctype: "multipart/form-data" } },
+          [
+            _c("div", { staticClass: "c-image__group" }, [
+              _vm.preview_image
+                ? _c("img", {
+                    staticClass: "p-pic__profile",
+                    attrs: { src: _vm.preview_image }
+                  })
+                : _c("img", {
+                    staticClass: "p-pic__profile",
+                    attrs: { src: "/storage/" + _vm.user.user_pic }
+                  }),
+              _vm._v(" "),
+              _c("label", { staticClass: "c-pic__label" }, [
+                _vm._v("画像を変更\n                "),
+                _c("input", {
+                  staticStyle: { display: "none" },
+                  attrs: { type: "file", name: "user_pic" },
+                  on: { change: _vm.file_selected }
+                })
+              ]),
+              _vm._v(" "),
+              _vm.errors.user_pic
+                ? _c("div", { staticClass: "c-invalid__feedback" }, [
+                    _vm._v(_vm._s(_vm.errors.user_pic))
+                  ])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-form__group" }, [
+              _c("label", { staticClass: "c-form__label" }, [_vm._v("名前")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "c-form__item" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model:value",
+                      value: _vm.user.name,
+                      expression: "user.name",
+                      arg: "value"
+                    }
+                  ],
+                  staticClass: "c-form__input",
+                  attrs: {
+                    id: "name",
+                    type: "text",
+                    name: "name",
+                    autocomplete: "name"
+                  },
+                  domProps: { value: _vm.user.name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "name", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.name
+                  ? _c("div", { staticClass: "c-invalid__feedback" }, [
+                      _vm._v(_vm._s(_vm.errors.name))
+                    ])
+                  : _vm._e()
               ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("label", { staticClass: "c-form__label" }, [
-          _vm._v("新しいパスワード")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "c-form__item" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model:value",
-                value: _vm.user.password,
-                expression: "user.password",
-                arg: "value"
-              }
-            ],
-            staticClass: "c-form__input",
-            attrs: {
-              id: "password",
-              type: "password",
-              name: "password",
-              autocomplete: "password"
-            },
-            domProps: { value: _vm.user.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.user, "password", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm.errors.password
-            ? _c("div", { staticClass: "c-invalid__feedback" }, [
-                _vm._v(_vm._s(_vm.errors.password))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-form__group" }, [
+              _c("label", { staticClass: "c-form__label" }, [
+                _vm._v("Eメール")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "c-form__item" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model:value",
+                      value: _vm.user.email,
+                      expression: "user.email",
+                      arg: "value"
+                    }
+                  ],
+                  staticClass: "c-form__input",
+                  attrs: {
+                    id: "email",
+                    type: "text",
+                    name: "email",
+                    autocomplete: "email"
+                  },
+                  domProps: { value: _vm.user.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "email", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.email
+                  ? _c("div", { staticClass: "c-invalid__feedback" }, [
+                      _vm._v(_vm._s(_vm.errors.email))
+                    ])
+                  : _vm._e()
               ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("label", { staticClass: "c-form__label" }, [
-          _vm._v("新しいパスワード（再入力）")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "c-form__item" }, [
-          _c("input", {
-            directives: [
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
               {
-                name: "model",
-                rawName: "v-model:value",
-                value: _vm.password_confirm,
-                expression: "password_confirm",
-                arg: "value"
-              }
-            ],
-            staticClass: "c-form__input",
-            attrs: {
-              id: "password_confirm",
-              type: "password",
-              name: "password_confirm",
-              autocomplete: "password"
-            },
-            domProps: { value: _vm.password_confirm },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+                staticClass: "c-button",
+                attrs: { type: "submit" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.profileEdit($event)
+                  }
                 }
-                _vm.password_confirm = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm.errors.password_confirm
-            ? _c("div", { staticClass: "c-invalid__feedback" }, [
-                _vm._v(_vm._s(_vm.errors.password_confirm))
+              },
+              [_vm._v("\n            編集する\n        ")]
+            )
+          ]
+        )
+      : _c(
+          "form",
+          { attrs: { method: "POST", enctype: "multipart/form-data" } },
+          [
+            _c("div", { staticClass: "c-form__group" }, [
+              _c("label", { staticClass: "c-form__label" }, [
+                _vm._v("現在のパスワード")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "c-form__item" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model:value",
+                      value: _vm.old_password,
+                      expression: "old_password",
+                      arg: "value"
+                    }
+                  ],
+                  staticClass: "c-form__input",
+                  attrs: {
+                    id: "old_password",
+                    type: "password",
+                    name: "old_password",
+                    autocomplete: "password"
+                  },
+                  domProps: { value: _vm.old_password },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.old_password = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.old_password
+                  ? _c("div", { staticClass: "c-invalid__feedback" }, [
+                      _vm._v(_vm._s(_vm.errors.old_password))
+                    ])
+                  : _vm._e()
               ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("div", { staticClass: "c-form__button" }, [
-          _c(
-            "button",
-            {
-              staticClass: "c-button",
-              attrs: { type: "submit" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.changePassword($event)
-                }
-              }
-            },
-            [
-              _vm._v(
-                "\n                    パスワードを変更する\n                "
-              )
-            ]
-          )
-        ])
-      ])
-    ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-form__group" }, [
+              _c("label", { staticClass: "c-form__label" }, [
+                _vm._v("新しいパスワード")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "c-form__item" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model:value",
+                      value: _vm.user.password,
+                      expression: "user.password",
+                      arg: "value"
+                    }
+                  ],
+                  staticClass: "c-form__input",
+                  attrs: {
+                    id: "password",
+                    type: "password",
+                    name: "password",
+                    autocomplete: "password"
+                  },
+                  domProps: { value: _vm.user.password },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.user, "password", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.password
+                  ? _c("div", { staticClass: "c-invalid__feedback" }, [
+                      _vm._v(_vm._s(_vm.errors.password))
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-form__group" }, [
+              _c("label", { staticClass: "c-form__label" }, [
+                _vm._v("新しいパスワード（再入力）")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "c-form__item" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model:value",
+                      value: _vm.password_confirm,
+                      expression: "password_confirm",
+                      arg: "value"
+                    }
+                  ],
+                  staticClass: "c-form__input",
+                  attrs: {
+                    id: "password_confirm",
+                    type: "password",
+                    name: "password_confirm",
+                    autocomplete: "password"
+                  },
+                  domProps: { value: _vm.password_confirm },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.password_confirm = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.password_confirm
+                  ? _c("div", { staticClass: "c-invalid__feedback" }, [
+                      _vm._v(_vm._s(_vm.errors.password_confirm))
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "c-form__group" }, [
+              _c("div", { staticClass: "c-form__button" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "c-button",
+                    attrs: { type: "submit" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changePassword($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    パスワードを変更する\n                "
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]
+        )
   ])
 }
 var staticRenderFns = []

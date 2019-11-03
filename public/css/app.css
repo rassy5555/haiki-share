@@ -10792,6 +10792,7 @@ table {
 html,
 body {
   width: 100%;
+  background-color: #f4f8fa;
   color: #777;
   font-size: 16px;
   line-height: 1.6;
@@ -10899,8 +10900,14 @@ img {
 
 .c-page__subtitle {
   margin: 30px 0;
+  line-height: 40px;
   font-size: 24px;
   text-align: center;
+}
+
+.c-more {
+  font-size: 14px;
+  margin-left: 10px;
 }
 
 .c-form__group {
@@ -10991,12 +10998,13 @@ img {
 }
 
 .c-image__group {
-  width: 300px;
+  width: 140px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
 .c-pic__label {
+  display: block;
   width: 140px;
   height: 40px;
   margin: 0 auto;
@@ -11205,12 +11213,21 @@ img {
   display: flex;
 }
 
+.p-more {
+  margin-left: 5px;
+}
+
 .p-message {
   background-color: #38c172;
   padding-top: 80px;
   text-align: center;
   line-height: 80px;
   color: white;
+}
+
+.p-message_no-product {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .p-pic {
@@ -11220,10 +11237,12 @@ img {
 }
 
 .p-pic__profile {
+  display: inline-block;
   width: 140px;
   height: 140px;
   border-radius: 50%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .p-pic__card {
@@ -11297,6 +11316,33 @@ img {
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
+}
+
+.p-filter__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .p-filter__wrapper {
+    display: block;
+    width: 65%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+
+.p-filter__item {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .p-filter__item {
+    height: 35px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 /* Utility ------------ */
