@@ -2896,6 +2896,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2925,6 +2927,12 @@ __webpack_require__.r(__webpack_exports__);
           self.errors[key] = error.response.data.errors[key][0];
         }
       });
+    },
+    registertest: function registertest(e) {
+      location.href = '../haiki-share/public/register';
+    },
+    registertest2: function registertest2(e) {
+      location.href = '../../haiki-share/public/register';
     }
   }
 });
@@ -3041,6 +3049,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 Vue.component('paginate', vuejs_paginate__WEBPACK_IMPORTED_MODULE_1___default.a);
@@ -3051,7 +3064,6 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   props: ['categories', 'product_list'],
   data: function data() {
     return {
-      items: this.product_list,
       prefectures: _master_prefectures__WEBPACK_IMPORTED_MODULE_0__["default"],
       currentTime: new Date(),
       budget: 10000,
@@ -3074,6 +3086,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     }
   },
   computed: {
+    //絞り込み
     filterdList: function filterdList() {
       var newList = [];
       var i = 0;
@@ -3112,12 +3125,13 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     //現在のページに表示する商品を取得
     getItems: function getItems() {
       var current = this.currentPage * this.parPage;
-      var start = current - this.parPage;
-      return this.items.slice(start, current);
+      var start = current - this.parPage; //絞り込んだ商品を数ページに分ける
+
+      return this.filterdList.slice(start, current);
     },
     //トータルページ数を取得
     getPageCount: function getPageCount() {
-      return Math.ceil(this.items.length / this.parPage);
+      return Math.ceil(this.filterdList.length / this.parPage);
     }
   }
 });
@@ -61609,7 +61623,11 @@ var render = function() {
         },
         [_vm._v("\n            ログイン\n        ")]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _c("h1", { on: { click: _vm.registertest } }, [_vm._v("test")]),
+    _vm._v(" "),
+    _c("h1", { on: { click: _vm.registertest2 } }, [_vm._v("test2")])
   ])
 }
 var staticRenderFns = []
@@ -61878,7 +61896,7 @@ var render = function() {
       _c(
         "ul",
         { staticClass: "c-itemlist" },
-        _vm._l(_vm.filterdList, function(product) {
+        _vm._l(_vm.getItems, function(product) {
           return _c("li", { staticClass: "c-card" }, [
             _c("img", {
               staticClass: "p-pic__card",
@@ -61927,6 +61945,22 @@ var render = function() {
         0
       ),
       _vm._v(" "),
+      _c(
+        "p",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.filterdList.length == 0,
+              expression: "filterdList.length==0"
+            }
+          ],
+          staticClass: "p-message_no-product"
+        },
+        [_vm._v("対象商品は現在ありません")]
+      ),
+      _vm._v(" "),
       _c("paginate", {
         attrs: {
           "page-count": _vm.getPageCount,
@@ -61934,9 +61968,12 @@ var render = function() {
           "margin-pages": 2,
           "click-handler": _vm.clickCallback,
           "prev-text": "<",
+          "prev-link-class": "p-page__prev",
           "next-text": ">",
+          "next-link-class": "p-page__next",
           "container-class": "p-pagination",
-          "page-class": "p-page__item"
+          "page-class": "p-page__item",
+          "page-link-class": "p-page__item-link"
         }
       })
     ],

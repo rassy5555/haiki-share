@@ -13,7 +13,7 @@
             <label class="p-filter__item"><input type="checkbox" v-model="showExpiration">賞味期限以内のもの</label>
         </div>
         <ul class="c-itemlist">
-            <li class="c-card" v-for="product in filterdList">
+            <li class="c-card" v-for="product in getItems">
                     <img class="p-pic__card" v-bind:src="'/storage/' + product.product_pic"  alt="" width="300" height="200">
                     <label class="p-saled" v-if="product.saled_flg==true">購入済</label>
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
@@ -24,15 +24,20 @@
                     </button>
             </li>
         </ul>
+        <p class="p-message_no-product" v-show="filterdList.length==0">対象商品は現在ありません</p>
         <paginate
             :page-count="getPageCount"
             :page-range="3"
             :margin-pages="2"
             :click-handler="clickCallback"
             :prev-text="'<'"
+            :prev-link-class="'p-page__prev'"	
             :next-text="'>'"
+            :next-link-class="'p-page__next'"	
             :container-class="'p-pagination'"
-            :page-class="'p-page__item'">
+            :page-class="'p-page__item'"
+            :page-link-class="'p-page__item-link'">
+
         </paginate>
     </div>
 </template>
@@ -46,7 +51,6 @@ export default {
     props: ['categories','product_list'],
     data: function(){
         return{
-            items: this.product_list,
             prefectures: prefectures_data,
             currentTime: new Date(),
             budget: 10000,
@@ -68,6 +72,7 @@ export default {
         },
     },
     computed: {
+        //絞り込み
         filterdList: function() {
             var newList = [];
             var i = 0;
@@ -101,11 +106,12 @@ export default {
         getItems: function() {
             var current = this.currentPage * this.parPage;
             var start = current - this.parPage;
-            return this.items.slice(start, current);
+            //絞り込んだ商品を数ページに分ける
+            return this.filterdList.slice(start, current);
         },
         //トータルページ数を取得
         getPageCount: function() {
-            return Math.ceil(this.items.length / this.parPage);
+            return Math.ceil(this.filterdList.length / this.parPage);
         }
     },
 }

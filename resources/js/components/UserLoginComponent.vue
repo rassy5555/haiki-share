@@ -19,6 +19,8 @@
                 ログイン
             </button>
         </div>
+        <h1 v-on:click="registertest">test</h1>
+        <h1 v-on:click="registertest2">test2</h1>
     </div>
 </template>
 <script>
@@ -51,6 +53,12 @@
                         self.errors[key] = error.response.data.errors[key][0];
                     }
                  });
+            },
+            registertest: function(e){
+                location.href = '../haiki-share/public/register';
+            },
+            registertest2: function(e){
+                location.href = '../../haiki-share/public/register';
             },
         },        
     }

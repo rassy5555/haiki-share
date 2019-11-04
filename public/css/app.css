@@ -11340,9 +11340,22 @@ img {
 }
 
 .p-page__item.active {
-  color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
+}
+
+.p-page__item.active .p-page__item-link {
+  color: #fff;
+}
+
+.p-page__prev {
+  line-height: 40px;
+  margin-right: 5px;
+}
+
+.p-page__next {
+  line-height: 40px;
+  margin-left: 5px;
 }
 
 .p-filter__wrapper {
