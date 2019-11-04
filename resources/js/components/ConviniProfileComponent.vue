@@ -1,6 +1,10 @@
 <template>
     <div>
-        <form method="POST" enctype="multipart/form-data">
+        <div class="p-page_title-wrapper">
+            <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'profile'}" v-on:click="profile_mode">プロフィール編集</div>
+            <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'password'}" v-on:click="password_mode">パスワード変更</div>
+        </div>
+        <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
                 <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
                 <img class="p-pic__profile" v-bind:src="'/storage/' + convini.convini_pic" v-else>
@@ -50,7 +54,7 @@
                 編集する
             </button>
         </form>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
                 <label class="c-form__label">現在のパスワード</label>
                 <div class="c-form__item">
@@ -66,7 +70,7 @@
                 </div>
             </div> 
             <div class="c-form__group">
-                <label class="c-form__label">新しいパスワード（再入力）</label>
+                <label class="c-form__label">新しいパスワード(再入力</label>
                 <div class="c-form__item">
                     <input id="password_confirm" type="password" class="c-form__input" name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
@@ -92,6 +96,7 @@
                 convini: this.props_convini,
                 old_password:'',
                 password_confirm:'',
+                edit_mode: 'profile',
                 file_info:'',
                 preview_image: '',
                 prefectures: prefectures_data,
@@ -163,7 +168,13 @@
                         self.errors[key] = error.response.data.errors[key][0];
                     }
                 });
-            }
+            },
+            profile_mode: function(e){
+                this.edit_mode = 'profile';
+            },
+            password_mode: function(e){
+                this.edit_mode = 'password';
+            },   
         },        
     }
 </script>

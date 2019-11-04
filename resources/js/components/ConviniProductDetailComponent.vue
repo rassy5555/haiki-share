@@ -1,11 +1,11 @@
 <template>
     <div>
         <h2 class="c-page__title">{{ product.product_name }}</h2>
-        <div class="c-image__group">
-            <img class="p-pic" v-bind:src="'/storage/' + product.product_pic">
+        <img class="p-pic" v-bind:src="'/storage/' + product.product_pic">
+        <div class="p-product__description">
+            <p><span>¥</span>{{ product.price | number_format }}</p>
+            <p>賞味期限: {{ product.expiration_date| date_time }}</p>
         </div>
-        <p><span>¥</span>{{ product.price | number_format }}</p>
-        <p>{{ product.expiration_date| date_time }}</p>
         <div class="c-form__button">
             <button type="submit" class="c-button" v-on:click="productEdit"  v-if="product.convini_id == convini.id">
                 編集する

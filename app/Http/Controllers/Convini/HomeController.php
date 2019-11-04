@@ -30,8 +30,8 @@ class HomeController extends Controller
     public function index()
     {
         $convini = Auth::user();
-        $listing_list = Product::where('convini_id',$convini->id)->where('delete_flg',false)->get();
-        $saled_list = Product::where('convini_id',$convini->id)->where('saled_flg',true)->where('delete_flg',false)->get();
+        $listing_list = Product::where('convini_id',$convini->id)->where('delete_flg',false)->take(5)->get();
+        $saled_list = Product::where('convini_id',$convini->id)->where('saled_flg',true)->where('delete_flg',false)->take(5)->get();
         return view('convini.home',['convini_id'=>$convini->id,'listing_list'=>$listing_list,'saled_list'=>$saled_list]);
     }
 }

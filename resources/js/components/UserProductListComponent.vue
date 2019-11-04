@@ -11,7 +11,6 @@
             </select>
             <label class="p-filter__item"><input id="price" type="number" v-model:value="budget" style="width:100px">円以下の商品</label>
             <label class="p-filter__item"><input type="checkbox" v-model="showExpiration">賞味期限以内のもの</label>
-
         </div>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in filterdList">

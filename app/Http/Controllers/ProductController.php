@@ -74,8 +74,7 @@ class ProductController extends Controller
     //商品一覧画面へ遷移
     public function productListShow(){
         $categories = Category::all();
-        $product_list = Product::where('delete_flg',false)->join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')
-        ->get();
+        $product_list = Product::where('delete_flg',false)->join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->get();
         return view('productList',['categories'=>$categories,'product_list'=>$product_list]);
     }
 }

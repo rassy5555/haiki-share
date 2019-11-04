@@ -16,6 +16,7 @@
   border: 1px solid rgba(0,0,0,0.125);
   border-radius: 0.25rem;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .p-container {
@@ -31,13 +32,5 @@
 .p-section__subtitle {
   font-size: $font-size_xxl;
   margin-bottom: $space_xl;
-}
-
-.p-productList {
-  display: flex;
-}
-
-.p-more {
-  margin-left: 5px;
 }
 

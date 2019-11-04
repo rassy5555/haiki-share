@@ -11211,6 +11211,7 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .p-container {
@@ -11236,6 +11237,12 @@ img {
   margin-left: 5px;
 }
 
+.p-product__description {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
 .p-message {
   background-color: #38c172;
   padding-top: 80px;
@@ -11250,6 +11257,7 @@ img {
 }
 
 .p-pic {
+  display: block;
   height: 200px;
   width: 300px;
   margin: 0 auto;
