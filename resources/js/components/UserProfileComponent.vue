@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div>
-            <h2 class="c-page__title" v-on:click="profile_mode">プロフィール編集</h2>
-            <h2 class="c-page__title" v-on:click="password_mode">パスワード変更</h2>
+        <div class="p-page_title-wrapper">
+            <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'profile'}" v-on:click="profile_mode">プロフィール編集</div>
+            <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'password'}" v-on:click="password_mode">パスワード変更</div>
         </div>
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
@@ -47,7 +47,7 @@
                 </div>
             </div> 
             <div class="c-form__group">
-                <label class="c-form__label">新しいパスワード（再入力）</label>
+                <label class="c-form__label">新しいパスワード(再入力)</label>
                 <div class="c-form__item">
                     <input id="password_confirm" type="password" class="c-form__input" name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>

@@ -61909,16 +61909,24 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", [
+    _c("div", { staticClass: "p-page_title-wrapper" }, [
       _c(
-        "h2",
-        { staticClass: "c-page__title", on: { click: _vm.profile_mode } },
+        "div",
+        {
+          staticClass: "c-page__title p-page__title-switch",
+          class: { active: _vm.edit_mode == "profile" },
+          on: { click: _vm.profile_mode }
+        },
         [_vm._v("プロフィール編集")]
       ),
       _vm._v(" "),
       _c(
-        "h2",
-        { staticClass: "c-page__title", on: { click: _vm.password_mode } },
+        "div",
+        {
+          staticClass: "c-page__title p-page__title-switch",
+          class: { active: _vm.edit_mode == "password" },
+          on: { click: _vm.password_mode }
+        },
         [_vm._v("パスワード変更")]
       )
     ]),
@@ -62143,7 +62151,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "c-form__group" }, [
               _c("label", { staticClass: "c-form__label" }, [
-                _vm._v("新しいパスワード（再入力）")
+                _vm._v("新しいパスワード(再入力)")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "c-form__item" }, [

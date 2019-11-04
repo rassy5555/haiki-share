@@ -24,9 +24,9 @@
 <div id="app">
 <header class="l-header p-header js-float-menu">
         @guest
-            <a class="p-header__title" href="/convini/login">haiki share</a>
+            <a class="p-header__title" href="{{ route('convini.login')}}">haiki share</a>
         @else
-            <a class="p-header__title" href="/convini/home">haiki share</a>
+            <a class="p-header__title" href="{{ route('convini.home')}}">haiki share</a>
         @endguest        
         <div class="p-header__menu-trigger js-toggle-sp-menu">
             <span></span>

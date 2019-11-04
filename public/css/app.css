@@ -10910,6 +10910,24 @@ img {
   margin-left: 10px;
 }
 
+.p-page_title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.p-page__title-switch {
+  font-size: 18px;
+  color: #999999;
+  border-bottom: 1px solid #999999;
+  padding: 5px 10px;
+  margin-right: 3px;
+}
+
+.p-page__title-switch.active {
+  color: #13b1c0;
+  border-bottom: 1px solid #13b1c0;
+}
+
 .c-form__group {
   display: flex;
   justify-content: center;
@@ -10922,6 +10940,7 @@ img {
 @media screen and (max-width: 768px) {
   .c-form__group {
     width: 90%;
+    margin-bottom: 15px;
   }
 }
 
