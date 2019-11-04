@@ -2916,7 +2916,7 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: ''
       };
-      axios.post('/login', {
+      axios.post('login', {
         email: this.email,
         password: this.password
       }).then(function () {

@@ -42,7 +42,7 @@
                     email:'',
                     password:'',
                 };
-                axios.post('/login',{
+                axios.post('login',{
                     email: this.email,
                     password: this.password,
                 }).then(function(){
