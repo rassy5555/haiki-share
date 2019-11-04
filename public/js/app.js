@@ -3244,7 +3244,7 @@ __webpack_require__.r(__webpack_exports__);
         user_pic: ''
       };
       var formData = new FormData();
-      formData.append('name', this.user.name), formData.append('email', this.user.email), formData.append('user_pic', this.file_info), axios.post('/profileEdit', formData).then(function () {
+      formData.append('name', this.user.name), formData.append('email', this.user.email), formData.append('user_pic', this.file_info), axios.post('profileEdit', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
@@ -3274,7 +3274,7 @@ __webpack_require__.r(__webpack_exports__);
         old_password: '',
         password: ''
       };
-      axios.post('/changePassword', {
+      axios.post('changePassword', {
         old_password: this.old_password,
         password: this.user.password,
         password_confirm: this.password_confirm
@@ -62039,7 +62039,7 @@ var render = function() {
                   })
                 : _c("img", {
                     staticClass: "p-pic__profile",
-                    attrs: { src: "/storage/" + _vm.user.user_pic }
+                    attrs: { src: "storage/" + _vm.user.user_pic }
                   }),
               _vm._v(" "),
               _c("label", { staticClass: "c-pic__label" }, [
