@@ -40,7 +40,7 @@
                     email:'',
                     password:'',
                 };
-                axios.post('/convini/login',{
+                axios.post('convini/login',{
                     email: this.email,
                     password: this.password,
                 }).then(function(){

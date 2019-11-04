@@ -60,7 +60,7 @@
                     password: '',
                     password_confirm: '',
                 };
-                axios.post('/register',{
+                axios.post('register',{
                     name: this.name,
                     email: this.email,
                     password: this.password,

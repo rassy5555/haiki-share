@@ -1959,7 +1959,7 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: ''
       };
-      axios.post('/convini/login', {
+      axios.post('convini/login', {
         email: this.email,
         password: this.password
       }).then(function () {
@@ -3367,7 +3367,7 @@ __webpack_require__.r(__webpack_exports__);
         password: '',
         password_confirm: ''
       };
-      axios.post('/register', {
+      axios.post('register', {
         name: this.name,
         email: this.email,
         password: this.password,
@@ -59491,7 +59491,7 @@ var render = function() {
           "a",
           {
             staticClass: "c-more",
-            attrs: { href: "/convini/listingList/" + _vm.convini_id }
+            attrs: { href: "convini/listingList/" + _vm.convini_id }
           },
           [_vm._v("全件表示")]
         )
@@ -59522,7 +59522,7 @@ var render = function() {
           _c("img", {
             staticClass: "p-pic__card",
             attrs: {
-              src: "/storage/" + product.product_pic,
+              src: "storage/" + product.product_pic,
               alt: "",
               width: "300",
               height: "200"
@@ -59585,7 +59585,7 @@ var render = function() {
           "a",
           {
             staticClass: "c-more",
-            attrs: { href: "/convini/saledList/" + _vm.convini_id }
+            attrs: { href: "convini/saledList/" + _vm.convini_id }
           },
           [_vm._v("全件表示")]
         )
@@ -59616,7 +59616,7 @@ var render = function() {
           _c("img", {
             staticClass: "p-pic__card",
             attrs: {
-              src: "/storage/" + product.product_pic,
+              src: "storage/" + product.product_pic,
               alt: "",
               width: "300",
               height: "200"
@@ -59790,7 +59790,7 @@ var render = function() {
     _vm._v(" "),
     _c("img", {
       staticClass: "p-pic",
-      attrs: { src: "/storage/" + _vm.product.product_pic }
+      attrs: { src: "storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
     _c("div", { staticClass: "p-product__description" }, [
@@ -59827,7 +59827,8 @@ var render = function() {
         staticClass: "twitter-share-button",
         attrs: {
           href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
-          "data-url": "http://127.0.0.1:8000/convini/productDetail/1",
+          "data-url":
+            "https://haiki-share.com/haiki-share/public/convini/productDetail/1",
           "data-text": _vm.tweetMessage,
           "data-show-count": "false"
         }
