@@ -2845,16 +2845,16 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     //プロフィール画面へ遷移
     profileEdit: function profileEdit(e) {
-      location.href = '../../profileEdit/';
+      location.href = 'profileEdit/';
     },
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
-      location.href = '../../productDetail/' + id;
+      location.href = 'productDetail/' + id;
     },
     //購入をキャンセルする
     productCansell: function productCansell(product_id) {
       var self = this;
-      axios.post('/productPurchase/' + product_id, {
+      axios.post('productPurchase/' + product_id, {
         saled_flg: false,
         user_id: this.user_id
       }).then(function () {});
@@ -2921,7 +2921,7 @@ __webpack_require__.r(__webpack_exports__);
         password: this.password
       }).then(function () {
         self.erros = [];
-        location.href = '../../';
+        location.href = 'home';
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
@@ -3374,7 +3374,7 @@ __webpack_require__.r(__webpack_exports__);
         password_confirm: this.password_confirm
       }).then(function () {
         self.erros = [];
-        location.href = '../../';
+        location.href = 'home';
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];

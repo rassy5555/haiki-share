@@ -67,7 +67,7 @@
                     password_confirm: this.password_confirm,
                 }).then(function(){
                     self.erros = [];
-                    location.href = '../../'
+                    location.href = 'home'
                 }).catch(function(error){
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];

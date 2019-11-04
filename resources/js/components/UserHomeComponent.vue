@@ -33,16 +33,16 @@
         methods: {
             //プロフィール画面へ遷移
             profileEdit: function(e){
-                location.href = '../../profileEdit/';
+                location.href = 'profileEdit/';
             },
             //商品詳細画面へ遷移
             productDetail: function(id){
-                location.href = '../../productDetail/' + id;
+                location.href = 'productDetail/' + id;
             },
             //購入をキャンセルする
             productCansell: function(product_id){
                 var self = this;
-                axios.post('/productPurchase/' + product_id,{
+                axios.post('productPurchase/' + product_id,{
                     saled_flg: false, 
                     user_id: this.user_id
                 }).then(function(){
