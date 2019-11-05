@@ -1964,7 +1964,7 @@ __webpack_require__.r(__webpack_exports__);
         password: this.password
       }).then(function () {
         self.erros = [];
-        location.href = '../../convini';
+        location.href = 'convini/home';
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
@@ -2166,7 +2166,7 @@ __webpack_require__.r(__webpack_exports__);
         convini_pic: ''
       };
       var formData = new FormData();
-      formData.append('convini_name', this.convini.convini_name), formData.append('branch_name', this.convini.branch_name), formData.append('prefectures', this.convini.prefectures), formData.append('address', this.convini.address), formData.append('email', this.convini.email), formData.append('convini_pic', this.file_info), axios.post('/convini/profileEdit', formData).then(function () {
+      formData.append('convini_name', this.convini.convini_name), formData.append('branch_name', this.convini.branch_name), formData.append('prefectures', this.convini.prefectures), formData.append('address', this.convini.address), formData.append('email', this.convini.email), formData.append('convini_pic', this.file_info), axios.post('convini/profileEdit', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
@@ -2196,7 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
         old_password: '',
         password: ''
       };
-      axios.post('/convini/changePassword', {
+      axios.post('convini/changePassword', {
         old_password: this.old_password,
         password: this.convini.password,
         password_confirm: this.password_confirm
@@ -2324,7 +2324,7 @@ __webpack_require__.r(__webpack_exports__);
         password: '',
         password_confirm: ''
       };
-      axios.post('/convini/register', {
+      axios.post('convini/register', {
         convini_name: this.convini_name,
         branch_name: this.branch_name,
         prefecture: this.prefecture,
@@ -2334,7 +2334,7 @@ __webpack_require__.r(__webpack_exports__);
         password_confirm: this.password_confirm
       }).then(function () {
         self.erros = [];
-        location.href = '../convini/';
+        location.href = 'convini/home';
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
@@ -2440,11 +2440,11 @@ Vue.component('paginate', vuejs_paginate__WEBPACK_IMPORTED_MODULE_0___default.a)
   methods: {
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
-      location.href = '../../convini/productDetail/' + id;
+      location.href = 'convini/productDetail/' + id;
     },
     //商品編集画面へ遷移
     productEdit: function productEdit(id) {
-      location.href = '../../convini/productEdit/' + id;
+      location.href = 'convini/productEdit/' + id;
     },
     //現在のページ数を取得（ページネーション用)
     clickCallback: function clickCallback(pageNum) {
@@ -2696,7 +2696,7 @@ __webpack_require__.r(__webpack_exports__);
     productRegister: function productRegister(e) {
       var self = this;
       var formData = new FormData();
-      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('/convini/productRegister', formData).then(function () {
+      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('convini/productRegister', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
         console.log(error.response);
@@ -59895,7 +59895,7 @@ var render = function() {
                   })
                 : _c("img", {
                     staticClass: "p-pic__profile",
-                    attrs: { src: "/storage/" + _vm.convini.convini_pic }
+                    attrs: { src: "storage/" + _vm.convini.convini_pic }
                   }),
               _vm._v(" "),
               _c("label", { staticClass: "c-pic__label" }, [
@@ -60702,7 +60702,7 @@ var render = function() {
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
-                src: "/storage/" + product.product_pic,
+                src: "storage/" + product.product_pic,
                 alt: "",
                 width: "300",
                 height: "200"
@@ -61090,11 +61090,11 @@ var render = function() {
       : _vm.product.product_pic
       ? _c("img", {
           staticClass: "p-pic",
-          attrs: { src: "/storage/" + _vm.product.product_pic }
+          attrs: { src: "storage/" + _vm.product.product_pic }
         })
       : _c("img", {
           staticClass: "p-pic",
-          attrs: { src: "/storage/no-image2.png" }
+          attrs: { src: "storage/no-image2.png" }
         }),
     _vm._v(" "),
     _c("label", { staticClass: "c-pic__label" }, [

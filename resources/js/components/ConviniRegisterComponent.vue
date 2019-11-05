@@ -94,7 +94,7 @@
                     password: '',
                     password_confirm: '',
                 };
-                axios.post('/convini/register',{
+                axios.post('convini/register',{
                     convini_name: this.convini_name,
                     branch_name: this.branch_name,
                     prefecture: this.prefecture,
@@ -104,7 +104,7 @@
                     password_confirm: this.password_confirm,
                 }).then(function(){
                     self.erros = [];
-                    location.href = '../convini/'
+                    location.href = 'convini/home'
                 }).catch(function(error){
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
