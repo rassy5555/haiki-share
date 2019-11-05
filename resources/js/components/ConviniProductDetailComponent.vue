@@ -39,7 +39,6 @@
         computed: {
             tweetMessage: function(){
                 var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
-                console.log(message);
                 return message;
             }
         },

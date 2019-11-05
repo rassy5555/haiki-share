@@ -2023,7 +2023,6 @@ Vue.filter('date_time', function (val) {
   computed: {
     tweetMessage: function tweetMessage() {
       var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
-      console.log(message);
       return message;
     }
   }
@@ -2987,9 +2986,10 @@ __webpack_require__.r(__webpack_exports__);
         this.user_id = null;
       }
 
-      axios.post('/productPurchase/' + this.product.id, {
+      axios.post('productPurchase/' + this.product.id, {
         saled_flg: this.saled_flg,
-        user_id: this.user_id
+        user_id: this.user_id,
+        convini_id: this.product.convini_id
       }).then(function () {
         console.log(self.saled_flg);
       });
@@ -61660,7 +61660,7 @@ var render = function() {
     _vm._v(" "),
     _c("img", {
       staticClass: "p-pic",
-      attrs: { src: "/storage/" + _vm.product.product_pic }
+      attrs: { src: "storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
     _c("div", { staticClass: "p-product__description" }, [

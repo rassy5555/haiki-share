@@ -7,9 +7,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\CreatePost;
 use App\Category;
 use App\Product;
+use App\User;
+use App\Convini;
 use App\Http\Requests\EditRequest;
+use App\Mail\SendMail;
+
+use Illuminate\Support\Facades\Mail;
 
 
 //商品関係処理コントローラー
@@ -57,7 +63,6 @@ class ProductController extends Controller
 
     //商品購入(購入キャンセル)処理
     public function productPurchase($product_id, Request $request){
-        \Debugbar::addMessage($request);
         $product = Product::where('id',$product_id)->first();
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
@@ -65,6 +70,12 @@ class ProductController extends Controller
         $product->saled_flg = $request->saled_flg;
         if($product->saled_flg){
             $product->user_id  = $request->user_id;
+            $user = User::find($request->user_id);
+            $convini = Convini::find($request->convini_id);
+            \Debugbar::addMessage($convini);
+            Mail::to([$user->email])->send(new SendMail($request->all()));
+            Mail::to([$convini->email])->send(new SendMail($request->all()));
+
         } else {
             $product->user_id = null;   
         }
