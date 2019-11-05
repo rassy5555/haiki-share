@@ -4,7 +4,7 @@
 <section class="main">
     <div class="l-container p-container">
         <div class="l-page__wrapper p-page__wrapper">
-            <convini_profile-component :props_convini="{{ $props_convini }}"></convini_profile-component>
+            <convini_profile-component :props_convini="{{ $convini }}"></convini_profile-component>
         </div>
     </div>
 </section>

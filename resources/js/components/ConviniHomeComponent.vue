@@ -12,7 +12,7 @@
         <p class="p-message_no-product" v-show="listing_list.length==0">対象商品は現在ありません</p>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in listing_list">
-                <img class="p-pic__card" v-bind:src="'storage/' + product.product_pic"  alt="" width="300" height="200">
+                <img class="p-pic__card" v-bind:src="'../storage/' + product.product_pic"  alt="" width="300" height="200">
                 <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
                 <dd class="c-card__description">賞味期限: {{ product.expiration_date| date_time }}</dd>
                 <dd class="c-card__description p-card__price"><span>¥</span>{{ product.price | number_format }}</dd>
@@ -28,7 +28,7 @@
         <p class="p-message_no-product" v-show="saled_list.length==0">対象商品は現在ありません</p>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in saled_list">
-                    <img class="p-pic__card" v-bind:src="'storage/' + product.product_pic"  alt="" width="300" height="200">
+                    <img class="p-pic__card" v-bind:src="'../storage/' + product.product_pic"  alt="" width="300" height="200">
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
                     <dd class="c-card__description">賞味期限: {{ product.expiration_date| date_time }}</dd>
                     <dd class="c-card__description p-card__price"><span>¥</span>{{ product.price | number_format }}</dd>

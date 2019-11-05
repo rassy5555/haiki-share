@@ -40,12 +40,12 @@
                     email:'',
                     password:'',
                 };
-                axios.post('convini/login',{
+                axios.post('login',{
                     email: this.email,
                     password: this.password,
                 }).then(function(){
                     self.erros = [];
-                    location.href = 'convini/home'
+                    location.href = 'home'
                 }).catch(function(error){
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];

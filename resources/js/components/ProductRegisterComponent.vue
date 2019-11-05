@@ -91,7 +91,7 @@
                 formData.append('expiration_date',this.product.expiration_date),
                 formData.append('comment',this.product.comment),
                 formData.append('product_pic',this.file_info),
-                axios.post('convini/productRegister',formData
+                axios.post('../productRegister',formData
                 ).then(function(){
                     self.erros = [];
                 }).catch(function(error){

@@ -7,7 +7,7 @@
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
                 <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
-                <img class="p-pic__profile" v-bind:src="'storage/' + convini.convini_pic" v-else>
+                <img class="p-pic__profile" v-bind:src="'../storage/' + convini.convini_pic" v-else>
                 <label class="c-pic__label">画像を変更
                     <input type="file" v-on:change="file_selected" name="convini_pic" style="display:none">
                 </label>
@@ -131,7 +131,7 @@
                 formData.append('address',this.convini.address),
                 formData.append('email',this.convini.email),
                 formData.append('convini_pic',this.file_info),
-                axios.post('convini/profileEdit',formData,
+                axios.post('../profileEdit',formData,
                 ).then(function(){
                     self.erros = [];
                 }).catch(function(error){
@@ -157,7 +157,7 @@
                     old_password:'',
                     password:'',
                 };
-                axios.post('convini/changePassword',{
+                axios.post('../changePassword',{
                     old_password: this.old_password,
                     password: this.convini.password,
                     password_confirm: this.password_confirm,

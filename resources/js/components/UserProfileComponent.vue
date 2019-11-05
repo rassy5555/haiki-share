@@ -98,7 +98,7 @@
                 formData.append('name',this.user.name),
                 formData.append('email',this.user.email),
                 formData.append('user_pic',this.file_info),
-                axios.post('profileEdit',formData,
+                axios.post('../profileEdit',formData,
                 ).then(function(){
                     self.erros = [];
                 }).catch(function(error){
@@ -124,7 +124,7 @@
                     old_password:'',
                     password:'',
                 };
-                axios.post('changePassword',{
+                axios.post('../changePassword',{
                     old_password: this.old_password,
                     password: this.user.password,
                     password_confirm: this.password_confirm,
