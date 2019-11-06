@@ -4,6 +4,8 @@
 <section class="main">
     <div class="l-container p-container">
         <div class="l-page__wrapper p-page__wrapper">
+        <p>{{ env('DB_CONNECTION')}}</p>
+
             <h2 class="c-page__title">{{ __('Login')}}</h2>
             <convini_login-component></convini_login-component>
             <!-- <form method="POST" action="{{ route('convini.login') }}">
