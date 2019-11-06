@@ -19,6 +19,11 @@
                 ログイン
             </button>
         </div>
+        <div class="c-form__group">
+            <a class="btn btn-link" href="password/reset">
+                パスワードを忘れた方
+            </a>
+        </div>
     </div>
 </template>
 <script>

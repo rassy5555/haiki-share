@@ -1941,6 +1941,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2872,6 +2877,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -59758,10 +59768,25 @@ var render = function() {
         },
         [_vm._v("\n            ログイン\n        ")]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "c-form__group" }, [
+      _c(
+        "a",
+        { staticClass: "btn btn-link", attrs: { href: "password/reset" } },
+        [_vm._v("\n            パスワードを忘れた方\n        ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -61626,12 +61651,27 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c("h1", { on: { click: _vm.registertest } }, [_vm._v("test")]),
     _vm._v(" "),
     _c("h1", { on: { click: _vm.registertest2 } }, [_vm._v("test2")])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "c-form__group" }, [
+      _c(
+        "a",
+        { staticClass: "btn btn-link", attrs: { href: "password/reset" } },
+        [_vm._v("\n        パスワードを忘れた方\n        ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
