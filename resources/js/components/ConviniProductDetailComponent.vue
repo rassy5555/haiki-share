@@ -33,7 +33,7 @@
         methods: {
             //商品編集画面へ遷移
             productEdit: function(e){
-                location.href = 'productEdit/' + this.product.id;
+                location.href = '../productEdit/' + this.product.id;
             }
         },
         computed: {

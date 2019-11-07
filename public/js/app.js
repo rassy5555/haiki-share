@@ -2022,7 +2022,7 @@ Vue.filter('date_time', function (val) {
   methods: {
     //商品編集画面へ遷移
     productEdit: function productEdit(e) {
-      location.href = 'productEdit/' + this.product.id;
+      location.href = '../productEdit/' + this.product.id;
     }
   },
   computed: {
@@ -61830,7 +61830,7 @@ var render = function() {
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
-                src: "../storage/" + product.product_pic,
+                src: "storage/" + product.product_pic,
                 alt: "",
                 width: "300",
                 height: "200"
