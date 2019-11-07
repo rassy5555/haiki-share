@@ -33,7 +33,7 @@
         methods: {
             //プロフィール画面へ遷移
             profileEdit: function(e){
-                location.href = 'profileEdit/';
+                location.href = 'profileEdit';
             },
             //商品詳細画面へ遷移
             productDetail: function(id){

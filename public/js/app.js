@@ -1890,11 +1890,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     //プロフィール画面へ遷移
     profileEdit: function profileEdit(e) {
-      location.href = 'profileEdit/';
+      location.href = 'profileEdit';
     },
     //商品登録画面へ遷移
     productRegister: function productRegister(e) {
-      location.href = 'productRegister/';
+      location.href = 'productRegister';
     },
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
@@ -2849,7 +2849,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     //プロフィール画面へ遷移
     profileEdit: function profileEdit(e) {
-      location.href = 'profileEdit/';
+      location.href = 'profileEdit';
     },
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
@@ -2877,8 +2877,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2936,12 +2934,6 @@ __webpack_require__.r(__webpack_exports__);
           self.errors[key] = error.response.data.errors[key][0];
         }
       });
-    },
-    registertest: function registertest(e) {
-      location.href = '../haiki-share/public/register';
-    },
-    registertest2: function registertest2(e) {
-      location.href = '../../haiki-share/public/register';
     }
   }
 });
@@ -61651,11 +61643,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("h1", { on: { click: _vm.registertest } }, [_vm._v("test")]),
-    _vm._v(" "),
-    _c("h1", { on: { click: _vm.registertest2 } }, [_vm._v("test2")])
+    _vm._m(0)
   ])
 }
 var staticRenderFns = [

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_convini')
 
 @section('content')
 <section class="main">

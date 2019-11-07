@@ -50,11 +50,11 @@
         methods: {
             //プロフィール画面へ遷移
             profileEdit: function(e){
-                location.href = 'profileEdit/';
+                location.href = 'profileEdit';
             },
             //商品登録画面へ遷移
             productRegister: function(e){
-                location.href = 'productRegister/';
+                location.href = 'productRegister';
             },
             //商品詳細画面へ遷移
             productDetail: function(id){
