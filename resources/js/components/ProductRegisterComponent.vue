@@ -1,8 +1,8 @@
 <template>
     <div>
         <img class="p-pic" :src="preview_image" v-if="preview_image">
-        <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'storage/' + product.product_pic">
-        <img class="p-pic" src="storage/no-image2.png" v-else>
+        <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'../storage/' + product.product_pic">
+        <img class="p-pic" src="/../storage/no-image2.png" v-else>
         <label class="c-pic__label">画像を変更
             <input type="file" v-on:change="file_selected" name="product_pic" style="display:none">
         </label>
@@ -95,7 +95,6 @@
                 ).then(function(){
                     self.erros = [];
                 }).catch(function(error){
-                    console.log(error.response);
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

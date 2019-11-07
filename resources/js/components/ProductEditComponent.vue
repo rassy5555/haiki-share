@@ -2,8 +2,8 @@
     <div>
         <div class="c-image__group">
             <img class="p-pic" :src="preview_image" v-if="preview_image">
-            <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'/storage/' + product.product_pic">
-            <img class="p-pic" src="/storage/no-image2.png" v-else>
+            <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'../../storage/' + product.product_pic">
+            <img class="p-pic" src="/../storage/no-image2.png" v-else>
             <label class="c-pic__label">画像を変更
                 <input type="file" v-on:change="file_selected" name="product_pic" style="display:none">
             </label>
@@ -92,7 +92,7 @@
                 formData.append('expiration_date',this.expiration_date),
                 formData.append('comment',this.product.comment),
                 formData.append('product_pic',this.file_info),
-                axios.post('/convini/productEdit/' + this.product.id ,formData
+                axios.post('productEdit/' + this.product.id ,formData
                 ).then(function(){
                     self.errors = [];
                 }).catch(function(error){
@@ -103,7 +103,7 @@
                 });
             },
             productDelete: function(e) {
-                axios.post('/convini/productDelete/' + this.product.id ,
+                axios.post('productDelete/' + this.product.id ,
                 ).then(function(){
                 }).catch(function(error){
                 });           

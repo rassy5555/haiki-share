@@ -2352,45 +2352,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['convini_pic'],
-  methods: {
-    uploadPic: function uploadPic(e) {
-      var _this = this;
-
-      axios.post('/convini/uploadProfilePic', {
-        convini_pic: this.convini_pic
-      }).then(function (res) {
-        console.log(_this.convini_pic);
-      });
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListingListComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ListingListComponent.vue?vue&type=script&lang=js& ***!
@@ -2445,11 +2406,11 @@ Vue.component('paginate', vuejs_paginate__WEBPACK_IMPORTED_MODULE_0___default.a)
   methods: {
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
-      location.href = 'convini/productDetail/' + id;
+      location.href = '../productDetail/' + id;
     },
     //商品編集画面へ遷移
     productEdit: function productEdit(id) {
-      location.href = 'convini/productEdit/' + id;
+      location.href = '../productEdit/' + id;
     },
     //現在のページ数を取得（ページネーション用)
     clickCallback: function clickCallback(pageNum) {
@@ -2571,7 +2532,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     productRegister: function productRegister(e) {
       var self = this;
       var formData = new FormData();
-      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('/convini/productEdit/' + this.product.id, formData).then(function () {
+      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productEdit/' + this.product.id, formData).then(function () {
         self.errors = [];
       })["catch"](function (error) {
         console.log(error.response);
@@ -2582,7 +2543,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       });
     },
     productDelete: function productDelete(e) {
-      axios.post('/convini/productDelete/' + this.product.id).then(function () {})["catch"](function (error) {});
+      axios.post('productDelete/' + this.product.id).then(function () {})["catch"](function (error) {});
     },
     file_selected: function file_selected(event) {
       var _this = this;
@@ -2704,8 +2665,6 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productRegister', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
-        console.log(error.response);
-
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -2783,7 +2742,7 @@ Vue.component('paginate', vuejs_paginate__WEBPACK_IMPORTED_MODULE_0___default.a)
   methods: {
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
-      location.href = '../../convini/productDetail/' + id;
+      location.href = '../productDetail/' + id;
     },
     //現在のページ数を取得（ページネーション用)
     clickCallback: function clickCallback(pageNum) {
@@ -2988,7 +2947,7 @@ __webpack_require__.r(__webpack_exports__);
         this.user_id = null;
       }
 
-      axios.post('../productPurchase/' + this.product.id, {
+      axios.post('productPurchase/' + this.product.id, {
         saled_flg: this.saled_flg,
         user_id: this.user_id,
         convini_id: this.product.convini_id
@@ -3246,7 +3205,7 @@ __webpack_require__.r(__webpack_exports__);
         user_pic: ''
       };
       var formData = new FormData();
-      formData.append('name', this.user.name), formData.append('email', this.user.email), formData.append('user_pic', this.file_info), axios.post('../profileEdit', formData).then(function () {
+      formData.append('name', this.user.name), formData.append('email', this.user.email), formData.append('user_pic', this.file_info), axios.post('profileEdit', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
@@ -3276,7 +3235,7 @@ __webpack_require__.r(__webpack_exports__);
         old_password: '',
         password: ''
       };
-      axios.post('../changePassword', {
+      axios.post('changePassword', {
         old_password: this.old_password,
         password: this.user.password,
         password_confirm: this.password_confirm
@@ -59493,7 +59452,7 @@ var render = function() {
           "a",
           {
             staticClass: "c-more",
-            attrs: { href: "convini/listingList/" + _vm.convini_id }
+            attrs: { href: "listingList/" + _vm.convini_id }
           },
           [_vm._v("全件表示")]
         )
@@ -59587,7 +59546,7 @@ var render = function() {
           "a",
           {
             staticClass: "c-more",
-            attrs: { href: "convini/saledList/" + _vm.convini_id }
+            attrs: { href: "saledList/" + _vm.convini_id }
           },
           [_vm._v("全件表示")]
         )
@@ -59807,7 +59766,7 @@ var render = function() {
     _vm._v(" "),
     _c("img", {
       staticClass: "p-pic",
-      attrs: { src: "storage/" + _vm.product.product_pic }
+      attrs: { src: "../../storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
     _c("div", { staticClass: "p-product__description" }, [
@@ -60634,65 +60593,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    { attrs: { method: "POST", enctype: "multipart/form-data" } },
-    [
-      _c("div", { staticClass: "c-form__group" }, [
-        _c("label", { staticClass: "c-form__label" }, [
-          _vm._v(_vm._s(_vm.convini_pic))
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "c-form__item",
-          attrs: { id: "pic", type: "file", name: "convini_pic" }
-        }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "c-pic",
-          attrs: { src: "/storage/" + _vm.convini_pic }
-        })
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "submit" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.uploadPic($event)
-            }
-          }
-        },
-        [_vm._v("\n        アップロードする\n    ")]
-      )
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListingListComponent.vue?vue&type=template&id=d605d574&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ListingListComponent.vue?vue&type=template&id=d605d574& ***!
@@ -60719,7 +60619,7 @@ var render = function() {
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
-                src: "storage/" + product.product_pic,
+                src: "../../storage/" + product.product_pic,
                 alt: "",
                 width: "300",
                 height: "200"
@@ -60820,11 +60720,11 @@ var render = function() {
         : _vm.product.product_pic
         ? _c("img", {
             staticClass: "p-pic",
-            attrs: { src: "/storage/" + _vm.product.product_pic }
+            attrs: { src: "../../storage/" + _vm.product.product_pic }
           })
         : _c("img", {
             staticClass: "p-pic",
-            attrs: { src: "/storage/no-image2.png" }
+            attrs: { src: "/../storage/no-image2.png" }
           }),
       _vm._v(" "),
       _c("label", { staticClass: "c-pic__label" }, [
@@ -61107,11 +61007,11 @@ var render = function() {
       : _vm.product.product_pic
       ? _c("img", {
           staticClass: "p-pic",
-          attrs: { src: "storage/" + _vm.product.product_pic }
+          attrs: { src: "../storage/" + _vm.product.product_pic }
         })
       : _c("img", {
           staticClass: "p-pic",
-          attrs: { src: "storage/no-image2.png" }
+          attrs: { src: "/../storage/no-image2.png" }
         }),
     _vm._v(" "),
     _c("label", { staticClass: "c-pic__label" }, [
@@ -61370,7 +61270,7 @@ var render = function() {
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
-                src: "/storage/" + product.product_pic,
+                src: "../storage/" + product.product_pic,
                 alt: "",
                 width: "300",
                 height: "200"
@@ -61485,7 +61385,7 @@ var render = function() {
           _c("img", {
             staticClass: "p-pic__card",
             attrs: {
-              src: "/storage/" + product.product_pic,
+              src: "../storage/" + product.product_pic,
               alt: "",
               width: "300",
               height: "200"
@@ -61688,7 +61588,7 @@ var render = function() {
     _vm._v(" "),
     _c("img", {
       staticClass: "p-pic",
-      attrs: { src: "storage/" + _vm.product.product_pic }
+      attrs: { src: "../storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
     _c("div", { staticClass: "p-product__description" }, [
@@ -61930,7 +61830,7 @@ var render = function() {
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
-                src: "/storage/" + product.product_pic,
+                src: "../storage/" + product.product_pic,
                 alt: "",
                 width: "300",
                 height: "200"
@@ -62067,7 +61967,7 @@ var render = function() {
                   })
                 : _c("img", {
                     staticClass: "p-pic__profile",
-                    attrs: { src: "storage/" + _vm.user.user_pic }
+                    attrs: { src: "../storage/" + _vm.user.user_pic }
                   }),
               _vm._v(" "),
               _c("label", { staticClass: "c-pic__label" }, [
@@ -74791,7 +74691,6 @@ Vue.component('user_login-component', __webpack_require__(/*! ./components/UserL
 Vue.component('convini_login-component', __webpack_require__(/*! ./components/ConviniLoginComponent.vue */ "./resources/js/components/ConviniLoginComponent.vue")["default"]);
 Vue.component('user_register-component', __webpack_require__(/*! ./components/UserRegisterComponent.vue */ "./resources/js/components/UserRegisterComponent.vue")["default"]);
 Vue.component('convini_register-component', __webpack_require__(/*! ./components/ConviniRegisterComponent.vue */ "./resources/js/components/ConviniRegisterComponent.vue")["default"]);
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('user_profile-component', __webpack_require__(/*! ./components/UserProfileComponent.vue */ "./resources/js/components/UserProfileComponent.vue")["default"]);
 Vue.component('user_product_list-component', __webpack_require__(/*! ./components/UserProductListComponent.vue */ "./resources/js/components/UserProductListComponent.vue")["default"]);
 Vue.component('convini_profile-component', __webpack_require__(/*! ./components/ConviniProfileComponent.vue */ "./resources/js/components/ConviniProfileComponent.vue")["default"]);
@@ -75198,75 +75097,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ConviniRegisterComponent_vue_vue_type_template_id_17e829b5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ConviniRegisterComponent_vue_vue_type_template_id_17e829b5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ExampleComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

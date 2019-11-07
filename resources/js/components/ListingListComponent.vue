@@ -2,7 +2,7 @@
     <div>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in getItems">
-                    <img class="p-pic__card" v-bind:src="'storage/' + product.product_pic"  alt="" width="300" height="200">
+                    <img class="p-pic__card" v-bind:src="'../../storage/' + product.product_pic"  alt="" width="300" height="200">
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
                     <dd class="c-card__description">賞味期限: {{ product.expiration_date| date_time }}</dd>
                     <dd class="c-card__description p-card__price"><span>¥</span>{{ product.price | number_format }}</dd>
@@ -42,11 +42,11 @@ export default {
     methods: {
         //商品詳細画面へ遷移
         productDetail: function(id){
-            location.href = 'convini/productDetail/' + id;
+            location.href = '../productDetail/' + id;
         },
         //商品編集画面へ遷移
         productEdit: function(id){
-            location.href = 'convini/productEdit/' + id;
+            location.href = '../productEdit/' + id;
         },
         //現在のページ数を取得（ページネーション用)
         clickCallback: function (pageNum) {

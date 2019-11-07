@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="c-page__title">{{ product.product_name }}</h2>
-        <img class="p-pic" v-bind:src="'storage/' + product.product_pic">
+        <img class="p-pic" v-bind:src="'../../storage/' + product.product_pic">
         <div class="p-product__description">
             <p><span>¥</span>{{ product.price | number_format }}</p>
             <p>賞味期限: {{ product.expiration_date| date_time }}</p>

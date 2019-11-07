@@ -7,7 +7,7 @@
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
                 <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
-                <img class="p-pic__profile" v-bind:src="'storage/' + user.user_pic" v-else>
+                <img class="p-pic__profile" v-bind:src="'../storage/' + user.user_pic" v-else>
                 <label class="c-pic__label">画像を変更
                     <input type="file" v-on:change="file_selected" name="user_pic" style="display:none">
                 </label>
@@ -98,7 +98,7 @@
                 formData.append('name',this.user.name),
                 formData.append('email',this.user.email),
                 formData.append('user_pic',this.file_info),
-                axios.post('../profileEdit',formData,
+                axios.post('profileEdit',formData,
                 ).then(function(){
                     self.erros = [];
                 }).catch(function(error){
@@ -124,7 +124,7 @@
                     old_password:'',
                     password:'',
                 };
-                axios.post('../changePassword',{
+                axios.post('changePassword',{
                     old_password: this.old_password,
                     password: this.user.password,
                     password_confirm: this.password_confirm,
