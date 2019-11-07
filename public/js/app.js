@@ -3080,7 +3080,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   methods: {
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
-      location.href = '../../productDetail/' + id;
+      location.href = 'productDetail/' + id;
     },
     //現在のページ数を取得（ページネーション用)
     clickCallback: function clickCallback(pageNum) {

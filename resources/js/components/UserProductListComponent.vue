@@ -64,7 +64,7 @@ export default {
     methods: {
         //商品詳細画面へ遷移
         productDetail: function(id){
-            location.href = '../../productDetail/' + id;
+            location.href = 'productDetail/' + id;
         },
         //現在のページ数を取得（ページネーション用)
         clickCallback: function (pageNum) {
