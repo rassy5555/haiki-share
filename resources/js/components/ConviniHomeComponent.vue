@@ -50,19 +50,19 @@
         methods: {
             //プロフィール画面へ遷移
             profileEdit: function(e){
-                location.href = '../../convini/profileEdit/';
+                location.href = 'profileEdit/';
             },
             //商品登録画面へ遷移
             productRegister: function(e){
-                location.href = '../../convini/productRegister/';
+                location.href = 'productRegister/';
             },
             //商品詳細画面へ遷移
             productDetail: function(id){
-                location.href = '../../convini/productDetail/' + id;
+                location.href = 'productDetail/' + id;
             },
             //商品編集画面へ遷移
             productEdit: function(id){
-                location.href = '../../convini/productEdit/' + id;
+                location.href = 'productEdit/' + id;
             },
         },
     }

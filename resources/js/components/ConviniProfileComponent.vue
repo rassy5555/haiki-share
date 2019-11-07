@@ -131,7 +131,7 @@
                 formData.append('address',this.convini.address),
                 formData.append('email',this.convini.email),
                 formData.append('convini_pic',this.file_info),
-                axios.post('../profileEdit',formData,
+                axios.post('profileEdit',formData,
                 ).then(function(){
                     self.erros = [];
                 }).catch(function(error){
@@ -157,7 +157,7 @@
                     old_password:'',
                     password:'',
                 };
-                axios.post('../changePassword',{
+                axios.post('changePassword',{
                     old_password: this.old_password,
                     password: this.convini.password,
                     password_confirm: this.password_confirm,

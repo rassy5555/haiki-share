@@ -1890,19 +1890,19 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     //プロフィール画面へ遷移
     profileEdit: function profileEdit(e) {
-      location.href = '../../convini/profileEdit/';
+      location.href = 'profileEdit/';
     },
     //商品登録画面へ遷移
     productRegister: function productRegister(e) {
-      location.href = '../../convini/productRegister/';
+      location.href = 'productRegister/';
     },
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
-      location.href = '../../convini/productDetail/' + id;
+      location.href = 'productDetail/' + id;
     },
     //商品編集画面へ遷移
     productEdit: function productEdit(id) {
-      location.href = '../../convini/productEdit/' + id;
+      location.href = 'productEdit/' + id;
     }
   }
 });
@@ -2022,7 +2022,7 @@ Vue.filter('date_time', function (val) {
   methods: {
     //商品編集画面へ遷移
     productEdit: function productEdit(e) {
-      location.href = '../../convini/productEdit/' + this.product.id;
+      location.href = 'productEdit/' + this.product.id;
     }
   },
   computed: {
@@ -2171,7 +2171,7 @@ __webpack_require__.r(__webpack_exports__);
         convini_pic: ''
       };
       var formData = new FormData();
-      formData.append('convini_name', this.convini.convini_name), formData.append('branch_name', this.convini.branch_name), formData.append('prefectures', this.convini.prefectures), formData.append('address', this.convini.address), formData.append('email', this.convini.email), formData.append('convini_pic', this.file_info), axios.post('../profileEdit', formData).then(function () {
+      formData.append('convini_name', this.convini.convini_name), formData.append('branch_name', this.convini.branch_name), formData.append('prefectures', this.convini.prefectures), formData.append('address', this.convini.address), formData.append('email', this.convini.email), formData.append('convini_pic', this.file_info), axios.post('profileEdit', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
@@ -2201,7 +2201,7 @@ __webpack_require__.r(__webpack_exports__);
         old_password: '',
         password: ''
       };
-      axios.post('../changePassword', {
+      axios.post('changePassword', {
         old_password: this.old_password,
         password: this.convini.password,
         password_confirm: this.password_confirm
@@ -2701,7 +2701,7 @@ __webpack_require__.r(__webpack_exports__);
     productRegister: function productRegister(e) {
       var self = this;
       var formData = new FormData();
-      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('../productRegister', formData).then(function () {
+      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productRegister', formData).then(function () {
         self.erros = [];
       })["catch"](function (error) {
         console.log(error.response);
