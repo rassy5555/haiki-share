@@ -2,7 +2,7 @@
     <div>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in getItems">
-                    <img class="p-pic__card" v-bind:src="'../storage/' + product.product_pic"  alt="" width="300" height="200">
+                    <img class="p-pic__card" v-bind:src="'../../storage/' + product.product_pic"  alt="" width="300" height="200">
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
                     <dd class="c-card__description">賞味期限: {{ product.expiration_date| date_time }}</dd>
                     <dd class="c-card__description p-card__price"><span>¥</span>{{ product.price | number_format }}</dd>
@@ -11,15 +11,19 @@
                     </button>
             </li>
         </ul>
+        <p class="p-message_no-product" v-show="saled_List.length==0">対象商品は現在ありません</p>
         <paginate
             :page-count="getPageCount"
             :page-range="3"
             :margin-pages="2"
             :click-handler="clickCallback"
             :prev-text="'<'"
+            :prev-link-class="'p-page__prev'"	
             :next-text="'>'"
+            :next-link-class="'p-page__next'"	
             :container-class="'p-pagination'"
-            :page-class="'p-page__item'">
+            :page-class="'p-page__item'"
+            :page-link-class="'p-page__item-link'">
         </paginate>
     </div>
 </template>

@@ -14,15 +14,19 @@
                     </button>
             </li>
         </ul>
+        <p class="p-message_no-product" v-show="listing_list.length==0">対象商品は現在ありません</p>
         <paginate
             :page-count="getPageCount"
             :page-range="3"
             :margin-pages="2"
             :click-handler="clickCallback"
             :prev-text="'<'"
+            :prev-link-class="'p-page__prev'"	
             :next-text="'>'"
+            :next-link-class="'p-page__next'"	
             :container-class="'p-pagination'"
-            :page-class="'p-page__item'">
+            :page-class="'p-page__item'"
+            :page-link-class="'p-page__item-link'">
         </paginate>
     </div>
 </template>

@@ -25,6 +25,7 @@ Vue.component('user_register-component', require('./components/UserRegisterCompo
 Vue.component('convini_register-component', require('./components/ConviniRegisterComponent.vue').default);
 Vue.component('user_profile-component', require('./components/UserProfileComponent.vue').default);
 Vue.component('user_product_list-component', require('./components/UserProductListComponent.vue').default);
+Vue.component('convini_product_list-component', require('./components/ConviniProductListComponent.vue').default);
 Vue.component('convini_profile-component', require('./components/ConviniProfileComponent.vue').default);
 Vue.component('product_register-component', require('./components/ProductRegisterComponent.vue').default);
 Vue.component('product_edit-component', require('./components/ProductEditComponent.vue').default);

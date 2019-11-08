@@ -74,6 +74,7 @@ Route::group(['prefix' => 'convini', 'middleware' => 'auth:convini'], function()
     Route::post('productEdit/{product_id}','Convini\ProductController@productEdit');
     Route::post('productDelete/{product_id}','Convini\ProductController@productDelete');
     Route::get('productDetail/{product_id}','Convini\ProductController@productDetailShow')->name('convini.productDetail');
+    Route::get('productList', 'Convini\ProductController@productListShow')->name('convini.productList');
     Route::get('listingList/{convini_id}','Convini\ProductController@listingListShow')->name('convini.listingList');
     Route::get('saledList/{convini_id}','Convini\ProductController@saledListShow')->name('convini.saledList');
     Route::get('back','Convini\ProductController@back');
