@@ -36,7 +36,7 @@ export default {
             }else {
                 this.user_id = null
             }
-            axios.post('productPurchase/' + this.product.id,{
+            axios.post('../productPurchase/' + this.product.id,{
                 saled_flg: this.saled_flg, 
                 user_id: this.user_id,
                 convini_id: this.product.convini_id
