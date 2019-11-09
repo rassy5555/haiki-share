@@ -10844,7 +10844,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .l-container {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -11048,7 +11048,7 @@ img {
 .c-card {
   position: relative;
   max-width: 220px;
-  height: 400px;
+  height: 380px;
   flex: 220px;
   padding: 10px;
   box-sizing: border-box;

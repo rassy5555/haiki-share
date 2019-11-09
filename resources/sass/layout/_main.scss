@@ -4,7 +4,7 @@
 .l-container {
   width: 760px;
   @include mq($breakpoint: md) {
-    width: 100%;
+    width: 90%;
   }
 }
 //
@@ -21,12 +21,6 @@
     width: 90%;
   }
 }
-// .l-container {
-//   width: 980px;
-//   @include mq($breakpoint: md) {
-//     width: 80%;
-//   }
-// }
 
 // ==================================
 // productItem
