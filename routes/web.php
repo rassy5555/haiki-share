@@ -54,7 +54,9 @@ Route::group(['prefix' => 'convini','middleware'=>'guest:convini','middleware'=>
     Route::post('register','Convini\RegisterController@register');
     Route::get('password/reset', 'Convini\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('password/email', 'Convini\ForgotPasswordController@sendResetLinkEmail')->name('convini.password.email');
-    Route::post('password/reset', 'Convini\PasswordController@reset')->name('password.update');
+    Route::post('password/reset', 'Convini\ResetPasswordController@reset')->name('password.update');
+    Route::get('password/reset/{token}', 'Convini\ResetPasswordController@showResetForm')->name('password.reset');
+
 });
  
 /*

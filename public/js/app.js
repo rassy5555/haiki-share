@@ -3617,10 +3617,7 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email
       }).then(function () {
         self.erros = [];
-        console.log(1);
       })["catch"](function (error) {
-        console.log(error.response.data.errors);
-
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
