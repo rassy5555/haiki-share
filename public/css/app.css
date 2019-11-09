@@ -10999,8 +10999,10 @@ img {
 }
 
 .c-invalid__feedback {
+  text-align: center;
   font-size: 12px;
   margin-top: 5px;
+  margin-bottom: 5px;
   color: #e3342f;
   display: block;
 }

@@ -2605,10 +2605,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       email: '',
+      success_message: '',
       errors: {
         email: ''
       }
@@ -2623,8 +2625,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('email', {
         email: this.email
       }).then(function () {
+        self.success_message = 'メールを送信しました。確認してください。';
         self.erros = [];
       })["catch"](function (error) {
+        self.success_message = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -2792,6 +2797,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
@@ -2801,6 +2807,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
   data: function data() {
     return {
       expiration_date: moment(this.product.expiration_date).format("YYYY-MM-DD HH:mm"),
+      success_message: '',
       errors: {
         product_name: '',
         price: '',
@@ -2821,9 +2828,11 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       var self = this;
       var formData = new FormData();
       formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('../productEdit/' + this.product.id, formData).then(function () {
+        self.success_message = '商品を編集しました';
         self.errors = [];
       })["catch"](function (error) {
-        console.log(error.response);
+        self.success_message = '';
+        console.log(error.response.data.errors);
 
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
@@ -2831,7 +2840,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       });
     },
     productDelete: function productDelete(e) {
-      axios.post('productDelete/' + this.product.id).then(function () {})["catch"](function (error) {});
+      axios.post('../productDelete/' + this.product.id).then(function () {})["catch"](function (error) {});
     },
     file_selected: function file_selected(event) {
       var _this = this;
@@ -2917,7 +2926,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories'],
@@ -2931,6 +2939,7 @@ __webpack_require__.r(__webpack_exports__);
         comment: '',
         product_pic: ''
       },
+      success_message: '',
       errors: {
         product_name: '',
         price: '',
@@ -2949,10 +2958,21 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     productRegister: function productRegister(e) {
       var self = this;
+      this.errors = {
+        product_name: '',
+        price: '',
+        category_id: '',
+        expiration_date: '',
+        comment: '',
+        product_pic: ''
+      };
       var formData = new FormData();
       formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productRegister', formData).then(function () {
+        self.success_message = '商品を登録しました';
         self.erros = [];
       })["catch"](function (error) {
+        self.success_message = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -3218,12 +3238,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'product', 'user'],
   data: function data() {
     return {
       saled_flg: this.product.saled_flg,
-      user_id: this.product.user_id
+      user_id: this.product.user_id,
+      success_message: {
+        purchase: '',
+        cancel: ''
+      }
     };
   },
   methods: {
@@ -3235,17 +3261,17 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.saled_flg) {
         this.user_id = this.user.id;
+        this.success_message.purchase = '商品を購入しました。メールを確認してください。';
       } else {
         this.user_id = null;
+        this.success_message.cancel = '購入をキャンセルしました';
       }
 
       axios.post('../productPurchase/' + this.product.id, {
         saled_flg: this.saled_flg,
         user_id: this.user_id,
         convini_id: this.product.convini_id
-      }).then(function () {
-        console.log(self.saled_flg);
-      });
+      }).then(function () {});
     }
   }
 });
@@ -3755,10 +3781,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       email: '',
+      success_message: '',
       errors: {
         email: ''
       }
@@ -3773,8 +3801,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('email', {
         email: this.email
       }).then(function () {
+        self.success_message = 'メールを送信しました。確認してください。';
         self.erros = [];
       })["catch"](function (error) {
+        self.success_message = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -61517,7 +61548,13 @@ var render = function() {
         },
         [_vm._v("\n            パスワードを再設定する\n        ")]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.success_message
+      ? _c("p", { staticClass: "p-success_message" }, [
+          _vm._v(_vm._s(_vm.success_message))
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -61930,7 +61967,13 @@ var render = function() {
         },
         [_vm._v("\n            削除する\n        ")]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.success_message
+      ? _c("p", { staticClass: "p-success_message" }, [
+          _vm._v(_vm._s(_vm.success_message))
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -62178,17 +62221,21 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.productRegister }
-        },
-        [_vm._v("\n            登録する\n        ")]
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.productRegister }
+      },
+      [_vm._v("\n        登録する\n    ")]
+    ),
+    _vm._v(" "),
+    _vm.success_message
+      ? _c("p", { staticClass: "p-success_message" }, [
+          _vm._v(_vm._s(_vm.success_message))
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -62613,7 +62660,19 @@ var render = function() {
               }
             },
             [_vm._v("\n            購入する\n        ")]
-          )
+          ),
+      _vm._v(" "),
+      _vm.success_message.cancel
+        ? _c("p", { staticClass: "p-success_message" }, [
+            _vm._v(_vm._s(_vm.success_message.cancel))
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.success_message.purchase
+        ? _c("p", { staticClass: "p-success_message" }, [
+            _vm._v(_vm._s(_vm.success_message.purchase))
+          ])
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c(
@@ -63633,7 +63692,13 @@ var render = function() {
         },
         [_vm._v("\n            パスワードを再設定する\n        ")]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.success_message
+      ? _c("p", { staticClass: "p-success_message" }, [
+          _vm._v(_vm._s(_vm.success_message))
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []

@@ -45,11 +45,10 @@
                 <div v-if="errors.comment" class="c-invalid__feedback">{{ errors.comment }}</div>
             </div>
         </div>
-        <div class="c-form__button">
-            <button type="submit" class="c-button"  v-on:click="productRegister">
-                登録する
-            </button>
-        </div>
+        <button type="submit" class="c-button"  v-on:click="productRegister">
+            登録する
+        </button>
+        <p class="p-success_message" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>
@@ -66,6 +65,7 @@
                     comment: '',
                     product_pic:'',
                 },
+                success_message: '',
                 errors: {
                     product_name:'',
                     price: '',
@@ -84,6 +84,14 @@
         methods:{
             productRegister: function(e){
                 var self = this;
+                this.errors = {
+                    product_name:'',
+                    price: '',
+                    category_id:'',
+                    expiration_date:'',
+                    comment: '',
+                    product_pic:'',
+                };
                 const formData = new FormData();
                 formData.append('product_name',this.product.product_name),
                 formData.append('category_id',this.product.category_id),
@@ -93,8 +101,10 @@
                 formData.append('product_pic',this.file_info),
                 axios.post('productRegister',formData,
                 ).then(function(){
+                    self.success_message = '商品を登録しました';
                     self.erros = [];
                 }).catch(function(error){
+                    self.success_message = '';
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

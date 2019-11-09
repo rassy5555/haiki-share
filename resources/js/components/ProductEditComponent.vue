@@ -57,6 +57,7 @@
                 削除する
             </button>
         </div>
+        <p class="p-success_message" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>
@@ -67,6 +68,7 @@
         data: function(){
             return{
                 expiration_date: moment(this.product.expiration_date).format( "YYYY-MM-DD HH:mm"),
+                success_message: '',
                 errors: {
                     product_name:'',
                     price: '',
@@ -94,16 +96,18 @@
                 formData.append('product_pic',this.file_info),
                 axios.post('../productEdit/' + this.product.id ,formData
                 ).then(function(){
+                    self.success_message = '商品を編集しました';
                     self.errors = [];
                 }).catch(function(error){
-                    console.log(error.response);
+                    self.success_message = '';
+                    console.log(error.response.data.errors);
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }
                 });
             },
             productDelete: function(e) {
-                axios.post('productDelete/' + this.product.id ,
+                axios.post('../productDelete/' + this.product.id ,
                 ).then(function(){
                 }).catch(function(error){
                 });           

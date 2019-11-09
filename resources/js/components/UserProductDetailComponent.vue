@@ -14,6 +14,8 @@
             <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.saled_flg }" v-on:click.prevent="productPurchase" v-else>
                 購入する
             </button>
+            <p class="p-success_message" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
+            <p class="p-success_message" v-if="success_message.purchase" >{{ success_message.purchase }}</p>
         </div>
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
@@ -25,6 +27,10 @@ export default {
         return { 
             saled_flg: this.product.saled_flg,
             user_id: this.product.user_id,
+            success_message: {
+                purchase: '',
+                cancel: '',
+            },
         }
     },
     methods: {
@@ -35,15 +41,17 @@ export default {
             this.saled_flg = !this.saled_flg;
             if(this.saled_flg){
                 this.user_id = this.user.id;
+                this.success_message.purchase = '商品を購入しました。メールを確認してください。';
             }else {
                 this.user_id = null
+                this.success_message.cancel = '購入をキャンセルしました';
             }
             axios.post('../productPurchase/' + this.product.id,{
                 saled_flg: this.saled_flg, 
                 user_id: this.user_id,
                 convini_id: this.product.convini_id
             }).then(function(){
-                console.log(self.saled_flg);
+
             })
          },
     },

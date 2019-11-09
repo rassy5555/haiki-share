@@ -12,6 +12,7 @@
                 パスワードを再設定する
             </button>
         </div>
+        <p class="p-success_message" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>
@@ -19,6 +20,7 @@
         data: function(){
             return{
                 email: '',
+                success_message: '',
                 errors: {
                     email: '',
                 }
@@ -33,8 +35,10 @@
                 axios.post('email',{
                     email: this.email,
                 }).then(function(){
+                    self.success_message = 'メールを送信しました。確認してください。';
                     self.erros = [];
                 }).catch(function(error){
+                    self.success_message = '';
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

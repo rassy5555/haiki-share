@@ -57,8 +57,10 @@
 }
 
 .c-invalid__feedback {
+    text-align: center;
     font-size: $font-size_s;
     margin-top: 5px;
+    margin-bottom: 5px;
     color: $red;
     display: block;
 }
