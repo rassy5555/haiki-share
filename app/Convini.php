@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\PasswordResetNotification;
+
 
 class Convini extends Authenticatable
 {
@@ -41,5 +43,13 @@ class Convini extends Authenticatable
 
     public function products() {
         return $this->hasMany('App\product');
+    }
+
+    /* @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordResetNotification($token));
     }
 }

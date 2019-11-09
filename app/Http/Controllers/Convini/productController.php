@@ -166,7 +166,7 @@ class ProductController extends Controller
         if(empty($convini) || ($convini->id !== Auth::user()->id) ){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
-        $saled_list = Product::where('saled_flg',true)->where('delete_flg',false)->get();
+        $saled_list = Product::where('convini_id',$convini_id)->where('saled_flg',true)->where('delete_flg',false)->get();
         return view('convini.saledList',['saled_list'=>$saled_list]);
     }
 }

@@ -3617,6 +3617,7 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email
       }).then(function () {
         self.erros = [];
+        console.log(1);
       })["catch"](function (error) {
         console.log(error.response.data.errors);
 
@@ -61889,8 +61890,8 @@ var render = function() {
             {
               name: "show",
               rawName: "v-show",
-              value: _vm.saled_List.length == 0,
-              expression: "saled_List.length==0"
+              value: _vm.saled_list.length == 0,
+              expression: "saled_list.length==0"
             }
           ],
           staticClass: "p-message_no-product"
