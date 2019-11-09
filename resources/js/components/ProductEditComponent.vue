@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="c-image__group">
+        <div class="c-image__group p-image__group-large">
             <img class="p-pic" :src="preview_image" v-if="preview_image">
             <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'../../storage/' + product.product_pic">
             <img class="p-pic" src="/../storage/no-image2.png" v-else>
@@ -43,7 +43,7 @@
         <div class="c-form__group">
             <label class="c-form__label">コメント</label>
             <div class="c-form__item">
-                <textarea id="comment" type="text" class="c-form__input" name="comment" v-model="product.comment"></textarea>
+                <textarea type="text" class="c-form__input p-form__comment" name="comment" v-model="product.comment"></textarea>
                 <div v-if="errors.comment" class="c-invalid__feedback">{{ errors.comment }}</div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                 formData.append('expiration_date',this.expiration_date),
                 formData.append('comment',this.product.comment),
                 formData.append('product_pic',this.file_info),
-                axios.post('productEdit/' + this.product.id ,formData
+                axios.post('../productEdit/' + this.product.id ,formData
                 ).then(function(){
                     self.errors = [];
                 }).catch(function(error){

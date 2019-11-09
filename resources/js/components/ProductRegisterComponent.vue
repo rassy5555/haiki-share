@@ -41,7 +41,7 @@
         <div class="c-form__group">
             <label class="c-form__label">コメント</label>
             <div class="c-form__item">
-                <textarea id="comment" type="text" class="c-form__input" name="comment" v-model:value="product.comment"></textarea>
+                <textarea type="text" class="c-form__input p-form__comment" name="comment" v-model:value="product.comment"></textarea>
                 <div v-if="errors.comment" class="c-invalid__feedback">{{ errors.comment }}</div>
             </div>
         </div>

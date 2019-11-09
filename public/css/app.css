@@ -11238,10 +11238,26 @@ img {
   margin-left: 5px;
 }
 
-.p-product__description {
+.p-product__detail {
+  width: 300px;
+  margin: 0 auto;
   text-align: center;
   margin-top: 30px;
   font-size: 18px;
+}
+
+.p-comment__detail {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.p-image__group-large {
+  width: 300px;
+}
+
+.p-form__comment {
+  height: 150px;
 }
 
 .p-message {

@@ -2,9 +2,10 @@
     <div>
         <h2 class="c-page__title">{{ product.product_name }}</h2>
         <img class="p-pic" v-bind:src="'../storage/' + product.product_pic">
-        <div class="p-product__description">
+        <div class="p-product__detail">
             <p>賞味期限: {{ product.expiration_date| date_time }}</p>
             <p><span>¥</span>{{ product.price | number_format }}</p>
+            <p class="p-comment__detail">{{ product.comment }}</p>
         </div>
         <div class="c-form__button">
             <button type="submit" class="c-button" v-on:click.prevent="productPurchase" v-if="this.saled_flg==true && product.user_id === user.id ">
@@ -14,6 +15,7 @@
                 購入する
             </button>
         </div>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
 </template>
 <script>

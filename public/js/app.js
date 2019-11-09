@@ -2003,6 +2003,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 Vue.filter('number_format', function (val) {
@@ -2181,8 +2182,6 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _master_prefectures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../master/prefectures */ "./resources/js/master/prefectures.js");
-//
-//
 //
 //
 //
@@ -2809,7 +2808,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     productRegister: function productRegister(e) {
       var self = this;
       var formData = new FormData();
-      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productEdit/' + this.product.id, formData).then(function () {
+      formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('../productEdit/' + this.product.id, formData).then(function () {
         self.errors = [];
       })["catch"](function (error) {
         console.log(error.response);
@@ -3187,6 +3186,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -60184,7 +60185,7 @@ var render = function() {
       attrs: { src: "../../storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
-    _c("div", { staticClass: "p-product__description" }, [
+    _c("div", { staticClass: "p-product__detail" }, [
       _c("p", [
         _c("span", [_vm._v("¥")]),
         _vm._v(_vm._s(_vm._f("number_format")(_vm.product.price)))
@@ -60195,6 +60196,10 @@ var render = function() {
           "賞味期限: " +
             _vm._s(_vm._f("date_time")(_vm.product.expiration_date))
         )
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "p-comment__detail" }, [
+        _vm._v(_vm._s(_vm.product.comment))
       ])
     ]),
     _vm._v(" "),
@@ -60950,27 +60955,21 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "c-form__group" }, [
-              _c("div", { staticClass: "c-form__button" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "c-button",
-                    attrs: { type: "submit" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changePassword($event)
-                      }
+            _c("div", { staticClass: "c-form__button" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "c-button",
+                  attrs: { type: "submit" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.changePassword($event)
                     }
-                  },
-                  [
-                    _vm._v(
-                      "\n                    パスワードを変更する\n                "
-                    )
-                  ]
-                )
-              ])
+                  }
+                },
+                [_vm._v("\n                パスワードを変更する\n            ")]
+              )
             ])
           ]
         )
@@ -61639,7 +61638,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "c-image__group" }, [
+    _c("div", { staticClass: "c-image__group p-image__group-large" }, [
       _vm.preview_image
         ? _c("img", { staticClass: "p-pic", attrs: { src: _vm.preview_image } })
         : _vm.product.product_pic
@@ -61846,8 +61845,8 @@ var render = function() {
               expression: "product.comment"
             }
           ],
-          staticClass: "c-form__input",
-          attrs: { id: "comment", type: "text", name: "comment" },
+          staticClass: "c-form__input p-form__comment",
+          attrs: { type: "text", name: "comment" },
           domProps: { value: _vm.product.comment },
           on: {
             input: function($event) {
@@ -62128,8 +62127,8 @@ var render = function() {
               arg: "value"
             }
           ],
-          staticClass: "c-form__input",
-          attrs: { id: "comment", type: "text", name: "comment" },
+          staticClass: "c-form__input p-form__comment",
+          attrs: { type: "text", name: "comment" },
           domProps: { value: _vm.product.comment },
           on: {
             input: function($event) {
@@ -62536,7 +62535,7 @@ var render = function() {
       attrs: { src: "../storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
-    _c("div", { staticClass: "p-product__description" }, [
+    _c("div", { staticClass: "p-product__detail" }, [
       _c("p", [
         _vm._v(
           "賞味期限: " +
@@ -62547,6 +62546,10 @@ var render = function() {
       _c("p", [
         _c("span", [_vm._v("¥")]),
         _vm._v(_vm._s(_vm._f("number_format")(_vm.product.price)))
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "p-comment__detail" }, [
+        _vm._v(_vm._s(_vm.product.comment))
       ])
     ]),
     _vm._v(" "),
@@ -62581,7 +62584,22 @@ var render = function() {
             },
             [_vm._v("\n            購入する\n        ")]
           )
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass: "twitter-share-button",
+        attrs: {
+          href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
+          "data-url":
+            "https://haiki-share.com/haiki-share/public/convini/productDetail/1",
+          "data-text": _vm.tweetMessage,
+          "data-show-count": "false"
+        }
+      },
+      [_vm._v("Tweet")]
+    )
   ])
 }
 var staticRenderFns = []

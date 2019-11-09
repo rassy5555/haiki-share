@@ -76,12 +76,10 @@
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
             </div>    
-            <div class="c-form__group">
-                <div class="c-form__button">
-                    <button type="submit" class="c-button" v-on:click.prevent="changePassword">
-                        パスワードを変更する
-                    </button>
-                </div>
+            <div class="c-form__button">
+                <button type="submit" class="c-button" v-on:click.prevent="changePassword">
+                    パスワードを変更する
+                </button>
             </div>
         </form>
     </div>
