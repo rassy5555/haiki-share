@@ -57,7 +57,7 @@
                     token: this.token,
                 }).then(function(){
                     self.erros = [];
-                    location.href = '../../../home'
+                    location.href = '../../home'
                 }).catch(function(error){
                     console.log(error.response.data.errors);
                     for(var key in error.response.data.errors) {

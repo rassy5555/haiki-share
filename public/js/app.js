@@ -3694,7 +3694,7 @@ __webpack_require__.r(__webpack_exports__);
         token: this.token
       }).then(function () {
         self.erros = [];
-        location.href = '../../../home';
+        location.href = '../../home';
       })["catch"](function (error) {
         console.log(error.response.data.errors);
 
