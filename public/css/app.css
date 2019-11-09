@@ -11273,6 +11273,12 @@ img {
   margin-bottom: 50px;
 }
 
+.p-success_message {
+  color: #e37b89;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .p-pic {
   display: block;
   height: 200px;

@@ -53,6 +53,7 @@
             <button type="submit" class="c-button" v-on:click.prevent="profileEdit">
                 編集する
             </button>
+            <p class="p-success_message">{{ success_message.profile }}</p>
         </form>
         <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
@@ -81,6 +82,7 @@
                     パスワードを変更する
                 </button>
             </div>
+            <p class="p-success_message">{{ success_message.password }}</p>
         </form>
     </div>
 </template>
@@ -98,6 +100,10 @@
                 file_info:'',
                 preview_image: '',
                 prefectures: prefectures_data,
+                success_message: {
+                    profile: '',
+                    password: '',
+                },
                 errors: {
                     convini_name: '',
                     branch_name: '',
@@ -132,7 +138,9 @@
                 axios.post('profileEdit',formData,
                 ).then(function(){
                     self.erros = [];
+                    self.success_message.profile = 'プロフィールを編集しました';
                 }).catch(function(error){
+                    self.success_message.profile = '';
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }
@@ -161,7 +169,9 @@
                     password_confirm: this.password_confirm,
                 }).then(function(){
                     self.erros = [];
+                    self.success_message.password = 'パスワードを変更しました';
                 }).catch(function(error){
+                    self.success_message.password = '';
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

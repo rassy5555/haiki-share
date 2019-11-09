@@ -30,6 +30,7 @@
             <button type="submit" class="c-button" v-on:click.prevent="profileEdit">
                 編集する
             </button>
+            <p class="p-success_message" v-if="success_message.profile" >{{ success_message.profile }}</p>
         </form>
         <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
@@ -52,14 +53,13 @@
                     <input id="password_confirm" type="password" class="c-form__input" name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
-            </div>    
-            <div class="c-form__group">
-                <div class="c-form__button">
-                    <button type="submit" class="c-button" v-on:click.prevent="changePassword">
-                        パスワードを変更する
-                    </button>
-                </div>
+            </div>   
+            <div class="c-form__button">
+                <button type="submit" class="c-button" v-on:click.prevent="changePassword">
+                    パスワードを変更する
+                </button>
             </div>
+            <p class="p-success_message">{{ success_message.password }}</p>
         </form>
     </div>
 </template>
@@ -76,6 +76,10 @@
                 password_confirm:'',
                 file_info:'',
                 preview_image: '',
+                success_message: {
+                    profile: '',
+                    password: '',
+                },
                 errors: {
                     name: '',
                     email: '',
@@ -100,8 +104,10 @@
                 formData.append('user_pic',this.file_info),
                 axios.post('profileEdit',formData,
                 ).then(function(){
+                    self.success_message.profile = 'プロフィールを編集しました';
                     self.erros = [];
                 }).catch(function(error){
+                    self.success_message.profile = '';
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }
@@ -129,8 +135,10 @@
                     password: this.user.password,
                     password_confirm: this.password_confirm,
                 }).then(function(){
+                    self.success_message.password = 'パスワードを変更しました';
                     self.erros = [];
                 }).catch(function(error){
+                    self.success_message.password = '';
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

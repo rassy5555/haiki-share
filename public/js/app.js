@@ -2269,6 +2269,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['props_convini'],
@@ -2281,6 +2283,10 @@ __webpack_require__.r(__webpack_exports__);
       file_info: '',
       preview_image: '',
       prefectures: _master_prefectures__WEBPACK_IMPORTED_MODULE_0__["default"],
+      success_message: {
+        profile: '',
+        password: ''
+      },
       errors: {
         convini_name: '',
         branch_name: '',
@@ -2308,7 +2314,10 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
       formData.append('convini_name', this.convini.convini_name), formData.append('branch_name', this.convini.branch_name), formData.append('prefectures', this.convini.prefectures), formData.append('address', this.convini.address), formData.append('email', this.convini.email), formData.append('convini_pic', this.file_info), axios.post('profileEdit', formData).then(function () {
         self.erros = [];
+        self.success_message.profile = 'プロフィールを編集しました';
       })["catch"](function (error) {
+        self.success_message.profile = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -2342,7 +2351,10 @@ __webpack_require__.r(__webpack_exports__);
         password_confirm: this.password_confirm
       }).then(function () {
         self.erros = [];
+        self.success_message.password = 'パスワードを変更しました';
       })["catch"](function (error) {
+        self.success_message.password = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -3466,6 +3478,10 @@ __webpack_require__.r(__webpack_exports__);
       password_confirm: '',
       file_info: '',
       preview_image: '',
+      success_message: {
+        profile: '',
+        password: ''
+      },
       errors: {
         name: '',
         email: '',
@@ -3486,8 +3502,11 @@ __webpack_require__.r(__webpack_exports__);
       };
       var formData = new FormData();
       formData.append('name', this.user.name), formData.append('email', this.user.email), formData.append('user_pic', this.file_info), axios.post('profileEdit', formData).then(function () {
+        self.success_message.profile = 'プロフィールを編集しました';
         self.erros = [];
       })["catch"](function (error) {
+        self.success_message.profile = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -3520,8 +3539,11 @@ __webpack_require__.r(__webpack_exports__);
         password: this.user.password,
         password_confirm: this.password_confirm
       }).then(function () {
+        self.success_message.password = 'パスワードを変更しました';
         self.erros = [];
       })["catch"](function (error) {
+        self.success_message.password = '';
+
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -60822,7 +60844,11 @@ var render = function() {
                 }
               },
               [_vm._v("\n            編集する\n        ")]
-            )
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "p-success_message" }, [
+              _vm._v(_vm._s(_vm.success_message.profile))
+            ])
           ]
         )
       : _c(
@@ -60970,6 +60996,10 @@ var render = function() {
                 },
                 [_vm._v("\n                パスワードを変更する\n            ")]
               )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "p-success_message" }, [
+              _vm._v(_vm._s(_vm.success_message.password))
             ])
           ]
         )
@@ -63045,7 +63075,13 @@ var render = function() {
                 }
               },
               [_vm._v("\n            編集する\n        ")]
-            )
+            ),
+            _vm._v(" "),
+            _vm.success_message.profile
+              ? _c("p", { staticClass: "p-success_message" }, [
+                  _vm._v(_vm._s(_vm.success_message.profile))
+                ])
+              : _vm._e()
           ]
         )
       : _c(
@@ -63178,27 +63214,25 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "c-form__group" }, [
-              _c("div", { staticClass: "c-form__button" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "c-button",
-                    attrs: { type: "submit" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changePassword($event)
-                      }
+            _c("div", { staticClass: "c-form__button" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "c-button",
+                  attrs: { type: "submit" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.changePassword($event)
                     }
-                  },
-                  [
-                    _vm._v(
-                      "\n                    パスワードを変更する\n                "
-                    )
-                  ]
-                )
-              ])
+                  }
+                },
+                [_vm._v("\n                パスワードを変更する\n            ")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "p-success_message" }, [
+              _vm._v(_vm._s(_vm.success_message.password))
             ])
           ]
         )
