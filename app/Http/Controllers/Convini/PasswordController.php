@@ -41,6 +41,7 @@ class PasswordController extends Controller
         $this->middleware('guest:convini');
     }
     
+    //パスワード再設定用メール送信画面を表示
     public function showLinkRequestForm()
     {
         return view('convini.passwords.email');
