@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="main">
     <div class="l-container p-container">

@@ -6,6 +6,7 @@ use App\Convini;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
@@ -26,13 +27,14 @@ class ResetPasswordController extends Controller
     */
 
     use AuthenticatesUsers;
+    use RedirectsUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/convini/home';
+    protected $redirectTo = 'convini/home';
 
     /**
      * Create a new controller instance.
@@ -75,7 +77,6 @@ class ResetPasswordController extends Controller
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
         // database. Otherwise we will parse the error and return the response.
-        
         $response = $this->broker()->reset(
             $this->credentials($request), function ($user, $password) {
                 $this->resetPassword($user, $password);
@@ -136,7 +137,6 @@ class ResetPasswordController extends Controller
      */
     protected function resetPassword($user, $password)
     {
-        dd($user);
         $user->password = Hash::make($password);
 
         $user->setRememberToken(Str::random(60));
@@ -144,7 +144,6 @@ class ResetPasswordController extends Controller
         $user->save();
 
         event(new PasswordReset($user));
-
         $this->guard()->login($user);
     }
 
@@ -182,14 +181,9 @@ class ResetPasswordController extends Controller
      */
     public function broker()
     {
-        return Password::broker();
+        return Password::broker('convinis');
     }
 
-    /**
-     * Get the guard to be used during password reset.
-     *
-     * @return \Illuminate\Contracts\Auth\StatefulGuard
-     */
     protected function guard()
     {
         return Auth::guard('convini');

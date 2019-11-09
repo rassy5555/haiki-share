@@ -35,6 +35,8 @@ Vue.component('listing_list-component', require('./components/ListingListCompone
 Vue.component('saled_list-component', require('./components/SaledListComponent.vue').default);
 Vue.component('user_send_password-component', require('./components/UserSendPasswordComponent.vue').default);
 Vue.component('user_reset_password-component', require('./components/UserResetPasswordComponent.vue').default);
+Vue.component('convini_send_password-component', require('./components/ConviniSendPasswordComponent.vue').default);
+Vue.component('convini_reset_password-component', require('./components/ConviniResetPasswordComponent.vue').default);
 
 
 
