@@ -6,7 +6,6 @@ use App\Convini;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
@@ -27,7 +26,6 @@ class ResetPasswordController extends Controller
     */
 
     use AuthenticatesUsers;
-    use RedirectsUsers;
 
     /**
      * Where to redirect users after login.
