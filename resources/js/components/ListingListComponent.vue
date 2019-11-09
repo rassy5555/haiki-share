@@ -26,7 +26,8 @@
             :next-link-class="'p-page__next'"	
             :container-class="'p-pagination'"
             :page-class="'p-page__item'"
-            :page-link-class="'p-page__item-link'">
+            :page-link-class="'p-page__item-link'"
+            :hide-prev-next= true>
         </paginate>
     </div>
 </template>

@@ -42,6 +42,7 @@
                 @else
                     <li ><a class="p-menu" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
                     <li ><a class="p-menu" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
+                    <li ><a class="p-menu" href="{{ route('convini.productList') }}">{{ __('Product List') }}</a></li>
                     <li class="p-menu">
                         <a class="p-menu" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

@@ -47,7 +47,7 @@ class ProductController extends Controller
 
     //商品登録画面へ遷移
     public function productRegisterShow() {
-        $categories = Category::all();
+        $categories = Category::where('delete_flg',false)->get();
         return view('convini.productRegister',['categories'=>$categories]);
     }
 
@@ -76,18 +76,18 @@ class ProductController extends Controller
 
     //商品編集画面へ遷移
     public function productEditShow($product_id) {
-        $product = Product::where('id',$product_id)->first();
+        $product = Product::where('id',$product_id)->where('delete_flg',false)->first();
         //パラメータから検索し、該当の商品が登録されていないまたは商品の出品者IDとログインユーザーのIDが違う場合マイページに遷移
         if(empty($product) || ($product->convini_id !== Auth::user()->id) ){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
-        $categories = Category::all();
+        $categories = Category::where('delete_flg',false)->get();
         return view('convini.productEdit',['categories'=>$categories,'product'=>$product]);
     }
 
     //商品編集画面処理
     public function productEdit($product_id, Request $request) {
-        $product = Product::where('id',$product_id)->first();
+        $product = Product::where('id',$product_id)->where('delete_flg',false)->first();
         //パラメータから検索し、該当の商品が登録されていないまたは商品の出品者IDとログインユーザーのIDが違う場合マイページに遷移        
         if(empty($product) || ($product->convini_id !== Auth::user()->id) ){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
@@ -116,7 +116,7 @@ class ProductController extends Controller
     //商品削除編集処理
     public function productDelete ($product_id, Request $request) {
         \Debugbar::addMessage($product_id);
-        $product = Product::where('id',$product_id)->first();
+        $product = Product::where('id',$product_id)->where('delete_flg',false)->first();
         //パラメータから検索し、該当の商品が登録されていないまたは商品の出品者IDとログインユーザーのIDが違う場合マイページに遷移        
         if(empty($product) || ($product->convini_id !== Auth::user()->id) ){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
@@ -127,13 +127,13 @@ class ProductController extends Controller
 
     //商品詳細画面へ遷移
     public function productDetailShow($product_id) {
-        $product = Product::where('id',$product_id)->first();
+        $product = Product::where('id',$product_id)->where('delete_flg',false)->first();
         \Debugbar::addMessage($product);
         //パラメータから検索し、該当の商品が登録されていない場合マイページに遷移
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
-        $categories = Category::all();
+        $categories = Category::where('delete_flg',false)->get();
         $convini = Auth::user();
         return view('convini.productDetail',['categories'=>$categories,'product'=>$product,'convini'=>$convini]);
     }
@@ -141,27 +141,27 @@ class ProductController extends Controller
 
     //商品一覧画面へ遷移
     public function productListShow(){
-        $categories = Category::all();
-        $product_list = Product::where('delete_flg',false)->join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->get();
+        $categories = Category::where('delete_flg',false)->get();
+        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('convinis.delete_flg',false)->where('products.delete_flg',false)->get();
         return view('convini.productList',['categories'=>$categories,'product_list'=>$product_list]);
     }
     
 
     //出品リストへ遷移
     public function listingListShow ($convini_id) {
-        $convini = Convini::where('id',$convini_id)->first();
+        $convini = Convini::where('id',$convini_id)->where('delete_flg',false)->first();
         //パラメータから検索し、該当するコンビニが存在しないまたは、コンビニのIDとログインIDが違う場合マイページへ遷移
         if(empty($convini) || ($convini->id !== Auth::user()->id) ){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
-        $listing_list = Product::where('convini_id',$convini_id)->get();
+        $listing_list = Product::where('convini_id',$convini_id)->where('delete_flg',false)->get();
         \Debugbar::addMessage($listing_list);
         return view('convini.listingList',['listing_list'=>$listing_list]);
     }
 
     //購入済リストへ遷移
     public function saledListShow ($convini_id) {
-        $convini = Convini::where('id',$convini_id)->first();
+        $convini = Convini::where('id',$convini_id)->where('delete_flg',false)->first();
         //パラメータから検索し、該当するコンビニが存在しないまたは、コンビニのIDとログインIDが違う場合マイページへ遷移
         if(empty($convini) || ($convini->id !== Auth::user()->id) ){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');

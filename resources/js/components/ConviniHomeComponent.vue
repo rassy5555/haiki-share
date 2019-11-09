@@ -40,7 +40,6 @@
     </div>
 </template>
 <script>
-    import Paginate from 'vuejs-paginate'
     export default {
         props:['convini_id','listing_list','saled_list'],
         data: function() {

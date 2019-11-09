@@ -56,7 +56,7 @@ class ProductController extends Controller
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
-        $categories = Category::all();
+        $categories = Category::where('delete_flg',false)->get();
         $user = Auth::user();
         return view('productDetail',['categories'=>$categories,'product'=>$product,'user'=>$user]);
     }
@@ -84,8 +84,8 @@ class ProductController extends Controller
 
     //商品一覧画面へ遷移
     public function productListShow(){
-        $categories = Category::all();
-        $product_list = Product::where('delete_flg',false)->join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->get();
+        $categories = Category::where('delete_flg',false)->get();
+        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('convinis.delete_flg',false)->where('products.delete_flg',false)->get();
         return view('productList',['categories'=>$categories,'product_list'=>$product_list]);
     }
 }

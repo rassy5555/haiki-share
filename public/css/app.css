@@ -11046,6 +11046,7 @@ img {
 }
 
 .c-card {
+  position: relative;
   max-width: 220px;
   height: 400px;
   flex: 220px;
@@ -11304,6 +11305,10 @@ img {
   justify-content: center;
 }
 
+.p-card__small {
+  height: 320px;
+}
+
 .p-card__name {
   margin-top: 5px;
   text-align: left;
@@ -11319,6 +11324,9 @@ img {
 }
 
 .p-saled {
+  position: absolute;
+  top: 15px;
+  left: 15px;
   color: red;
   font-weight: bold;
   border: 1px solid;
@@ -11328,13 +11336,14 @@ img {
 .p-pagination {
   display: flex;
   padding-left: 0;
-  width: 100px;
+  width: 170px;
   margin: 20px auto;
   padding-bottom: 20px;
   border-radius: 4px;
 }
 
 .p-page__item {
+  width: 25px;
   padding: 6px;
   border: 1px solid #ddd;
 }

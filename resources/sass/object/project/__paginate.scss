@@ -1,7 +1,7 @@
 .p-pagination {
     display: flex;
     padding-left: 0;
-    width: 100px;
+    width: 170px;
     margin: 20px auto;
     padding-bottom: 20px;
     border-radius: 4px;
@@ -10,6 +10,7 @@
 }
 
 .p-page__item {
+    width: 25px;
     padding: 6px;
     border: 1px solid #ddd;
     &.active {

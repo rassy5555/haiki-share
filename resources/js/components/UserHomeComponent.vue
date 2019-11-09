@@ -22,7 +22,6 @@
     </div>
 </template>
 <script>
-    import Paginate from 'vuejs-paginate'
     export default {
         props:['user_id','purchased_list'],
         data: function() {
