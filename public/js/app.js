@@ -62329,7 +62329,7 @@ var render = function() {
           _c("img", {
             staticClass: "p-pic__card",
             attrs: {
-              src: "../storage/" + product.product_pic,
+              src: "storage/" + product.product_pic,
               alt: "",
               width: "300",
               height: "200"
