@@ -7,7 +7,7 @@
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
                 <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
-                <img class="p-pic__profile" v-bind:src="'../storage/' + user.user_pic" v-else>
+                <img class="p-pic__profile" v-bind:src="'storage/' + user.user_pic" v-else>
                 <label class="c-pic__label">画像を変更
                     <input type="file" v-on:change="file_selected" name="user_pic" style="display:none">
                 </label>

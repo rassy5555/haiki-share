@@ -62911,7 +62911,7 @@ var render = function() {
                   })
                 : _c("img", {
                     staticClass: "p-pic__profile",
-                    attrs: { src: "../storage/" + _vm.user.user_pic }
+                    attrs: { src: "storage/" + _vm.user.user_pic }
                   }),
               _vm._v(" "),
               _c("label", { staticClass: "c-pic__label" }, [
