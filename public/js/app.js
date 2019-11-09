@@ -60972,7 +60972,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "c-form__group" }, [
               _c("label", { staticClass: "c-form__label" }, [
-                _vm._v("新しいパスワード(再入力")
+                _vm._v("新しいパスワード(再入力)")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "c-form__item" }, [

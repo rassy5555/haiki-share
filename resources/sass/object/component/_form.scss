@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     width: 75%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     @include mq($breakpoint: md) {
         width: 90%;
         margin-bottom: 15px;
@@ -59,8 +59,8 @@
 .c-invalid__feedback {
     text-align: center;
     font-size: $font-size_s;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: $red;
     display: block;
 }

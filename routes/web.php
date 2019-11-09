@@ -19,8 +19,8 @@ Auth::routes();
 | 1) User 認証不要
 |--------------------------------------------------------------------------
 */
-Route::get('/', function () { return redirect('/login'); });
- 
+Route::get('/','TopController@top')->name('top');
+
 /*
 |--------------------------------------------------------------------------
 | 2) User ログイン後
@@ -76,5 +76,4 @@ Route::group(['prefix' => 'convini', 'middleware' => 'auth:convini'], function()
     Route::get('productList', 'Convini\ProductController@productListShow')->name('convini.productList');
     Route::get('listingList/{convini_id}','Convini\ProductController@listingListShow')->name('convini.listingList');
     Route::get('saledList/{convini_id}','Convini\ProductController@saledListShow')->name('convini.saledList');
-    Route::get('back','Convini\ProductController@back');
 });

@@ -10815,6 +10815,7 @@ a {
 }
 
 a:hover {
+  text-decoration: none;
   color: #e3a8b1;
   transition: 0.3s;
 }
@@ -10934,7 +10935,7 @@ img {
   flex-wrap: wrap;
   width: 75%;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -11001,8 +11002,8 @@ img {
 .c-invalid__feedback {
   text-align: center;
   font-size: 12px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #e3342f;
   display: block;
 }
@@ -11071,6 +11072,45 @@ img {
 }
 
 /* Project ------------ */
+
+.p-page__title-large {
+  margin: 30px 0;
+  font-size: 38px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .p-page__title-large {
+    font-size: 24px;
+  }
+}
+
+.p-page__text-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .p-page__text-wrapper {
+    width: 90%;
+  }
+}
+
+.p-page__text {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .p-page__text {
+    font-size: 14px;
+    text-align: left;
+  }
+}
 
 .p-header {
   padding-right: 30px;
