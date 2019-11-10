@@ -60,6 +60,7 @@ export default {
          },
     },
         computed: {
+            //twitterシェア時の文面
             tweetMessage: function(){
                 var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
                 return message;

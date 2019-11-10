@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+//コンビニ用パスワードリマインダー時のメールの内容に関する処理クラス
 class ConviniPasswordResetNotification extends Notification
 {
     use Queueable;

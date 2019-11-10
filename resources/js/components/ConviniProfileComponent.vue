@@ -118,6 +118,7 @@
             }
         },
         methods: {
+            //プロフィール編集処理
             profileEdit: function(e){
                 var self = this;
                 this.errors = {
@@ -146,6 +147,7 @@
                     }
                  });
             },
+            //画像プレビュー表示
             file_selected(event){
                 this.file_info = event.target.files[0];
                 if(this.file_info){
@@ -157,6 +159,7 @@
                     reader.readAsDataURL(file);                
                 }
             },
+            //パスワード変更処理
             changePassword: function(e){
                 var self = this;
                 this.errors = {
@@ -177,9 +180,11 @@
                     }
                 });
             },
+            //表示モードをプロフィール編集に切替
             profile_mode: function(e){
                 this.edit_mode = 'profile';
             },
+            //表示モードをパスワード変更に切替
             password_mode: function(e){
                 this.edit_mode = 'password';
             },   

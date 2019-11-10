@@ -1,4 +1,3 @@
-
 <p>{{ $product->product_name }}が購入されました！ <br>
     {{ $user->name }}さんがお店に取りにきます!<br><br>
 

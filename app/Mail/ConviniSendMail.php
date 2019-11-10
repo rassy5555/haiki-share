@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+//コンビニ用メールの内容に関する処理クラス
 class ConviniSendMail extends Mailable
 {
     use Queueable, SerializesModels;

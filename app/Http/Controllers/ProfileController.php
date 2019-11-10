@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\EditRequest;
 
 
-//プロフィール編集処理クラス
+//ユーザー用プロフィール編集処理クラス
 class ProfileController extends Controller
 {
     /**
@@ -41,7 +41,6 @@ class ProfileController extends Controller
     //パスワード変更バリデーション処理
     public function passwordValidator(array $data){
         $hashed_password = Auth::user()->password;
-        \Debugbar::addMessage($data);
         return Validator::make($data, [
             'password' => ['required', 'string', 'min:8','max:50','different:old_password'],
             'password_confirm' =>['same:password'],
@@ -57,7 +56,6 @@ class ProfileController extends Controller
 
     //プロフィール編集
     public function profileEdit (Request $request) {
-        \Debugbar::addMessage($request);
         //画像がPOST送信されていなければ画像を除いてバリデーション
         if(empty($request->user_pic)){
             $this->profileValidator($request->except(['user_pic']))->validate();
@@ -81,11 +79,9 @@ class ProfileController extends Controller
     //パスワード変更
     public function changePassword(Request $request){
         $this->passwordValidator($request->all())->validate();
-        \Debugbar::addMessage($request->password);
         //パスワードをハッシュ化
         $user = Auth::user();
         $user->password = Hash::make($request->password);
-        \Debugbar::addMessage($user->password);
         $user->save();
     }
 }

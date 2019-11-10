@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 
 
-
+//コンビニ用パスワードリマインダー時のメール送信処理クラス
 class ForgotPasswordController extends Controller
 {
     /*
@@ -57,7 +57,6 @@ class ForgotPasswordController extends Controller
      */
     public function sendResetLinkEmail(Request $request)
     {
-        \Debugbar::addMessage($request);
         $this->validateEmail($request);
         // We will send the password reset link to this user. Once we have attempted
         // to send the link, we will examine the response then see the message we
@@ -79,7 +78,6 @@ class ForgotPasswordController extends Controller
      */
     protected function validateEmail(Request $request)
     {
-        
         $request->validate(['email' => 'required|email|exists:convinis']);
     }
 

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
 
+//コンビニ用新規登録処理
 class RegisterController extends Controller
 {
     /*
@@ -49,6 +50,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+     //バリデーション
     protected function validator(array $data)
     {       return Validator::make($data, [
             'convini_name' => ['required', 'string', 'max:20'],
@@ -67,6 +70,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Convini
      */
+    //新規ユーザー作成
     protected function create(array $data)
     {
         return Convini::create([
@@ -81,11 +85,13 @@ class RegisterController extends Controller
         ]);
     }
 
+    //新規登録画面へ遷移
     public function showRegister()
     {
         return view('convini.register');
     }
 
+    //新規ユーザー作成処理
     public function register(Request $request)
     {   
         $this->validator($request->all())->validate();

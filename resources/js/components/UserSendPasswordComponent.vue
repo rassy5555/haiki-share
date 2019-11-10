@@ -27,6 +27,7 @@
             }
         },
         methods: {
+            //パスワードリマインダー用メールを送信
             resetPassword: function(e){
                 var self = this;
                 this.errors = {

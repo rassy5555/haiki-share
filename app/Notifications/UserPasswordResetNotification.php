@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+//ユーザー用パスワードリマインダー時のメールの内容に関する処理クラス
 class UserPasswordResetNotification extends Notification
 {
     use Queueable;

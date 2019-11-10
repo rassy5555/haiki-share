@@ -19,7 +19,7 @@ use App\Mail\ConviniSendMail;
 use Illuminate\Support\Facades\Mail;
 
 
-//商品関係処理コントローラー
+//ユーザー用商品関係処理クラス
 class ProductController extends Controller
 {
     /**
@@ -52,7 +52,9 @@ class ProductController extends Controller
 
     //商品詳細画面へ遷移
     public function productDetailShow($product_id) {
-        $product = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('products.id',$product_id)->first();
+        $product = Product::join('convinis','products.convini_id','=','convinis.id')
+        ->select('products.*','convinis.convini_name','convinis.branch_name','convinis.email','convinis.prefectures','convinis.address','convinis.delete_flg')
+        ->where('products.id',$product_id)->first();
         //パラメータから検索し、該当の商品が登録されていない場合マイページに遷移
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
@@ -64,11 +66,14 @@ class ProductController extends Controller
 
     //商品購入(購入キャンセル)処理
     public function productPurchase($product_id, Request $request){
-        $product = Product::find($product_id);
+        $product = Product::where('delete_flg',false)->find($product_id);
+        //パラメータから検索して該当する商品がなければマイページへ遷移
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
+        //商品を購入したのかキャンセルしたのかパラメータより判定
         $product->saled_flg = $request->saled_flg;
+        //商品購入の場合コンビニとユーザーにメール送信
         if($product->saled_flg){
             $product->user_id  = $request->user_id;
             $user = User::find($request->user_id);
@@ -85,7 +90,8 @@ class ProductController extends Controller
     public function productListShow(){
         $categories = Category::where('delete_flg',false)->get();
         //商品テーブルとコンビニテーブルを結合させて商品一覧を取得
-        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')
+        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')
+        ->select('products.*','convinis.convini_name','convinis.branch_name','convinis.email','convinis.prefectures','convinis.address','convinis.delete_flg')
         ->where('saled_flg',false)->where('convinis.delete_flg',false)->where('products.delete_flg',false)
         ->orderBy('products.updated_at', 'desc')->get();
         return view('productList',['categories'=>$categories,'product_list'=>$product_list]);

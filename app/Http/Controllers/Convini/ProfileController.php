@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\EditRequest;
 
 
-//プロフィール編集処理クラス
+//コンビニ用プロフィール編集処理クラス
 class ProfileController extends Controller
 {
     /**
@@ -44,7 +44,6 @@ class ProfileController extends Controller
     //パスワード変更バリデーション処理
     public function passwordValidator(array $data){
         $hashed_password = Auth::user()->password;
-        \Debugbar::addMessage($data);
         return Validator::make($data, [
             'password' => ['required', 'string', 'min:8','max:50','different:old_password'],
             'password_confirm' =>['same:password'],
@@ -83,11 +82,9 @@ class ProfileController extends Controller
     //パスワード変更
     public function changePassword(Request $request){
         $this->passwordValidator($request->all())->validate();
-        \Debugbar::addMessage($request->password);
         //パスワードをハッシュ化
         $convini = Auth::user();
         $convini->password = Hash::make($request->password);
-        \Debugbar::addMessage($convini->password);
         $convini->save();
     }
 }

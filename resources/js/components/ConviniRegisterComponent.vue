@@ -83,6 +83,7 @@
             }
         },
         methods: {
+            //ログイン処理
             login: function(e){
                 var self = this;
                 this.errors = {

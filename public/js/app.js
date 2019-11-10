@@ -2024,6 +2024,7 @@ Vue.filter('date_time', function (val) {
     }
   },
   computed: {
+    //twitterシェア時の文面
     tweetMessage: function tweetMessage() {
       var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
       return message;
@@ -2301,6 +2302,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //プロフィール編集処理
     profileEdit: function profileEdit(e) {
       var self = this;
       this.errors = {
@@ -2323,6 +2325,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    //画像プレビュー表示
     file_selected: function file_selected(event) {
       var _this = this;
 
@@ -2339,6 +2342,7 @@ __webpack_require__.r(__webpack_exports__);
         reader.readAsDataURL(file);
       }
     },
+    //パスワード変更処理
     changePassword: function changePassword(e) {
       var self = this;
       this.errors = {
@@ -2360,9 +2364,11 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    //表示モードをプロフィール編集に切替
     profile_mode: function profile_mode(e) {
       this.edit_mode = 'profile';
     },
+    //表示モードをパスワード変更に切替
     password_mode: function password_mode(e) {
       this.edit_mode = 'password';
     }
@@ -2465,6 +2471,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //ログイン処理
     login: function login(e) {
       var self = this;
       this.errors = {
@@ -2554,6 +2561,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //パスワードリセット処理
     resetPassword: function resetPassword(e) {
       var self = this;
       this.errors = {
@@ -2617,6 +2625,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //パスワードリマインダー用メール送信処理
     resetPassword: function resetPassword(e) {
       var self = this;
       this.errors = {
@@ -2824,6 +2833,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     datetime: vuejs_datetimepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   methods: {
+    //商品登録処理
     productRegister: function productRegister(e) {
       var self = this;
       var formData = new FormData();
@@ -2839,6 +2849,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         }
       });
     },
+    //商品削除処理
     productDelete: function productDelete(e) {
       axios.post('../productDelete/' + this.product.id).then(function () {
         self.success_message = '商品を削除しました';
@@ -2846,6 +2857,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         location.href = "../home";
       })["catch"](function (error) {});
     },
+    //画像プレビュー表示
     file_selected: function file_selected(event) {
       var _this = this;
 
@@ -3194,6 +3206,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //ログイン処理
     login: function login(e) {
       var self = this;
       this.errors = {
@@ -3286,6 +3299,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
+    //twitterシェア時の文面
     tweetMessage: function tweetMessage() {
       var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
       return message;
@@ -3536,6 +3550,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //プロフィール編集処理
     profileEdit: function profileEdit(e) {
       var self = this;
       this.errors = {
@@ -3555,6 +3570,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    //画像プレビュー表示
     file_selected: function file_selected(event) {
       var _this = this;
 
@@ -3571,6 +3587,7 @@ __webpack_require__.r(__webpack_exports__);
         reader.readAsDataURL(file);
       }
     },
+    //パスワード変更処理
     changePassword: function changePassword(e) {
       var self = this;
       this.errors = {
@@ -3592,9 +3609,11 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    //表示モードをプロフィールに切替
     profile_mode: function profile_mode(e) {
       this.edit_mode = 'profile';
     },
+    //表示モードをパスワードに切替
     password_mode: function password_mode(e) {
       this.edit_mode = 'password';
     }
@@ -3665,6 +3684,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //新規登録処理
     login: function login(e) {
       var self = this;
       this.errors = {
@@ -3747,6 +3767,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //パスワードリセット処理
     resetPassword: function resetPassword(e) {
       var self = this;
       this.errors = {
@@ -3810,6 +3831,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    //パスワードリマインダー用メールを送信
     resetPassword: function resetPassword(e) {
       var self = this;
       this.errors = {
@@ -75994,27 +76016,49 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+//ユーザー用コンポーネント
 
-Vue.component('user_home-component', __webpack_require__(/*! ./components/UserHomeComponent.vue */ "./resources/js/components/UserHomeComponent.vue")["default"]);
-Vue.component('convini_home-component', __webpack_require__(/*! ./components/ConviniHomeComponent.vue */ "./resources/js/components/ConviniHomeComponent.vue")["default"]);
-Vue.component('user_login-component', __webpack_require__(/*! ./components/UserLoginComponent.vue */ "./resources/js/components/UserLoginComponent.vue")["default"]);
-Vue.component('convini_login-component', __webpack_require__(/*! ./components/ConviniLoginComponent.vue */ "./resources/js/components/ConviniLoginComponent.vue")["default"]);
-Vue.component('user_register-component', __webpack_require__(/*! ./components/UserRegisterComponent.vue */ "./resources/js/components/UserRegisterComponent.vue")["default"]);
-Vue.component('convini_register-component', __webpack_require__(/*! ./components/ConviniRegisterComponent.vue */ "./resources/js/components/ConviniRegisterComponent.vue")["default"]);
-Vue.component('user_profile-component', __webpack_require__(/*! ./components/UserProfileComponent.vue */ "./resources/js/components/UserProfileComponent.vue")["default"]);
-Vue.component('user_product_list-component', __webpack_require__(/*! ./components/UserProductListComponent.vue */ "./resources/js/components/UserProductListComponent.vue")["default"]);
-Vue.component('convini_product_list-component', __webpack_require__(/*! ./components/ConviniProductListComponent.vue */ "./resources/js/components/ConviniProductListComponent.vue")["default"]);
-Vue.component('convini_profile-component', __webpack_require__(/*! ./components/ConviniProfileComponent.vue */ "./resources/js/components/ConviniProfileComponent.vue")["default"]);
-Vue.component('product_register-component', __webpack_require__(/*! ./components/ProductRegisterComponent.vue */ "./resources/js/components/ProductRegisterComponent.vue")["default"]);
-Vue.component('product_edit-component', __webpack_require__(/*! ./components/ProductEditComponent.vue */ "./resources/js/components/ProductEditComponent.vue")["default"]);
-Vue.component('convini_product_detail-component', __webpack_require__(/*! ./components/ConviniProductDetailComponent.vue */ "./resources/js/components/ConviniProductDetailComponent.vue")["default"]);
-Vue.component('user_product_detail-component', __webpack_require__(/*! ./components/UserProductDetailComponent.vue */ "./resources/js/components/UserProductDetailComponent.vue")["default"]);
-Vue.component('listing_list-component', __webpack_require__(/*! ./components/ListingListComponent.vue */ "./resources/js/components/ListingListComponent.vue")["default"]);
-Vue.component('saled_list-component', __webpack_require__(/*! ./components/SaledListComponent.vue */ "./resources/js/components/SaledListComponent.vue")["default"]);
-Vue.component('user_send_password-component', __webpack_require__(/*! ./components/UserSendPasswordComponent.vue */ "./resources/js/components/UserSendPasswordComponent.vue")["default"]);
-Vue.component('user_reset_password-component', __webpack_require__(/*! ./components/UserResetPasswordComponent.vue */ "./resources/js/components/UserResetPasswordComponent.vue")["default"]);
-Vue.component('convini_send_password-component', __webpack_require__(/*! ./components/ConviniSendPasswordComponent.vue */ "./resources/js/components/ConviniSendPasswordComponent.vue")["default"]);
-Vue.component('convini_reset_password-component', __webpack_require__(/*! ./components/ConviniResetPasswordComponent.vue */ "./resources/js/components/ConviniResetPasswordComponent.vue")["default"]);
+Vue.component('user_home-component', __webpack_require__(/*! ./components/UserHomeComponent.vue */ "./resources/js/components/UserHomeComponent.vue")["default"]); //マイページ
+
+Vue.component('user_login-component', __webpack_require__(/*! ./components/UserLoginComponent.vue */ "./resources/js/components/UserLoginComponent.vue")["default"]); //ログイン
+
+Vue.component('user_register-component', __webpack_require__(/*! ./components/UserRegisterComponent.vue */ "./resources/js/components/UserRegisterComponent.vue")["default"]); //新規登録
+
+Vue.component('user_profile-component', __webpack_require__(/*! ./components/UserProfileComponent.vue */ "./resources/js/components/UserProfileComponent.vue")["default"]); //プロフィール編集
+
+Vue.component('user_product_list-component', __webpack_require__(/*! ./components/UserProductListComponent.vue */ "./resources/js/components/UserProductListComponent.vue")["default"]); //商品一覧表示
+
+Vue.component('user_product_detail-component', __webpack_require__(/*! ./components/UserProductDetailComponent.vue */ "./resources/js/components/UserProductDetailComponent.vue")["default"]); //商品詳細
+
+Vue.component('user_send_password-component', __webpack_require__(/*! ./components/UserSendPasswordComponent.vue */ "./resources/js/components/UserSendPasswordComponent.vue")["default"]); //パスワードリマインダーメール送信
+
+Vue.component('user_reset_password-component', __webpack_require__(/*! ./components/UserResetPasswordComponent.vue */ "./resources/js/components/UserResetPasswordComponent.vue")["default"]); //パスワードリセット
+//コンビニ用コンポーネント
+
+Vue.component('convini_home-component', __webpack_require__(/*! ./components/ConviniHomeComponent.vue */ "./resources/js/components/ConviniHomeComponent.vue")["default"]); //マイページ
+
+Vue.component('convini_login-component', __webpack_require__(/*! ./components/ConviniLoginComponent.vue */ "./resources/js/components/ConviniLoginComponent.vue")["default"]); //ログイン
+
+Vue.component('convini_register-component', __webpack_require__(/*! ./components/ConviniRegisterComponent.vue */ "./resources/js/components/ConviniRegisterComponent.vue")["default"]); //新規登録
+
+Vue.component('convini_profile-component', __webpack_require__(/*! ./components/ConviniProfileComponent.vue */ "./resources/js/components/ConviniProfileComponent.vue")["default"]); //プロフィール編集
+
+Vue.component('product_register-component', __webpack_require__(/*! ./components/ProductRegisterComponent.vue */ "./resources/js/components/ProductRegisterComponent.vue")["default"]); //商品登録
+
+Vue.component('product_edit-component', __webpack_require__(/*! ./components/ProductEditComponent.vue */ "./resources/js/components/ProductEditComponent.vue")["default"]); //商品編集
+
+Vue.component('convini_product_detail-component', __webpack_require__(/*! ./components/ConviniProductDetailComponent.vue */ "./resources/js/components/ConviniProductDetailComponent.vue")["default"]); //商品詳細
+
+Vue.component('convini_product_list-component', __webpack_require__(/*! ./components/ConviniProductListComponent.vue */ "./resources/js/components/ConviniProductListComponent.vue")["default"]); //商品一覧表示
+
+Vue.component('listing_list-component', __webpack_require__(/*! ./components/ListingListComponent.vue */ "./resources/js/components/ListingListComponent.vue")["default"]); //出品した商品一覧表示
+
+Vue.component('saled_list-component', __webpack_require__(/*! ./components/SaledListComponent.vue */ "./resources/js/components/SaledListComponent.vue")["default"]); //購入済商品
+
+Vue.component('convini_send_password-component', __webpack_require__(/*! ./components/ConviniSendPasswordComponent.vue */ "./resources/js/components/ConviniSendPasswordComponent.vue")["default"]); //パスワードリマインダーメール送信
+
+Vue.component('convini_reset_password-component', __webpack_require__(/*! ./components/ConviniResetPasswordComponent.vue */ "./resources/js/components/ConviniResetPasswordComponent.vue")["default"]); //パスワードリセット
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

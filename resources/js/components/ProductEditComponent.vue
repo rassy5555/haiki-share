@@ -85,6 +85,7 @@
             datetime
         },
         methods:{
+            //商品登録処理
             productRegister: function(e){
                 var self = this;
                 const formData = new FormData();
@@ -106,6 +107,7 @@
                     }
                 });
             },
+            //商品削除処理
             productDelete: function(e) {
                 axios.post('../productDelete/' + this.product.id ,
                 ).then(function(){
@@ -115,6 +117,7 @@
                 }).catch(function(error){
                 });           
              },
+            //画像プレビュー表示
             file_selected(event){
                 this.file_info = event.target.files[0];
                 if(this.file_info){

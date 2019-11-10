@@ -7,20 +7,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-
+//コンビニ用ログイン関係処理クラス
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
 
     use AuthenticatesUsers;
 
@@ -43,6 +32,7 @@ class LoginController extends Controller
 
     }
     
+    //ログイン画面を表示
     public function showLoginForm()
     {
         return view('convini.login');  
@@ -53,6 +43,7 @@ class LoginController extends Controller
         return Auth::guard('convini');  
     }
     
+    //ログアウト処理
     public function logout(Request $request)
     {
         Auth::guard('convini')->logout();  

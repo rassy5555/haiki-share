@@ -45,6 +45,7 @@
             }
         },
         methods: {
+            //パスワードリセット処理
             resetPassword: function(e){
                 var self = this;
                 this.errors = {

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\ConviniPasswordResetNotification;
 
-
+//コンビニアカウントテーブル
 class Convini extends Authenticatable
 {
     use Notifiable;

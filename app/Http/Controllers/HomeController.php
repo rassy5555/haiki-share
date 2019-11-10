@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
+//ユーザー用マイページ画面処理クラス
 class HomeController extends Controller
 {
     /**
@@ -27,6 +29,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+    //マイページを表示
     public function index()
     {
         $user = Auth::user();

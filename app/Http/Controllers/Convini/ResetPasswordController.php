@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\PasswordReset;
 
+//コンビニ用パスワードリセット処理クラス
 class ResetPasswordController extends Controller
 {
     /*
@@ -54,12 +55,13 @@ class ResetPasswordController extends Controller
      * @param  string|null  $token
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+    //パスワードリセット画面へ遷移
     public function showResetForm(Request $request, $token = null)
     {
         return view('convini.passwords.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
-        // return view('auth.passwords.reset',['token'=>$token]);
     }
 
     /**
@@ -68,9 +70,9 @@ class ResetPasswordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
+    //パスワードリセット処理
     public function reset(Request $request)
     {
-        \Debugbar::addMessage($request);
         $request->validate($this->rules(), $this->validationErrorMessages());
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
@@ -94,6 +96,8 @@ class ResetPasswordController extends Controller
      *
      * @return array
      */
+
+     //バリデーション
     protected function rules()
     {
         return [
@@ -133,6 +137,7 @@ class ResetPasswordController extends Controller
      * @param  string  $password
      * @return void
      */
+    //パスワードリセット処理
     protected function resetPassword($user, $password)
     {
         $user->password = Hash::make($password);

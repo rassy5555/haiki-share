@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+//カテゴリーテーブル
 class Category extends Model
 {
     //
