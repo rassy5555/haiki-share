@@ -62008,7 +62008,7 @@ var render = function() {
         })
       : _c("img", {
           staticClass: "p-pic",
-          attrs: { src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../storage/no-image2.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())) }
+          attrs: { src: "/../storage/no-image2.png" }
         }),
     _vm._v(" "),
     _c("label", { staticClass: "c-pic__label" }, [
