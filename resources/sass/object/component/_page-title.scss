@@ -31,4 +31,7 @@
         color: $main-color;
         border-bottom:1px solid $main-color;
     }
+    @include mq($breakpoint: md) {
+        font-size: $font-size_m;
+    }
 }

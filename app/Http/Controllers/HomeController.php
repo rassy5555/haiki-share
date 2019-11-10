@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $purchased_list = Product::where('user_id',$user->id)->where('delete_flg',false)->orderBy('updated_at', 'desc')->take(5)->get();
+        $purchased_list = Product::where('user_id',$user->id)->where('delete_flg',false)->orderBy('updated_at', 'desc')->get();
         return view('home',['user_id'=>$user->id,'purchased_list'=>$purchased_list]);
     }
 }

@@ -3135,7 +3135,9 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('productPurchase/' + product_id, {
         saled_flg: false,
         user_id: this.user_id
-      }).then(function () {});
+      }).then(function () {
+        location.href = "home";
+      });
     }
   }
 });

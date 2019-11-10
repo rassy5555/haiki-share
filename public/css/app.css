@@ -10929,6 +10929,12 @@ img {
   border-bottom: 1px solid #13b1c0;
 }
 
+@media screen and (max-width: 768px) {
+  .p-page__title-switch {
+    font-size: 14px;
+  }
+}
+
 .c-form__group {
   display: flex;
   justify-content: center;
@@ -11361,6 +11367,7 @@ img {
 @media screen and (max-width: 768px) {
   .p-button__flex {
     width: 120px;
+    font-size: 12px;
   }
 }
 
