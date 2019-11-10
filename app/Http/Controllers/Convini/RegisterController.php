@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'convini_name' => ['required', 'string', 'max:20'],
             'branch_name' => ['required', 'string', 'max:20'],
             'prefecture' => ['required'],
-            'address' => ['required', 'string', 'max:20'],
+            'address' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email:rfc,filter', 'max:30', 'unique:convinis'],
             'password' => ['required', 'string', 'min:8','max:50'],
             'password_confirm' =>['same:password'],
