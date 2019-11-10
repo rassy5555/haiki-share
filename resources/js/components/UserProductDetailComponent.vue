@@ -3,6 +3,8 @@
         <h2 class="c-page__title">{{ product.product_name }}</h2>
         <img class="p-pic" v-bind:src="'../storage/' + product.product_pic">
         <div class="p-product__detail">
+            <p>{{ product.convini_name }} {{ product.branch_name }}店</p>
+            <p>住所:{{ product.address }}</p>
             <p>賞味期限: {{ product.expiration_date| date_time }}</p>
             <p><span>¥</span>{{ product.price | number_format }}</p>
             <p class="p-comment__detail">{{ product.comment }}</p>
@@ -17,10 +19,11 @@
             <p class="p-success_message" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
             <p class="p-success_message" v-if="success_message.purchase" >{{ success_message.purchase }}</p>
         </div>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
 </template>
 <script>
+
 export default {
     props:['categories','product','user'],
     data: function() {

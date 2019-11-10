@@ -140,7 +140,10 @@ class ProductController extends Controller
     //商品一覧画面へ遷移
     public function productListShow(){
         $categories = Category::where('delete_flg',false)->get();
-        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('convinis.delete_flg',false)->where('products.delete_flg',false)->orderBy('products.updated_at', 'desc')->get();
+        //商品テーブルとコンビニテーブルを結合させて商品一覧を取得
+        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')
+        ->where('convinis.delete_flg',false)->where('products.delete_flg',false)
+        ->orderBy('products.updated_at', 'desc')->get();
         return view('convini.productList',['categories'=>$categories,'product_list'=>$product_list]);
     }
     

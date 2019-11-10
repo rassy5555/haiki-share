@@ -3247,6 +3247,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'product', 'user'],
   data: function data() {
@@ -62623,6 +62625,17 @@ var render = function() {
     _c("div", { staticClass: "p-product__detail" }, [
       _c("p", [
         _vm._v(
+          _vm._s(_vm.product.convini_name) +
+            " " +
+            _vm._s(_vm.product.branch_name) +
+            "店"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("住所:" + _vm._s(_vm.product.address))]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
           "賞味期限: " +
             _vm._s(_vm._f("date_time")(_vm.product.expiration_date))
         )
@@ -62690,7 +62703,7 @@ var render = function() {
         attrs: {
           href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
           "data-url":
-            "https://haiki-share.com/haiki-share/public/convini/productDetail/1",
+            "https://haiki-share.com/haiki-share/public/productDetail/1",
           "data-text": _vm.tweetMessage,
           "data-show-count": "false"
         }

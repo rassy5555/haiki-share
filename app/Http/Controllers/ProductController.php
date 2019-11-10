@@ -64,8 +64,7 @@ class ProductController extends Controller
 
     //商品購入(購入キャンセル)処理
     public function productPurchase($product_id, Request $request){
-        $product = Product::where('id',$product_id)->first();
-        // $product = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('products.id',$product_id)->first();
+        $product = Product::find($product_id);
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
@@ -85,7 +84,10 @@ class ProductController extends Controller
     //商品一覧画面へ遷移
     public function productListShow(){
         $categories = Category::where('delete_flg',false)->get();
-        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('saled_flg',false)->where('convinis.delete_flg',false)->where('products.delete_flg',false)->orderBy('products.updated_at', 'desc')->get();
+        //商品テーブルとコンビニテーブルを結合させて商品一覧を取得
+        $product_list = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')
+        ->where('saled_flg',false)->where('convinis.delete_flg',false)->where('products.delete_flg',false)
+        ->orderBy('products.updated_at', 'desc')->get();
         return view('productList',['categories'=>$categories,'product_list'=>$product_list]);
     }
 }
