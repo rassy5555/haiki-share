@@ -15,7 +15,7 @@ class AddDeleteFlgToConvinisTable extends Migration
     {
         Schema::table('convinis', function (Blueprint $table) {
             //
-            $table->boolean('delete_flg')->nullable()->after('convini_pic');
+            $table->boolean('delete_flg')->after('convini_pic');
         });
     }
 

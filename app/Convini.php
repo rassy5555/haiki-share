@@ -18,7 +18,7 @@ class Convini extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'convini_name','branch_name', 'email', 'password','prefectures','address','convini_pic'
+        'convini_name','branch_name', 'email', 'password','prefectures','address','convini_pic','delete_flg'
     ];
 
     /**

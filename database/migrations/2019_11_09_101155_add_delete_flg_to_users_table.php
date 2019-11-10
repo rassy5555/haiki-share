@@ -15,7 +15,7 @@ class AddDeleteFlgToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->boolean('delete_flg')->nullable()->after('user_pic');
+            $table->boolean('delete_flg')->after('user_pic');
         });
     }
 

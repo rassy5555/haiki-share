@@ -77,6 +77,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'convini_pic' => 'no-image.png',
+            'delete_flg' => 0
         ]);
     }
 
@@ -88,7 +89,6 @@ class RegisterController extends Controller
     public function register(Request $request)
     {   
         $this->validator($request->all())->validate();
-        \Debugbar::addMessage(3);
         event(new Registered($convini = $this->create($request->all())));
         $this->guard()->login($convini);
 
