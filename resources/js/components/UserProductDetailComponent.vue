@@ -59,11 +59,11 @@ export default {
             })
          },
     },
-    computed: {
-        tweetMessage: function(){
-            var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
-            return message;
-        }
-    },
+        computed: {
+            tweetMessage: function(){
+                var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
+                return message;
+            }
+        },
 }
 </script>
