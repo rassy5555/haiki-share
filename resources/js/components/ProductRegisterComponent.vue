@@ -2,9 +2,7 @@
     <div>
         <img class="p-pic" :src="preview_image" v-if="preview_image">
         <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'../storage/' + product.product_pic">
-        <!-- <img class="p-pic" src="../images/no-image2.png" v-else>
-        <img class="p-pic" src="/../images/no-image2.png"> -->
-        <img class="p-pic" v-bind:src="'../storage/' + noimage" v-else>
+        <img class="p-pic" v-bind:src="'../images/' + no_image" v-else>
         <label class="c-pic__label">画像を変更
             <input type="file" v-on:change="file_selected" name="product_pic" style="display:none">
         </label>
@@ -54,6 +52,7 @@
     </div>
 </template>
 <script>
+    import no_image from '../images/no-image2.png';
     import datetime from 'vuejs-datetimepicker';
     export default {
         props: ['categories'],
