@@ -62008,7 +62008,7 @@ var render = function() {
         })
       : _c("img", {
           staticClass: "p-pic",
-          attrs: { src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../storage/no-image2.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())) }
+          attrs: { src: __webpack_require__(/*! ../images/no-image2.png */ "./resources/js/images/no-image2.png") }
         }),
     _vm._v(" "),
     _c("label", { staticClass: "c-pic__label" }, [
@@ -77421,6 +77421,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UserSendPasswordComponent_vue_vue_type_template_id_458fd394___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/images/no-image2.png":
+/*!*******************************************!*\
+  !*** ./resources/js/images/no-image2.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/no-image2.png?f2b6eafb6b7d0efe3f4a819336cf2899";
 
 /***/ }),
 
