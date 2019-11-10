@@ -36,7 +36,7 @@ class ProfileController extends Controller
             'branch_name' => ['required', 'string', 'max:20'],
             'prefectures' => ['required'],
             'address' => ['required', 'string', 'max:50'],
-            'email' => [ 'required','string', 'email:rfc,filter', 'max:50'],
+            'email' => [ 'required','string', 'email:rfc,filter', 'max:30'],
             'convini_pic' => ['file','image','mimes:png,jpeg,jpg,gif'],
         ]);
     }
@@ -46,7 +46,7 @@ class ProfileController extends Controller
         $hashed_password = Auth::user()->password;
         \Debugbar::addMessage($data);
         return Validator::make($data, [
-            'password' => ['required', 'string', 'min:8','same:password_confirm','different:old_password'],
+            'password' => ['required', 'string', 'min:8','max:50','same:password_confirm','different:old_password'],
             'password_confirm' =>['same:password'],
             'old_password' => ['required', 'string', 'min:8',"password_hash_check:$hashed_password"],
         ]);

@@ -145,6 +145,7 @@ return [
 
     'attributes' => [
         'email' => 'E-mail',
+        'name' => '名前',
         'password' => 'パスワード',
         'convini_name' => 'コンビニ名',
         'branch_name' => '支店名',

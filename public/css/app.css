@@ -11400,7 +11400,7 @@ img {
 .p-pagination {
   display: flex;
   padding-left: 0;
-  width: 170px;
+  width: 100px;
   margin: 20px auto;
   padding-bottom: 20px;
   border-radius: 4px;

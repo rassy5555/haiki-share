@@ -55,8 +55,8 @@ class RegisterController extends Controller
             'branch_name' => ['required', 'string', 'max:20'],
             'prefecture' => ['required'],
             'address' => ['required', 'string', 'max:20'],
-            'email' => ['required', 'string', 'email:rfc,filter', 'max:100', 'unique:convinis'],
-            'password' => ['required', 'string', 'min:8'],
+            'email' => ['required', 'string', 'email:rfc,filter', 'max:30', 'unique:convinis'],
+            'password' => ['required', 'string', 'min:8','max:50'],
             'password_confirm' =>['same:password'],
         ]);
     }
@@ -87,9 +87,8 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {   
-        \Debugbar::addMessage($request);
         $this->validator($request->all())->validate();
-        \Debugbar::addMessage(2);
+        \Debugbar::addMessage(3);
         event(new Registered($convini = $this->create($request->all())));
         $this->guard()->login($convini);
 
