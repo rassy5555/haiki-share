@@ -13,8 +13,8 @@
             <label class="p-filter__item"><input type="checkbox" v-model="showExpiration">賞味期限以内のもの</label>
         </div>
         <ul class="c-itemlist">
-            <li class="c-card" v-for="product in getItems">
-                    <img class="p-pic__card" v-bind:src="'../storage/' + product.product_pic"  alt="" width="300" height="200">
+            <li class="c-card p-card__small" v-for="product in getItems">
+                    <img class="p-pic__card" v-bind:src="'storage/' + product.product_pic"  alt="" width="300" height="200">
                     <label class="p-saled" v-if="product.saled_flg==true">購入済</label>
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
                     <dd class="c-card__description">賞味期限: {{ product.expiration_date| date_time }}</dd>
@@ -42,7 +42,7 @@
     </div>
 </template>
 <script>
-import prefectures_data from '../master/prefectures'
+import prefectures_data from '../../master/prefectures'
 import Paginate from 'vuejs-paginate'
 Vue.component('paginate', Paginate)
 const moment = require('moment');

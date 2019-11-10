@@ -59,7 +59,7 @@
     </div>
 </template>
 <script>
-    import prefectures_data from '../master/prefectures'
+    import prefectures_data from '../../master/prefectures'
     export default {
         data: function(){
             return{
