@@ -2840,7 +2840,11 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       });
     },
     productDelete: function productDelete(e) {
-      axios.post('../productDelete/' + this.product.id).then(function () {})["catch"](function (error) {});
+      axios.post('../productDelete/' + this.product.id).then(function () {
+        self.success_message = '商品を削除しました';
+        self.errors = [];
+        location.href = "../home";
+      })["catch"](function (error) {});
     },
     file_selected: function file_selected(event) {
       var _this = this;
@@ -2970,6 +2974,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productRegister', formData).then(function () {
         self.success_message = '商品を登録しました';
         self.erros = [];
+        location.href = "home";
       })["catch"](function (error) {
         self.success_message = '';
 
@@ -60477,7 +60482,7 @@ var render = function() {
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
-                src: "../../storage/" + product.product_pic,
+                src: "../storage/" + product.product_pic,
                 alt: "",
                 width: "300",
                 height: "200"

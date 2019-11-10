@@ -109,6 +109,9 @@
             productDelete: function(e) {
                 axios.post('../productDelete/' + this.product.id ,
                 ).then(function(){
+                    self.success_message = '商品を削除しました';
+                    self.errors = [];
+                    location.href = "../home"
                 }).catch(function(error){
                 });           
              },

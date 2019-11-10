@@ -103,6 +103,7 @@
                 ).then(function(){
                     self.success_message = '商品を登録しました';
                     self.erros = [];
+                    location.href = "home";
                 }).catch(function(error){
                     self.success_message = '';
                     for(var key in error.response.data.errors) {
