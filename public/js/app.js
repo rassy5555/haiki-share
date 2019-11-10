@@ -3283,6 +3283,12 @@ __webpack_require__.r(__webpack_exports__);
         convini_id: this.product.convini_id
       }).then(function () {});
     }
+  },
+  computed: {
+    tweetMessage: function tweetMessage() {
+      var message = this.product.product_name + 'を' + this.product.price.toLocaleString() + '円で販売中!';
+      return message;
+    }
   }
 });
 
