@@ -95,10 +95,8 @@ class ProductController extends Controller
         // //画像がPOST送信されていなければ画像を除いてバリデーション
         if(empty($request->product_pic)){
             $this->productValidator($request->except(['product_pic']))->validate();
-            debug(44);
         } else {
             $this->productValidator($request->all())->validate();
-            debug(55);
         }
         $product->fill($request->except('product_pic'));
 

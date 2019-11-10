@@ -13,7 +13,8 @@ use App\Product;
 use App\User;
 use App\Convini;
 use App\Http\Requests\EditRequest;
-use App\Mail\SendMail;
+use App\Mail\UserSendMail;
+use App\Mail\ConviniSendMail;
 
 use Illuminate\Support\Facades\Mail;
 
@@ -51,7 +52,7 @@ class ProductController extends Controller
 
     //商品詳細画面へ遷移
     public function productDetailShow($product_id) {
-        $product = Product::where('id',$product_id)->first();
+        $product = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('products.id',$product_id)->first();
         //パラメータから検索し、該当の商品が登録されていない場合マイページに遷移
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
@@ -64,6 +65,7 @@ class ProductController extends Controller
     //商品購入(購入キャンセル)処理
     public function productPurchase($product_id, Request $request){
         $product = Product::where('id',$product_id)->first();
+        // $product = Product::join('convinis','products.convini_id','=','convinis.id')->select('convinis.*','products.*')->where('products.id',$product_id)->first();
         if(empty($product)){
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
@@ -72,10 +74,8 @@ class ProductController extends Controller
             $product->user_id  = $request->user_id;
             $user = User::find($request->user_id);
             $convini = Convini::find($request->convini_id);
-            \Debugbar::addMessage($convini);
-            Mail::to([$user->email])->send(new SendMail($request->all()));
-            Mail::to([$convini->email])->send(new SendMail($request->all()));
-
+            Mail::to([$user->email])->send(new UserSendMail($convini,$product));
+            Mail::to([$convini->email])->send(new ConviniSendMail($user,$product));
         } else {
             $product->user_id = null;   
         }

@@ -41,6 +41,7 @@ export default {
             this.saled_flg = !this.saled_flg;
             if(this.saled_flg){
                 this.user_id = this.user.id;
+                this.success_message.cancel = '';
                 this.success_message.purchase = '商品を購入しました。メールを確認してください。';
             }else {
                 this.user_id = null

@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendMail extends Mailable
+class UserSendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,11 +17,13 @@ class SendMail extends Mailable
      * @return void
      */
 
-    public $parameter;
+    public $convini;
+    public $product;
 
-    public function __construct($parameter)
+    public function __construct($convini,$product)
     {
-        $this->parameter = $parameter; 
+        $this->convini = $convini; 
+        $this->product = $product; 
     }
 
     /**
@@ -31,7 +33,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->text('mail.purchase')->subject('SUBJECT')
+        return $this->view('mail.userPurchase')->subject('商品を購入しました')
         ;
     }
 }
