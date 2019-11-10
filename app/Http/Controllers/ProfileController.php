@@ -43,7 +43,7 @@ class ProfileController extends Controller
         $hashed_password = Auth::user()->password;
         \Debugbar::addMessage($data);
         return Validator::make($data, [
-            'password' => ['required', 'string', 'min:8','max:50','same:password_confirm','different:old_password'],
+            'password' => ['required', 'string', 'min:8','max:50','different:old_password'],
             'password_confirm' =>['same:password'],
             'old_password' => ['required', 'string', 'min:8','max:50',"password_hash_check:$hashed_password"],
         ]);
