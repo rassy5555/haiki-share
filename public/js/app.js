@@ -1879,6 +1879,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['convini_id', 'listing_list', 'saled_list'],
   data: function data() {
@@ -3282,7 +3283,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.saled_flg) {
         this.user_id = this.user.id;
         this.success_message.cancel = '';
-        this.success_message.purchase = '商品を購入しました。メールを確認してください。';
+        this.success_message.purchase = '商品を購入しました';
       } else {
         this.user_id = null;
         this.success_message.cancel = '購入をキャンセルしました';
@@ -59990,6 +59991,10 @@ var render = function() {
               height: "200"
             }
           }),
+          _vm._v(" "),
+          product.saled_flg == true
+            ? _c("label", { staticClass: "p-saled" }, [_vm._v("購入済")])
+            : _vm._e(),
           _vm._v(" "),
           _c("dt", { staticClass: "c-card__description p-card__name" }, [
             _vm._v(_vm._s(product.product_name))

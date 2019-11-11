@@ -46,7 +46,7 @@ export default {
             if(this.saled_flg){
                 this.user_id = this.user.id;
                 this.success_message.cancel = '';
-                this.success_message.purchase = '商品を購入しました。メールを確認してください。';
+                this.success_message.purchase = '商品を購入しました';
             }else {
                 this.user_id = null
                 this.success_message.cancel = '購入をキャンセルしました';
