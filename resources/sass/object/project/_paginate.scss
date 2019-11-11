@@ -1,12 +1,21 @@
+// .p-pagination {
+//     display: inline-block;
+//     padding-left: 0;
+//     margin: 20px auto;
+//     padding-bottom: 20px;
+//     border-radius: 4px;
+//     & li {
+//         display: inline;
+//     }
+// }
+
 .p-pagination {
     display: flex;
+    justify-content: center;
     padding-left: 0;
-    width: 100px;
     margin: 20px auto;
     padding-bottom: 20px;
     border-radius: 4px;
-    li {
-    }
 }
 
 .p-page__item {
