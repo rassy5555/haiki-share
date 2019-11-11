@@ -11300,6 +11300,14 @@ img {
   font-size: 18px;
 }
 
+.p-text {
+  text-align: left;
+}
+
+.p-text:first-line {
+  text-align: center;
+}
+
 .p-comment__detail {
   width: 280px;
   text-align: left;

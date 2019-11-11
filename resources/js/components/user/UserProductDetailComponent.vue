@@ -3,8 +3,9 @@
         <h2 class="c-page__title">{{ product.product_name }}</h2>
         <img class="p-pic" v-bind:src="'../storage/' + product.product_pic">
         <div class="p-product__detail">
-            <p>{{ product.convini_name }} {{ product.branch_name }}店</p>
-            <p>住所:{{ product.address }}</p>
+            <p>{{ product.convini_name }}</p>
+            <p>{{ product.branch_name }}店</p>
+            <p>{{ product.address }}</p>
             <p>賞味期限: {{ product.expiration_date| date_time }}</p>
             <p><span>¥</span>{{ product.price | number_format }}</p>
             <p class="p-comment__detail">{{ product.comment }}</p>

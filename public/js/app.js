@@ -3265,6 +3265,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'product', 'user'],
   data: function data() {
@@ -62656,16 +62657,11 @@ var render = function() {
     }),
     _vm._v(" "),
     _c("div", { staticClass: "p-product__detail" }, [
-      _c("p", [
-        _vm._v(
-          _vm._s(_vm.product.convini_name) +
-            " " +
-            _vm._s(_vm.product.branch_name) +
-            "店"
-        )
-      ]),
+      _c("p", [_vm._v(_vm._s(_vm.product.convini_name))]),
       _vm._v(" "),
-      _c("p", [_vm._v("住所:" + _vm._s(_vm.product.address))]),
+      _c("p", [_vm._v(_vm._s(_vm.product.branch_name) + "店")]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.product.address))]),
       _vm._v(" "),
       _c("p", [
         _vm._v(
