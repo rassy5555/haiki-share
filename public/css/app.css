@@ -11301,9 +11301,14 @@ img {
 }
 
 .p-comment__detail {
+  width: 300px;
   text-align: left;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.p-comment__detail:first-line {
+  text-align: center;
 }
 
 .p-image__group-large {
@@ -11338,6 +11343,13 @@ img {
   height: 200px;
   width: 300px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .p-pic {
+    height: 180px;
+    width: 270px;
+  }
 }
 
 .p-pic__profile {

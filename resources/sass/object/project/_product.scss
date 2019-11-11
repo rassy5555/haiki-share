@@ -15,8 +15,13 @@ margin-left: 5px;
 }
 
 .p-comment__detail {
-
+  width: 300px;
   text-align: left;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+
+.p-comment__detail:first-line {
+  text-align: center;
 }

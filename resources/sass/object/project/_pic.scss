@@ -4,6 +4,10 @@
     height: 200px;
     width: 300px;
     margin: 0 auto;
+    @include mq($breakpoint: md) {
+        height: 180px;
+        width: 270px;
+    }
 }
 
 .p-pic__profile {
