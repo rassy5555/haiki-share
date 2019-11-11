@@ -1,5 +1,8 @@
 .p-image__group-large {
     width: 300px;
+    @include mq($breakpoint: md) {
+        width: 100%;
+    }
 }
 
 .p-form__comment {

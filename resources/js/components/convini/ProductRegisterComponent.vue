@@ -1,12 +1,14 @@
 <template>
     <div>
-        <img class="p-pic" :src="preview_image" v-if="preview_image">
-        <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'../storage/' + product.product_pic">
-        <img class="p-pic" v-bind:src="'../storage/' + no_image" v-else>
-        <label class="c-pic__label">画像を変更
-            <input type="file" v-on:change="file_selected" name="product_pic" style="display:none">
-        </label>
-        <div v-if="errors.product_pic" class="c-invalid__feedback">{{ errors.product_pic }}</div>
+        <div class="c-image__group p-image__group-large">
+            <img class="p-pic" :src="preview_image" v-if="preview_image">
+            <img class="p-pic" v-else-if="product.product_pic" v-bind:src="'../storage/' + product.product_pic">
+            <img class="p-pic" v-bind:src="'../storage/' + no_image" v-else>
+            <label class="c-pic__label">画像を変更
+                <input type="file" v-on:change="file_selected" name="product_pic" style="display:none">
+            </label>
+            <div v-if="errors.product_pic" class="c-invalid__feedback">{{ errors.product_pic }}</div>
+        </div>
         <div class="c-form__group">
             <label class="c-form__label">商品名</label>
             <div class="c-form__item">

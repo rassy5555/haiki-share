@@ -2942,6 +2942,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories'],
@@ -62038,32 +62040,34 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.preview_image
-      ? _c("img", { staticClass: "p-pic", attrs: { src: _vm.preview_image } })
-      : _vm.product.product_pic
-      ? _c("img", {
-          staticClass: "p-pic",
-          attrs: { src: "../storage/" + _vm.product.product_pic }
+    _c("div", { staticClass: "c-image__group p-image__group-large" }, [
+      _vm.preview_image
+        ? _c("img", { staticClass: "p-pic", attrs: { src: _vm.preview_image } })
+        : _vm.product.product_pic
+        ? _c("img", {
+            staticClass: "p-pic",
+            attrs: { src: "../storage/" + _vm.product.product_pic }
+          })
+        : _c("img", {
+            staticClass: "p-pic",
+            attrs: { src: "../storage/" + _vm.no_image }
+          }),
+      _vm._v(" "),
+      _c("label", { staticClass: "c-pic__label" }, [
+        _vm._v("画像を変更\n            "),
+        _c("input", {
+          staticStyle: { display: "none" },
+          attrs: { type: "file", name: "product_pic" },
+          on: { change: _vm.file_selected }
         })
-      : _c("img", {
-          staticClass: "p-pic",
-          attrs: { src: "../storage/" + _vm.no_image }
-        }),
-    _vm._v(" "),
-    _c("label", { staticClass: "c-pic__label" }, [
-      _vm._v("画像を変更\n        "),
-      _c("input", {
-        staticStyle: { display: "none" },
-        attrs: { type: "file", name: "product_pic" },
-        on: { change: _vm.file_selected }
-      })
+      ]),
+      _vm._v(" "),
+      _vm.errors.product_pic
+        ? _c("div", { staticClass: "c-invalid__feedback" }, [
+            _vm._v(_vm._s(_vm.errors.product_pic))
+          ])
+        : _vm._e()
     ]),
-    _vm._v(" "),
-    _vm.errors.product_pic
-      ? _c("div", { staticClass: "c-invalid__feedback" }, [
-          _vm._v(_vm._s(_vm.errors.product_pic))
-        ])
-      : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
       _c("label", { staticClass: "c-form__label" }, [_vm._v("商品名")]),
