@@ -27,14 +27,14 @@ Route::get('/','TopController@top')->name('top');
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => 'auth:user'], function() {
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/profileEdit', 'ProfileController@profileEditShow')->name('profileEdit');
-    Route::post('/profileEdit', 'ProfileController@profileEdit');
-    Route::post('/changePassword', 'ProfileController@changePassword');
-    Route::get('/productDetail/{product_id}', 'ProductController@productDetailShow')->name('productDetail');
-    Route::post('/productPurchase/{product_id}', 'ProductController@productPurchase');
-    Route::post('/productCancell/{product_id}', 'ProductController@productCancell');
-    Route::get('/productList', 'ProductController@productListShow')->name('productList');
+    Route::get('/home', 'User\HomeController@index')->name('home');
+    Route::get('/profileEdit', 'User\ProfileController@profileEditShow')->name('profileEdit');
+    Route::post('/profileEdit', 'User\ProfileController@profileEdit');
+    Route::post('/changePassword', 'User\ProfileController@changePassword');
+    Route::get('/productDetail/{product_id}', 'User\ProductController@productDetailShow')->name('productDetail');
+    Route::post('/productPurchase/{product_id}', 'User\ProductController@productPurchase');
+    Route::post('/productCancell/{product_id}', 'User\ProductController@productCancell');
+    Route::get('/productList', 'User\ProductController@productListShow')->name('productList');
 });
  
 /*
