@@ -10905,6 +10905,12 @@ img {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .c-page__title {
+    font-size: 24px;
+  }
+}
+
 .c-page__subtitle {
   margin: 30px 0;
   line-height: 40px;

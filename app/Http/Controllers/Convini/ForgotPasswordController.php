@@ -78,7 +78,7 @@ class ForgotPasswordController extends Controller
      */
     protected function validateEmail(Request $request)
     {
-        $request->validate(['email' => 'required|email|exists:convinis']);
+        $request->validate(['email' => 'required|email']);
     }
 
     /**
