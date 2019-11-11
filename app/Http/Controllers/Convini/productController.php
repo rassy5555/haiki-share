@@ -151,7 +151,6 @@ class ProductController extends Controller
             return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
         $listing_list = Product::where('convini_id',$convini_id)->where('delete_flg',false)->orderBy('updated_at', 'desc')->get();
-        \Debugbar::addMessage($listing_list);
         return view('convini.listingList',['listing_list'=>$listing_list]);
     }
 

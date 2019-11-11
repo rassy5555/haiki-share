@@ -10888,9 +10888,15 @@ img {
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 5px;
+  border-bottom: solid 4px #627295;
   color: white;
   background-color: #3490dc;
   padding: 5px;
+}
+
+.c-button:active {
+  transform: translateY(4px);
+  border-bottom: none;
 }
 
 .c-page__title {
