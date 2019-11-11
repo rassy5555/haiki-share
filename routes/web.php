@@ -20,6 +20,15 @@ Auth::routes();
 |--------------------------------------------------------------------------
 */
 Route::get('/','TopController@top')->name('top');
+Route::get('login', 'User\Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'User\Auth\LoginController@login');
+Route::post('logout', 'User\Auth\LoginController@logout')->name('logout');
+Route::get('register', 'User\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'User\Auth\RegisterController@register');
+Route::get('password/reset', 'User\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'User\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::post('password/reset', 'User\Auth\ResetPasswordController@reset')->name('password.update');
+Route::get('password/reset/{token}', 'User\Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
 /*
 |--------------------------------------------------------------------------
