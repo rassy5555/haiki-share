@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('babel-polyfill');
 window.Vue = require('vue');
 
 /**
