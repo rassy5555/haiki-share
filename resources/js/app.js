@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-require('babel-polyfill');
+require("@babel/polyfill");
 import '@babel/polyfill';
 window.Vue = require('vue');
 
