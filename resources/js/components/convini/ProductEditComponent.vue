@@ -101,7 +101,6 @@
                     self.errors = [];
                 }).catch(function(error){
                     self.success_message = '';
-                    console.log(error.response.data.errors);
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

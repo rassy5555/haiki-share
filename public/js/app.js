@@ -2145,8 +2145,6 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 
         if (this.selectPrefecture != 0 && this.selectPrefecture != this.product_list[i].prefectures) {
-          console.log(this.selectPrefecture);
-          console.log(this.product_list[i].prefecture);
           isShow = false;
         }
 
@@ -2497,7 +2495,6 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
-          console.log(self.errors[key]);
         }
       });
     }
@@ -2576,8 +2573,6 @@ __webpack_require__.r(__webpack_exports__);
         self.erros = [];
         location.href = '../../../home';
       })["catch"](function (error) {
-        console.log(error.response.data.errors);
-
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }
@@ -2842,7 +2837,6 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         self.errors = [];
       })["catch"](function (error) {
         self.success_message = '';
-        console.log(error.response.data.errors);
 
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
@@ -3423,8 +3417,6 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 
         if (this.selectPrefecture != 0 && this.selectPrefecture != this.product_list[i].prefectures) {
-          console.log(this.selectPrefecture);
-          console.log(this.product_list[i].prefecture);
           isShow = false;
         }
 
@@ -3785,8 +3777,6 @@ __webpack_require__.r(__webpack_exports__);
         self.erros = [];
         location.href = '../../home';
       })["catch"](function (error) {
-        console.log(error.response.data.errors);
-
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];
         }

@@ -109,7 +109,6 @@
                 }).catch(function(error){
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
-                        console.log(self.errors[key]);
                     }
                  });
             },

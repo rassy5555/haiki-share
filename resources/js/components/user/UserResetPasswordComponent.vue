@@ -60,7 +60,6 @@
                     self.erros = [];
                     location.href = '../../home'
                 }).catch(function(error){
-                    console.log(error.response.data.errors);
                     for(var key in error.response.data.errors) {
                         self.errors[key] = error.response.data.errors[key][0];
                     }

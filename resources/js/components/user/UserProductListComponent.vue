@@ -92,8 +92,6 @@ export default {
                 }
                 //都道府県が選択されている場合その都道府県にあるコンビニの商品のみ表示
                 if (this.selectPrefecture != 0 && this.selectPrefecture != this.product_list[i].prefectures){
-                    console.log(this.selectPrefecture);
-                    console.log(this.product_list[i].prefecture);
                     isShow = false;
                 }
                 if (isShow) {
