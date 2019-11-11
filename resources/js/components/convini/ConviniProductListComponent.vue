@@ -15,7 +15,8 @@
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in getItems">
                     <img class="p-pic__card" v-bind:src="'../storage/' + product.product_pic"  alt="" width="300" height="200">
-                    <label class="p-saled" v-if="product.saled_flg==true">購入済</label>
+                    <label class="p-saled" v-if="product.saled_flg==true">1aaaa</label>
+                    <label class="p-saled" v-if="product.saled_flg==1">購入3</label>
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>
                     <dd class="c-card__description">賞味期限: {{ product.expiration_date| date_time }}</dd>
                     <dd class="c-card__description p-card__price"><span>¥</span>{{ product.price | number_format }}</dd>

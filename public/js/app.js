@@ -2090,6 +2090,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 Vue.component('paginate', vuejs_paginate__WEBPACK_IMPORTED_MODULE_1___default.a);
@@ -60522,7 +60523,11 @@ var render = function() {
             }),
             _vm._v(" "),
             product.saled_flg == true
-              ? _c("label", { staticClass: "p-saled" }, [_vm._v("購入済")])
+              ? _c("label", { staticClass: "p-saled" }, [_vm._v("1aaaa")])
+              : _vm._e(),
+            _vm._v(" "),
+            product.saled_flg == 1
+              ? _c("label", { staticClass: "p-saled" }, [_vm._v("購入3")])
               : _vm._e(),
             _vm._v(" "),
             _c("dt", { staticClass: "c-card__description p-card__name" }, [
