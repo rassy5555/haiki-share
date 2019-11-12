@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 require("@babel/polyfill");
+// require('babel-polyfill');
+// import '@babel/polyfill';
 require('./bootstrap');
-require('babel-polyfill')
-import '@babel/polyfill';
 
 window.Vue = require('vue');
 
@@ -44,7 +44,7 @@ Vue.component('saled_list-component', require('./components/convini/SaledListCom
 Vue.component('convini_send_password-component', require('./components/convini/ConviniSendPasswordComponent.vue').default);　//パスワードリマインダーメール送信
 Vue.component('convini_reset_password-component', require('./components/convini/ConviniResetPasswordComponent.vue').default);　//パスワードリセット
 
-
+Vue.component('test-component', require('./components/TestComponent.vue').default);　
 
 
 /**

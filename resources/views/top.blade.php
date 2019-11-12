@@ -21,6 +21,7 @@
                 </button>
             </a> 
         </div>
+        <test-component></test-component>
     </div>
 </section>
 @endsection
