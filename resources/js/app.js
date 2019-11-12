@@ -3,10 +3,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-require('./bootstrap');
 require("@babel/polyfill");
+require('./bootstrap');
+require('babel-polyfill')
 import '@babel/polyfill';
+
 window.Vue = require('vue');
 
 /**
