@@ -160,7 +160,7 @@ return [
         'expiration_date' => '賞味期限',
         'price' => '価格',
         'comment' => 'コメント',
-        'product_pic' => '商品画像',
+        'product_pic' => '画像',
     ],
 
 ];
