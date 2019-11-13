@@ -36,7 +36,7 @@
                 axios.post('email',{
                     email: this.email,
                 }).then(function(){
-                    self.success_message = 'メールを送信しました。確認してください。';
+                    self.success_message = 'メールを送信しました';
                     self.erros = [];
                 }).catch(function(error){
                     self.success_message = '';
