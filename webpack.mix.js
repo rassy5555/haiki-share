@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-require("@babel/polyfill");
+// require("@babel/polyfill");
 
 
 /*
@@ -12,14 +12,14 @@ require("@babel/polyfill");
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.options({
-  polyfills: [
-    'Promise'
-  ]
-})
-module.exports = {
-    entry: ["@babel/polyfill", "./app/js"],
-};
+// mix.options({
+//   polyfills: [
+//     'Promise'
+//   ]
+// })
+// module.exports = {
+//     entry: ["@babel/polyfill", "./app/js"],
+// };
 
 mix.js(['resources/js/app.js','resources/js/jQuery.js'], 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
