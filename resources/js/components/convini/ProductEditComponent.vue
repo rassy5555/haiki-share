@@ -112,7 +112,7 @@
                 ).then(function(){
                     self.success_message = '商品を削除しました';
                     self.errors = [];
-                    location.href = "../home"
+                    location.href = "../home?flash_message=delete"
                 }).catch(function(error){
                 });           
              },

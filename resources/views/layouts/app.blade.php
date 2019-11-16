@@ -59,11 +59,10 @@
     </header>
         <!-- フラッシュメッセージ -->
         @if (session('flash_message'))
-            <div class="alert alert-primary text-center" role="alert">
+            <div class="l-message p-message" role="alert">
                 {{ session('flash_message') }}
             </div>
         @endif
-        
         <main>
             @yield('content')
         </main>

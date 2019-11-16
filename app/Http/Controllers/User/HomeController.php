@@ -34,6 +34,14 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $purchased_list = Product::where('user_id',$user->id)->where('delete_flg',false)->orderBy('updated_at', 'desc')->get();
+        //GETパラメータがあればセッションメッセージを表示
+        if(!empty($_GET['flash_message'])){
+            switch($_GET['flash_message']){
+                case 'cancel': 
+                    session()->now('flash_message', '購入をキャンセルしました');
+                    break;
+            }
+        }
         return view('home',['user_id'=>$user->id,'purchased_list'=>$purchased_list]);
     }
 }

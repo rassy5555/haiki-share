@@ -57,7 +57,7 @@ class ProductController extends Controller
         ->where('products.id',$product_id)->first();
         //パラメータから検索し、該当の商品が登録されていない場合マイページに遷移
         if(empty($product)){
-            return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
+            return redirect()->action('User\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
         $categories = Category::where('delete_flg',false)->get();
         $user = Auth::user();
@@ -69,7 +69,7 @@ class ProductController extends Controller
         $product = Product::where('delete_flg',false)->find($product_id);
         //パラメータから検索して該当する商品がなければマイページへ遷移
         if(empty($product)){
-            return redirect()->action('Convini\HomeController@index')->with('flash_message', '不正な値が入力されました');
+            return redirect()->action('User\HomeController@index')->with('flash_message', '不正な値が入力されました');
         }
         //商品を購入したのかキャンセルしたのかパラメータより判定
         $product->saled_flg = $request->saled_flg;

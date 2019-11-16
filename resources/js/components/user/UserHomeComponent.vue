@@ -45,7 +45,7 @@
                     saled_flg: false, 
                     user_id: this.user_id
                 }).then(function(){
-                    location.href = "home"
+                    location.href = "home?&flash_message=cancel"
                 })                
             },
         },

@@ -56,7 +56,6 @@ export default {
                 user_id: this.user_id,
                 convini_id: this.product.convini_id
             }).then(function(){
-
             })
          },
     },
