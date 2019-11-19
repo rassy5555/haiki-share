@@ -1,3 +1,5 @@
+@section('title', '新規登録（ユーザー')
+
 @extends('layouts.app')
 
 @section('content')

@@ -40,11 +40,13 @@ Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/profileEdit', 'User\ProfileController@profileEditShow')->name('profileEdit');
     Route::post('/profileEdit', 'User\ProfileController@profileEdit');
     Route::post('/changePassword', 'User\ProfileController@changePassword');
-    Route::get('/productDetail/{product_id}', 'User\ProductController@productDetailShow')->name('productDetail');
     Route::post('/productPurchase/{product_id}', 'User\ProductController@productPurchase');
     Route::post('/productCancell/{product_id}', 'User\ProductController@productCancell');
+    Route::get('/productDetail/{product_id}', 'User\ProductController@productDetailShow')->name('productDetail');
     Route::get('/productList', 'User\ProductController@productListShow')->name('productList');
 });
+
+
  
 /*
 |--------------------------------------------------------------------------

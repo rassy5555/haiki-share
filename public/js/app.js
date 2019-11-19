@@ -70107,7 +70107,7 @@ var render = function() {
           attrs: { type: "submit" },
           on: { click: _vm.productRegister }
         },
-        [_vm._v("\n            出品する\n        ")]
+        [_vm._v("\n            商品登録\n        ")]
       )
     ]),
     _vm._v(" "),
@@ -71329,7 +71329,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("Email")]),
+      _c("label", { staticClass: "c-form__label" }, [_vm._v("E-mail")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -72818,7 +72818,7 @@ var render = function() {
     _c("div", { staticClass: "p-product__detail" }, [
       _c("p", [_vm._v(_vm._s(_vm.product.convini_name))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.product.branch_name) + "店")]),
+      _c("p", [_vm._v(_vm._s(_vm.product.branch_name))]),
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.product.address))]),
       _vm._v(" "),

@@ -1,3 +1,5 @@
+@section('title', '購入済商品')
+
 @extends('layouts.app_convini')
 
 @section('content')

@@ -1,5 +1,6 @@
 {
     "Login": "ログイン",
+    "Logout": "ログアウト",
     "Register": "新規登録",
     "User": "ユーザーの方はこちら",
     "Name": "名前", 
@@ -12,7 +13,7 @@
     "Password":"パスワード",
     "Confirm Password":"パスワード（再入力)",
     "Profile Pic":"プロフィール写真",
-    "Profile Edit":"プロフィール",
+    "Profile Edit":"プロフィール編集",
     "Edit": "編集する",
     "Edited": "プロフィールを編集しました",
     "Product Register": "商品登録",

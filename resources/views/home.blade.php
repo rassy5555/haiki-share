@@ -1,3 +1,5 @@
+@section('title', 'マイページ（ユーザー）')
+
 @extends('layouts.app')
 
 @section('content')

@@ -1,3 +1,5 @@
+@section('title', 'パスワードリセット（コンビニ）')
+
 @extends('layouts.app_convini')
 @section('content')
 <section class="main">

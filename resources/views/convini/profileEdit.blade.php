@@ -1,3 +1,5 @@
+@section('title', 'プロフィール編集')
+
 @extends('layouts.app_convini')
 
 @section('content')

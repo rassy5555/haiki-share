@@ -7,7 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'haiki share') }}</title>
+    <title>@yield('title') {{ config('app.name') }}</title>
+    <meta name="description" content="haiki shareは廃棄商品の売買サイトです。食品ロス削減とともに食費を節約しましょう！"/>
+    <meta name=”keywords” content="コンビニ,廃棄商品,食品ロス,賞味期限">
+
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
     <!-- Scripts -->
@@ -25,7 +28,7 @@
 <div id="app">
     <header class="l-header p-header js-float-menu">
         @guest
-            <a class="p-header__title" href="{{ route('login')}}">haiki share</a>
+            <a class="p-header__title" href="{{ route('top')}}">haiki share</a>
         @else
             <a class="p-header__title" href="{{ route('home')}}">haiki share</a>
         @endguest
@@ -41,6 +44,7 @@
                     <li><a class="p-menu" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     <li><a class="p-menu" href="{{ route('convini.login') }}">{{ __('Convini') }}</a></li>
                 @else
+                    <li><a class="p-menu" href="{{ route('home') }}">{{ __('My Page') }}</a></li>
                     <li><a class="p-menu" href="{{ route('profileEdit') }}">{{ __('Profile Edit') }}</a></li>
                     <li><a class="p-menu" href="{{ route('productList') }}">{{ __('Product List') }}</a></li>
                     <li>

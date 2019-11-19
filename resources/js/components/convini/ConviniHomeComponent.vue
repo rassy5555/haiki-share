@@ -5,7 +5,7 @@
                 プロフィール編集
             </button>    
             <button type="submit" class="c-button p-button__flex" v-on:click="productRegister">
-                出品する
+                商品登録
             </button> 
         </div>
         <h3 class="c-page__subtitle">出品した商品一覧<label><a class="c-more" v-bind:href="'listingList/' + convini_id">全件表示</a></label></h3>

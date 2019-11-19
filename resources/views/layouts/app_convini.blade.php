@@ -7,7 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'haiki share') }}</title>
+    <title>@yield('title') {{ config('app.name') }}</title>
+    <meta name="description" content="haiki shareは廃棄商品の売買サイトです。食品ロス削減とともにお店の売り上げをアップさせましょう！"/>
+    <meta name=”keywords” content="コンビニ,廃棄商品,食品ロス,賞味期限">
+
     <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
 
     <!-- Scripts -->
@@ -41,8 +44,9 @@
                     <li ><a class="p-menu" href="{{ route('convini.register') }}">{{ __('Register') }}</a></li>
                     <li ><a class="p-menu" href="{{ route('login') }}">{{ __('User') }}</a></li>
                 @else
-                    <li ><a class="p-menu" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
+                    <li><a class="p-menu" href="{{ route('convini.home') }}">{{ __('My Page') }}</a></li>
                     <li ><a class="p-menu" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
+                    <li ><a class="p-menu" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
                     <li ><a class="p-menu" href="{{ route('convini.productList') }}">{{ __('Product List') }}</a></li>
                     <li class="p-menu">
                         <a class="p-menu" href="{{ route('logout') }}"

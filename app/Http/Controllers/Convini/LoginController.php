@@ -29,7 +29,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest:convini')->except('logout');
         $this->middleware('guest:user')->except('logout');
-
     }
     
     //ログイン画面を表示

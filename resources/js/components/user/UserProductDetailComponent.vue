@@ -4,7 +4,7 @@
         <img class="p-pic" v-bind:src="'../storage/' + product.product_pic">
         <div class="p-product__detail">
             <p>{{ product.convini_name }}</p>
-            <p>{{ product.branch_name }}店</p>
+            <p>{{ product.branch_name }}</p>
             <p>{{ product.address }}</p>
             <p>賞味期限: {{ product.expiration_date| date_time }}</p>
             <p><span>¥</span>{{ product.price | number_format }}</p>

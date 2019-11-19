@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">Email</label>
+            <label class="c-form__label">E-mail</label>
             <div class="c-form__item">
                 <input id="email" type="text" class="c-form__input" name="email" v-model="email">
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>

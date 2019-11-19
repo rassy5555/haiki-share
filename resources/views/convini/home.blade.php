@@ -1,3 +1,5 @@
+@section('title', 'コンビニ側マイページ')
+
 @extends('layouts.app_convini')
 
 @section('content')

@@ -1,3 +1,5 @@
+@section('title', '出品した商品')
+
 @extends('layouts.app_convini')
 
 @section('content')
