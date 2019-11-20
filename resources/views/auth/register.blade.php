@@ -1,4 +1,4 @@
-@section('title', '新規登録（ユーザー)')
+@section('title', '新規登録（ユーザー）')
 
 @extends('layouts.app')
 
