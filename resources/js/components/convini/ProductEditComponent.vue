@@ -53,11 +53,26 @@
             </button>
         </div>
         <div class="c-form__button">
-            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.product.saled_flg }"  v-on:click.prevent="productDelete">
+            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.product.saled_flg }"  v-on:click.prevent="showModal">
                 削除する
             </button>
         </div>
         <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
+        <div class="p-modal__cover" v-show='confirm_mode' v-on:click="closeModal">
+        </div>
+        <div class="l-modal__wrapper p-modal__wrapper">
+            <div class="l-modal__container p-modal__container" v-if="confirm_mode=='delete'">
+                <p>商品を削除しますか?</p>
+                <div class="p-button__wrapper">
+                    <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="productDelete">
+                        はい
+                    </button>    
+                    <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="closeModal">
+                        いいえ
+                    </button> 
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -69,6 +84,7 @@
             return{
                 expiration_date: moment(this.product.expiration_date).format( "YYYY-MM-DD HH:mm"),
                 success_message: '',
+                confirm_mode:'',
                 errors: {
                     product_name:'',
                     price: '',
@@ -105,6 +121,14 @@
                         self.errors[key] = error.response.data.errors[key][0];
                     }
                 });
+            },
+            //確認モーダル表示
+            showModal: function(e){
+                    this.confirm_mode = 'delete';
+            },
+            //確認モーダル閉じる
+            closeModal: function(e){
+                this.confirm_mode = '';
             },
             //商品削除処理
             productDelete: function(e) {

@@ -14,9 +14,24 @@
                 <button class="c-button p-button__small" v-on:click="productDetail(product.id)">
                     詳細をみる
                 </button>                
-                <button type="submit" class="c-button p-button__small" v-on:click="productCansell(product.id)">
+                <button type="submit" class="c-button p-button__small" v-on:click="showModal">
                    キャンセル
                 </button>
+                <div class="p-modal__cover" v-show='confirm_mode' v-on:click="closeModal">
+                </div>
+                <div class="l-modal__wrapper p-modal__wrapper">
+                    <div class="l-modal__container p-modal__container" v-if="confirm_mode=='cancel'">
+                        <p>購入をキャンセルしますか?</p>
+                        <div class="p-button__wrapper">
+                            <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="productCansell(product.id)">
+                                はい
+                            </button>    
+                            <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="closeModal">
+                                いいえ
+                            </button> 
+                        </div>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -26,7 +41,7 @@
         props:['user_id','purchased_list'],
         data: function() {
             return { 
-                
+                confirm_mode:'',
             }
         },
         methods: {
@@ -37,6 +52,14 @@
             //商品詳細画面へ遷移
             productDetail: function(id){
                 location.href = 'productDetail/' + id;
+            },
+            //確認モーダル表示
+            showModal: function(e){
+                    this.confirm_mode = 'cancel';
+            },
+            //確認モーダル閉じる
+            closeModal: function(e){
+                this.confirm_mode = '';
             },
             //購入をキャンセルする
             productCansell: function(product_id){

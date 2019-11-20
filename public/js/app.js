@@ -2867,6 +2867,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
@@ -2877,6 +2892,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     return {
       expiration_date: moment(this.product.expiration_date).format("YYYY-MM-DD HH:mm"),
       success_message: '',
+      confirm_mode: '',
       errors: {
         product_name: '',
         price: '',
@@ -2907,6 +2923,14 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
           self.errors[key] = error.response.data.errors[key][0];
         }
       });
+    },
+    //確認モーダル表示
+    showModal: function showModal(e) {
+      this.confirm_mode = 'delete';
+    },
+    //確認モーダル閉じる
+    closeModal: function closeModal(e) {
+      this.confirm_mode = '';
     },
     //商品削除処理
     productDelete: function productDelete(e) {
@@ -3189,10 +3213,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user_id', 'purchased_list'],
   data: function data() {
-    return {};
+    return {
+      confirm_mode: ''
+    };
   },
   methods: {
     //プロフィール画面へ遷移
@@ -3202,6 +3243,14 @@ __webpack_require__.r(__webpack_exports__);
     //商品詳細画面へ遷移
     productDetail: function productDetail(id) {
       location.href = 'productDetail/' + id;
+    },
+    //確認モーダル表示
+    showModal: function showModal(e) {
+      this.confirm_mode = 'cancel';
+    },
+    //確認モーダル閉じる
+    closeModal: function closeModal(e) {
+      this.confirm_mode = '';
     },
     //購入をキャンセルする
     productCansell: function productCansell(product_id) {
@@ -72200,7 +72249,7 @@ var render = function() {
           on: {
             click: function($event) {
               $event.preventDefault()
-              return _vm.productDelete($event)
+              return _vm.showModal($event)
             }
           }
         },
@@ -72212,7 +72261,50 @@ var render = function() {
       ? _c("p", { staticClass: "p-success__message" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
-      : _vm._e()
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.confirm_mode,
+          expression: "confirm_mode"
+        }
+      ],
+      staticClass: "p-modal__cover",
+      on: { click: _vm.closeModal }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "l-modal__wrapper p-modal__wrapper" }, [
+      _vm.confirm_mode == "delete"
+        ? _c("div", { staticClass: "l-modal__container p-modal__container" }, [
+            _c("p", [_vm._v("商品を削除しますか?")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-button__wrapper" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "c-button p-button__small p-button__flex",
+                  attrs: { type: "submit" },
+                  on: { click: _vm.productDelete }
+                },
+                [_vm._v("\n                    はい\n                ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "c-button p-button__small p-button__flex",
+                  attrs: { type: "submit" },
+                  on: { click: _vm.closeModal }
+                },
+                [_vm._v("\n                    いいえ\n                ")]
+              )
+            ])
+          ])
+        : _vm._e()
+    ])
   ])
 }
 var staticRenderFns = []
@@ -72688,14 +72780,71 @@ var render = function() {
             {
               staticClass: "c-button p-button__small",
               attrs: { type: "submit" },
-              on: {
-                click: function($event) {
-                  return _vm.productCansell(product.id)
-                }
-              }
+              on: { click: _vm.showModal }
             },
             [_vm._v("\n               キャンセル\n            ")]
-          )
+          ),
+          _vm._v(" "),
+          _c("div", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.confirm_mode,
+                expression: "confirm_mode"
+              }
+            ],
+            staticClass: "p-modal__cover",
+            on: { click: _vm.closeModal }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "l-modal__wrapper p-modal__wrapper" }, [
+            _vm.confirm_mode == "cancel"
+              ? _c(
+                  "div",
+                  { staticClass: "l-modal__container p-modal__container" },
+                  [
+                    _c("p", [_vm._v("購入をキャンセルしますか?")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "p-button__wrapper" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "c-button p-button__small p-button__flex",
+                          attrs: { type: "submit" },
+                          on: {
+                            click: function($event) {
+                              return _vm.productCansell(product.id)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            はい\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "c-button p-button__small p-button__flex",
+                          attrs: { type: "submit" },
+                          on: { click: _vm.closeModal }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            いいえ\n                        "
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              : _vm._e()
+          ])
         ])
       }),
       0
