@@ -24,7 +24,7 @@
                     </button>
             </li>
         </ul>
-        <p class="p-message_no-product" v-show="filterdList.length==0">対象商品は現在ありません</p>
+        <p class="p-message__no-product" v-show="filterdList.length==0">対象商品は現在ありません</p>
         <paginate
             :page-count="getPageCount"
             :page-range="3"

@@ -9,6 +9,7 @@
 	margin: 0 auto;
 	padding: 0;
 }
+
 .c-card {
 	position: relative;
     max-width: 220px;
@@ -22,9 +23,8 @@
 		border: 1px solid rgba(0,0,0,0.125);
 		border-radius: 5px;
 	}
-}
-
-.c-card__description {
-    margin-top: 3px;
-	font-size:  12px;
+	&__description {
+		margin-top: 3px;
+		font-size:  12px;
+	}
 }

@@ -1,0 +1,17 @@
+.c-pic {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    &__label {
+        display: block;
+        width: 140px;
+        height: 40px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 1px solid;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+    }
+}

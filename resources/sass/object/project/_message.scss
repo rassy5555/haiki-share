@@ -4,15 +4,15 @@
     text-align: center;
     line-height: 80px;
     color: white;
+
+    &__no-product {
+        text-align: center;
+        margin-bottom: 50px;
+    }
 }
 
-.p-message_no-product {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.p-success_message {
-    color: $_sfont-coloruccess;
+.p-success__message {
+    color: $font-color-success;
     margin-bottom: 30px;
     text-align: center;
 }

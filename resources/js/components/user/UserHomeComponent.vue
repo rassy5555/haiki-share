@@ -4,7 +4,7 @@
             プロフィール編集
         </button>    
         <h3 class="c-page__subtitle">購入した商品一覧</h3>
-        <p class="p-message_no-product" v-show="purchased_list.length==0">対象商品は現在ありません</p>
+        <p class="p-message__no-product" v-show="purchased_list.length==0">対象商品は現在ありません</p>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in purchased_list">
                 <img class="p-pic__card" v-bind:src="'storage/' + product.product_pic"  alt="" width="300" height="200">

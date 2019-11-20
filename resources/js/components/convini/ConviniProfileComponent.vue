@@ -6,8 +6,8 @@
         </div>
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">
-                <img class="p-pic__profile" :src="preview_image" v-if="preview_image">
-                <img class="p-pic__profile" v-bind:src="'../storage/' + convini.convini_pic" v-else>
+                <img class="c-pic p-pic__profile" :src="preview_image" v-if="preview_image">
+                <img class="c-pic p-pic__profile" v-bind:src="'../storage/' + convini.convini_pic" v-else>
                 <label class="c-pic__label">画像を変更
                     <input type="file" v-on:change="file_selected" name="convini_pic" style="display:none">
                 </label>
@@ -53,7 +53,7 @@
             <button type="submit" class="c-button" v-on:click.prevent="profileEdit">
                 編集する
             </button>
-            <p class="p-success_message">{{ success_message.profile }}</p>
+            <p class="p-success__message">{{ success_message.profile }}</p>
         </form>
         <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
@@ -82,7 +82,7 @@
                     パスワードを変更する
                 </button>
             </div>
-            <p class="p-success_message">{{ success_message.password }}</p>
+            <p class="p-success__message">{{ success_message.password }}</p>
         </form>
     </div>
 </template>

@@ -4,6 +4,7 @@
 
 .p-container {
   margin: 0 auto;
+  padding-top: 150px;  
   border-radius: 0.25rem;
   margin: 0 auto;
   @include mq($breakpoint: md) {
@@ -17,11 +18,6 @@
   border-radius: 0.25rem;
   margin: 0 auto;
   margin-bottom: 80px;
-}
-
-.p-container {
-  margin: 0 auto;
-  padding-top: 150px;  
 }
 
 .p-section__title {

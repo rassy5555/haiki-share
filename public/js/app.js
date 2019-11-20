@@ -3328,6 +3328,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'product', 'user'],
   data: function data() {
@@ -70136,7 +70138,7 @@ var render = function() {
             expression: "listing_list.length==0"
           }
         ],
-        staticClass: "p-message_no-product"
+        staticClass: "p-message__no-product"
       },
       [_vm._v("対象商品は現在ありません")]
     ),
@@ -70234,7 +70236,7 @@ var render = function() {
             expression: "saled_list.length==0"
           }
         ],
-        staticClass: "p-message_no-product"
+        staticClass: "p-message__no-product"
       },
       [_vm._v("対象商品は現在ありません")]
     ),
@@ -70733,7 +70735,7 @@ var render = function() {
               expression: "filterdList.length==0"
             }
           ],
-          staticClass: "p-message_no-product"
+          staticClass: "p-message__no-product"
         },
         [_vm._v("対象商品は現在ありません")]
       ),
@@ -70811,11 +70813,11 @@ var render = function() {
             _c("div", { staticClass: "c-image__group" }, [
               _vm.preview_image
                 ? _c("img", {
-                    staticClass: "p-pic__profile",
+                    staticClass: "c-pic p-pic__profile",
                     attrs: { src: _vm.preview_image }
                   })
                 : _c("img", {
-                    staticClass: "p-pic__profile",
+                    staticClass: "c-pic p-pic__profile",
                     attrs: { src: "../storage/" + _vm.convini.convini_pic }
                   }),
               _vm._v(" "),
@@ -71078,7 +71080,7 @@ var render = function() {
               [_vm._v("\n            編集する\n        ")]
             ),
             _vm._v(" "),
-            _c("p", { staticClass: "p-success_message" }, [
+            _c("p", { staticClass: "p-success__message" }, [
               _vm._v(_vm._s(_vm.success_message.profile))
             ])
           ]
@@ -71230,7 +71232,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "p-success_message" }, [
+            _c("p", { staticClass: "p-success__message" }, [
               _vm._v(_vm._s(_vm.success_message.password))
             ])
           ]
@@ -71752,7 +71754,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success_message" }, [
+      ? _c("p", { staticClass: "p-success__message" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()
@@ -71858,7 +71860,7 @@ var render = function() {
               expression: "listing_list.length==0"
             }
           ],
-          staticClass: "p-message_no-product"
+          staticClass: "p-message__no-product"
         },
         [_vm._v("対象商品は現在ありません")]
       ),
@@ -72171,7 +72173,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success_message" }, [
+      ? _c("p", { staticClass: "p-success__message" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()
@@ -72435,7 +72437,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success_message" }, [
+      ? _c("p", { staticClass: "p-success__message" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()
@@ -72525,7 +72527,7 @@ var render = function() {
               expression: "saled_list.length==0"
             }
           ],
-          staticClass: "p-message_no-product"
+          staticClass: "p-message__no-product"
         },
         [_vm._v("対象商品は現在ありません")]
       ),
@@ -72596,7 +72598,7 @@ var render = function() {
             expression: "purchased_list.length==0"
           }
         ],
-        staticClass: "p-message_no-product"
+        staticClass: "p-message__no-product"
       },
       [_vm._v("対象商品は現在ありません")]
     ),
@@ -72872,17 +72874,19 @@ var render = function() {
           ),
       _vm._v(" "),
       _vm.success_message.cancel
-        ? _c("p", { staticClass: "p-success_message" }, [
+        ? _c("p", { staticClass: "p-success__message" }, [
             _vm._v(_vm._s(_vm.success_message.cancel))
           ])
         : _vm._e(),
       _vm._v(" "),
       _vm.success_message.purchase
-        ? _c("p", { staticClass: "p-success_message" }, [
+        ? _c("p", { staticClass: "p-success__message" }, [
             _vm._v(_vm._s(_vm.success_message.purchase))
           ])
         : _vm._e()
     ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "p-confirm" }),
     _vm._v(" "),
     _c(
       "a",
@@ -73146,7 +73150,7 @@ var render = function() {
               expression: "filterdList.length==0"
             }
           ],
-          staticClass: "p-message_no-product"
+          staticClass: "p-message__no-product"
         },
         [_vm._v("対象商品は現在ありません")]
       ),
@@ -73346,7 +73350,7 @@ var render = function() {
             ),
             _vm._v(" "),
             _vm.success_message.profile
-              ? _c("p", { staticClass: "p-success_message" }, [
+              ? _c("p", { staticClass: "p-success__message" }, [
                   _vm._v(_vm._s(_vm.success_message.profile))
                 ])
               : _vm._e()
@@ -73499,7 +73503,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("p", { staticClass: "p-success_message" }, [
+            _c("p", { staticClass: "p-success__message" }, [
               _vm._v(_vm._s(_vm.success_message.password))
             ])
           ]
@@ -73904,7 +73908,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success_message" }, [
+      ? _c("p", { staticClass: "p-success__message" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()

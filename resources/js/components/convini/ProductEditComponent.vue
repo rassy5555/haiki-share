@@ -57,7 +57,7 @@
                 削除する
             </button>
         </div>
-        <p class="p-success_message" v-if="success_message" >{{ success_message }}</p>
+        <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>

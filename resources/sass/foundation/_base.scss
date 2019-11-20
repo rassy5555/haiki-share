@@ -23,12 +23,11 @@ p, a {
 a {
   text-decoration: none;
   transition: .3s;
-}
-
-a:hover {
-  text-decoration: none;
-  color: $color_corp;
-  transition: .3s;
+  &:hover {
+    text-decoration: none;
+    color: $color_corp;
+    transition: .3s;
+  }
 }
 
 img {

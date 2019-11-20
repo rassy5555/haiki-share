@@ -17,8 +17,10 @@
             <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.saled_flg }" v-on:click.prevent="productPurchase" v-else>
                 購入する
             </button>
-            <p class="p-success_message" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
-            <p class="p-success_message" v-if="success_message.purchase" >{{ success_message.purchase }}</p>
+            <p class="p-success__message" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
+            <p class="p-success__message" v-if="success_message.purchase" >{{ success_message.purchase }}</p>
+        </div>
+        <div class="p-confirm">
         </div>
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
