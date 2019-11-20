@@ -3330,12 +3330,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'product', 'user'],
   data: function data() {
     return {
       saled_flg: this.product.saled_flg,
       user_id: this.product.user_id,
+      confirm_mode: '',
       success_message: {
         purchase: '',
         cancel: ''
@@ -3343,19 +3368,30 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    //プロフィール画面へ遷移
+    //確認モーダル表示
+    showModal: function showModal(e) {
+      if (!this.saled_flg) {
+        this.confirm_mode = 'purchase';
+      } else {
+        this.confirm_mode = 'cancel';
+      }
+    },
+    //確認モーダル閉じる
+    closeModal: function closeModal(e) {
+      this.confirm_mode = '';
+    },
+    //商品購入処理
     productPurchase: function productPurchase(e) {
-      var self = this; // this.saled_flg = true;
-
+      var self = this;
       this.saled_flg = !this.saled_flg;
 
       if (this.saled_flg) {
         this.user_id = this.user.id;
         this.success_message.cancel = '';
-        this.success_message.purchase = '商品を購入しました';
+        this.confirm_mode = '', this.success_message.purchase = '商品を購入しました';
       } else {
         this.user_id = null;
-        this.success_message.cancel = '購入をキャンセルしました';
+        this.confirm_mode = '', this.success_message.cancel = '購入をキャンセルしました';
       }
 
       axios.post('../productPurchase/' + this.product.id, {
@@ -72851,7 +72887,7 @@ var render = function() {
               on: {
                 click: function($event) {
                   $event.preventDefault()
-                  return _vm.productPurchase($event)
+                  return _vm.showModal($event)
                 }
               }
             },
@@ -72866,7 +72902,7 @@ var render = function() {
               on: {
                 click: function($event) {
                   $event.preventDefault()
-                  return _vm.productPurchase($event)
+                  return _vm.showModal($event)
                 }
               }
             },
@@ -72886,7 +72922,74 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "p-confirm" }),
+    _c("div", {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.confirm_mode,
+          expression: "confirm_mode"
+        }
+      ],
+      staticClass: "p-modal__cover",
+      on: { click: _vm.closeModal }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "l-modal__wrapper p-modal__wrapper" }, [
+      _vm.confirm_mode == "purchase"
+        ? _c("div", { staticClass: "l-modal__container p-modal__container" }, [
+            _c("p", [_vm._v("購入しますか?")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-button__wrapper" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "c-button p-button__small  p-button__flex",
+                  attrs: { type: "submit" },
+                  on: { click: _vm.productPurchase }
+                },
+                [_vm._v("\n                    はい\n                ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "c-button p-button__small  p-button__flex",
+                  attrs: { type: "submit" },
+                  on: { click: _vm.closeModal }
+                },
+                [_vm._v("\n                    いいえ\n                ")]
+              )
+            ])
+          ])
+        : _vm.confirm_mode == "cancel"
+        ? _c("div", { staticClass: "l-modal__container p-modal__container" }, [
+            _c("p", [_vm._v("購入をキャンセルしますか?")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-button__wrapper" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "c-button p-button__small p-button__flex",
+                  attrs: { type: "submit" },
+                  on: { click: _vm.productPurchase }
+                },
+                [_vm._v("\n                    はい\n                ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "c-button p-button__small p-button__flex",
+                  attrs: { type: "submit" },
+                  on: { click: _vm.closeModal }
+                },
+                [_vm._v("\n                    いいえ\n                ")]
+              )
+            ])
+          ])
+        : _vm._e()
+    ]),
     _vm._v(" "),
     _c(
       "a",

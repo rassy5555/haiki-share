@@ -13,9 +13,7 @@
 @import "layout/_header";
 @import "layout/_main";
 @import "layout/_message";
-
-//
-//
+@import "layout/_modal";
 
 /* component ------------ */
 @import "object/component/_button.scss";
@@ -38,6 +36,7 @@
 @import "object/project/_saled";
 @import "object/project/_paginate";
 @import "object/project/_filter";
+@import "object/project/_modal";
 
 
 /* Utility ------------ */
