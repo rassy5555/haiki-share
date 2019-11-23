@@ -1,7 +1,11 @@
 {
     "Login": "ログイン",
+    "Login User": "ログイン(ユーザー側)",
+    "Login Convini": "ログイン(コンビニ側)",
     "Logout": "ログアウト",
     "Register": "新規登録",
+    "Register User": "新規登録(ユーザー側)",
+    "Register Convini": "新規登録(コンビニ側)",
     "User": "ユーザーの方はこちら",
     "Name": "名前", 
     "Convini": "コンビニの方はこちら",

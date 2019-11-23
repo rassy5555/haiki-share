@@ -7,5 +7,6 @@
     もし、このメールに心当たりのない場合は削除してください。
 </p>
 <p>
-    {{ $actionText }}: <a href="{{ $actionUrl }}">{{ $actionUrl }}</a>
+{{ $actionText }}: <a href="{{ $actionUrl }}">{{ $actionUrl }}</a>
+    <!-- {{ $actionText }}: <a href="{{ $actionUrl }} + ?email=www@w.com">{{ $actionUrl }}</a> -->
 </p>

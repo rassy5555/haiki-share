@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Convini;
 
+use Log;
 use App\Convini;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -10,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Hashing\Hasher as HasherContract;
 use Illuminate\Auth\Events\PasswordReset;
 
 //コンビニ用パスワードリセット処理クラス
@@ -25,7 +28,6 @@ class ResetPasswordController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
 
     /**
@@ -34,14 +36,16 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = 'convini/home';
+    protected $hasher;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(HasherContract $hasher)
     {
+        $this->hasher = $hasher;
         $this->middleware('guest:user');
         $this->middleware('guest:convini');
     }
@@ -72,8 +76,16 @@ class ResetPasswordController extends Controller
      */
     //パスワードリセット処理
     public function reset(Request $request)
-    {
-        $request->validate($this->rules(), $this->validationErrorMessages());
+    {   
+        //入力されたEmailからトークンを取得
+        $reset_data = DB::table('password_resets')->where('email',$request->email)->first();
+        if(empty($reset_data)){
+            $reset_data = new \stdClass();
+            $reset_data->token = '';
+            $reset_data->created_at = '';
+        }
+
+        $request->validate($this->rules($reset_data), $this->validationErrorMessages());
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
         // database. Otherwise we will parse the error and return the response.
@@ -98,11 +110,12 @@ class ResetPasswordController extends Controller
      */
 
      //バリデーション
-    protected function rules()
+    protected function rules($reset_data)
     {
+
         return [
-            'token' => 'required',
-            'email' => 'required|email|max:30',
+            'token' => "required|token_exist:$reset_data->token|token_limit:$reset_data->created_at",
+            'email' => "required|email|max:30",
             'password' => 'required|confirmed|min:8|max:50|',
         ];
     }

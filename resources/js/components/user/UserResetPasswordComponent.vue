@@ -50,6 +50,8 @@
                 var self = this;
                 this.errors = {
                     email:'',
+                    password: '',
+                    password_confirmation: '',
                 };
                 axios.post('../reset',{
                     email: this.email,
