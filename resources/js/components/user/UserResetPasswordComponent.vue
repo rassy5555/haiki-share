@@ -5,6 +5,7 @@
             <label class="c-form__label">Email</label>
             <div class="c-form__item">
                 <input type="text" class="c-form__input" v-model="email" name="email">
+                <div v-if="errors.token" class="c-invalid__feedback">{{ errors.token }}</div>
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
@@ -38,6 +39,7 @@
                 password: '',
                 password_confirmation: '',
                 errors: {
+                    token: '',
                     email: '',
                     password: '',
                     password_confirmation: '',
@@ -49,6 +51,7 @@
             resetPassword: function(e){
                 var self = this;
                 this.errors = {
+                    token: '',
                     email:'',
                     password: '',
                     password_confirmation: '',

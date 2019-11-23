@@ -115,7 +115,7 @@ return [
     'url'                  => ':attributeに正しい形式を指定してください。',
     'uuid'                 => ':attributeに有効なUUIDを指定してください。',
     'password_hash_check'         => ':attributeと一致しません', 
-    'token_exist'         => 'Emailが間違っています', 
+    'token_exist'         => 'メールアドレスが間違っているか対象のメールアドレスが存在しません', 
     'token_limit'         => '60分経ちました。有効期限切れです。', 
 
     /*

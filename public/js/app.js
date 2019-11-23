@@ -3907,6 +3907,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token'],
   data: function data() {
@@ -3915,6 +3916,7 @@ __webpack_require__.r(__webpack_exports__);
       password: '',
       password_confirmation: '',
       errors: {
+        token: '',
         email: '',
         password: '',
         password_confirmation: ''
@@ -3926,6 +3928,7 @@ __webpack_require__.r(__webpack_exports__);
     resetPassword: function resetPassword(e) {
       var self = this;
       this.errors = {
+        token: '',
         email: '',
         password: '',
         password_confirmation: ''
@@ -71681,15 +71684,15 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _vm.errors.email
-          ? _c("div", { staticClass: "c-invalid__feedback" }, [
-              _vm._v(_vm._s(_vm.errors.email))
-            ])
-          : _vm._e(),
-        _vm._v(" "),
         _vm.errors.token
           ? _c("div", { staticClass: "c-invalid__feedback" }, [
               _vm._v(_vm._s(_vm.errors.token))
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.errors.email
+          ? _c("div", { staticClass: "c-invalid__feedback" }, [
+              _vm._v(_vm._s(_vm.errors.email))
             ])
           : _vm._e()
       ])
@@ -74007,6 +74010,12 @@ var render = function() {
             }
           }
         }),
+        _vm._v(" "),
+        _vm.errors.token
+          ? _c("div", { staticClass: "c-invalid__feedback" }, [
+              _vm._v(_vm._s(_vm.errors.token))
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _vm.errors.email
           ? _c("div", { staticClass: "c-invalid__feedback" }, [
