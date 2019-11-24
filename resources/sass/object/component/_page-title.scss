@@ -5,12 +5,13 @@
     @include mq($breakpoint: md) {
         font-size: $font-size_xl;
     }
-    &-sub {
-        margin: 30px 0;
-        line-height: 40px;
-        font-size: $font-size_xl;
-        text-align: center;
-    }
+}
+
+.c-page__subtitle {
+    margin: 30px 0;
+    line-height: 40px;
+    font-size: $font-size_xl;
+    text-align: center;
 }
 
 .c-more{

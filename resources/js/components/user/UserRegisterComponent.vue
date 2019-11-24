@@ -1,36 +1,38 @@
 <template>
     <div>
         <div class="c-form__group">
-            <label class="c-form__label">名前</label>
+            <label>名前</label>
             <div class="c-form__item">
-                <input id="name" type="text" class="c-form__input" name="name" v-model="name">
+                <input id="name" type="text" name="name" v-model="name">
                 <div v-if="errors.name" class="c-invalid__feedback">{{ errors.name }}</div>
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">Email</label>
+            <label>Email</label>
             <div class="c-form__item">
-                <input id="email" type="text" class="c-form__input" v-model="email" name="email">
+                <input id="email" type="text"  v-model="email" name="email">
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">パスワード</label>
+            <label>パスワード</label>
             <div class="c-form__item">
-                <input id="password" type="password" class="c-form__input" v-model="password" name="password">
+                <input id="password" type="password"  v-model="password" name="password">
                 <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
             </div>
         </div> 
         <div class="c-form__group">
-            <label class="c-form__label">パスワード（再入力)</label>
+            <label>パスワード（再入力)</label>
             <div class="c-form__item">
-                <input id="password_confirm" type="password" class="c-form__input" name="password_confirm" v-model="password_confirm" autocomplete="password" >
+                <input id="password_confirm" type="password"  name="password_confirm" v-model="password_confirm" autocomplete="password" >
                 <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
             </div>
         </div>  
-        <button type="submit" class="c-button" v-on:click="login">
-            新規登録
-        </button>
+        <div class="c-form__button">
+            <button type="submit" class="c-button" v-on:click="login">
+                新規登録
+            </button>
+        </div>
     </div>
 </template>
 <script>

@@ -8,7 +8,7 @@
                 商品登録
             </button> 
         </div>
-        <h3 class="c-page__title-sub">出品した商品一覧<label><a class="c-more" v-bind:href="'listingList/' + convini_id">全件表示</a></label></h3>
+        <h3 class="c-page__subtitle">出品した商品一覧<label><a class="c-more" v-bind:href="'listingList/' + convini_id">全件表示</a></label></h3>
         <p class="p-message__no-product" v-show="listing_list.length==0">対象商品は現在ありません</p>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in listing_list">
@@ -25,7 +25,7 @@
                 </button>
             </li>
         </ul>
-        <h3　class="c-page__title-sub">購入済商品一覧<label><a class="c-more" v-bind:href="'saledList/' + convini_id">全件表示</a></label></h3>
+        <h3　class="c-page__subtitle">購入済商品一覧<label><a class="c-more" v-bind:href="'saledList/' + convini_id">全件表示</a></label></h3>
         <p class="p-message__no-product" v-show="saled_list.length==0">対象商品は現在ありません</p>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in saled_list">
