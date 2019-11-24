@@ -2006,8 +2006,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2052,8 +2050,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2333,8 +2329,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['props_convini'],
@@ -2508,8 +2502,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2607,8 +2599,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token'],
   data: function data() {
@@ -2662,8 +2652,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2810,10 +2798,6 @@ Vue.component('paginate', vuejs_paginate__WEBPACK_IMPORTED_MODULE_0___default.a)
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuejs_datetimepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datetimepicker */ "./node_modules/vuejs-datetimepicker/src/datetime_picker.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -3309,8 +3293,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3677,8 +3659,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['props_user'],
@@ -3821,8 +3801,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3906,8 +3884,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['token'],
   data: function data() {
@@ -3961,8 +3937,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -70474,17 +70448,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.login }
-        },
-        [_vm._v("\n            ログイン\n        ")]
-      )
-    ]),
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.login }
+      },
+      [_vm._v("\n        ログイン\n    ")]
+    ),
     _vm._v(" "),
     _vm._m(0)
   ])
@@ -70552,19 +70524,17 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _vm.product.convini_id == _vm.convini.id
-        ? _c(
-            "button",
-            {
-              staticClass: "c-button",
-              attrs: { type: "submit" },
-              on: { click: _vm.productEdit }
-            },
-            [_vm._v("\n            編集する\n        ")]
-          )
-        : _vm._e()
-    ]),
+    _vm.product.convini_id == _vm.convini.id
+      ? _c(
+          "button",
+          {
+            staticClass: "c-button",
+            attrs: { type: "submit" },
+            on: { click: _vm.productEdit }
+          },
+          [_vm._v("\n        編集する\n    ")]
+        )
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "a",
@@ -70876,7 +70846,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "p-page_title-wrapper" }, [
+    _c("div", { staticClass: "p-page__title-wrapper" }, [
       _c(
         "div",
         {
@@ -70944,7 +70914,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "convini_name",
                     type: "text",
@@ -70984,7 +70953,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "branch_name",
                     type: "text",
@@ -71026,7 +70994,6 @@ var render = function() {
                         arg: "value"
                       }
                     ],
-                    staticClass: "c-form__input",
                     attrs: {
                       id: "prefectures",
                       type: "text",
@@ -71086,7 +71053,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "address",
                     type: "text",
@@ -71126,7 +71092,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "email",
                     type: "text",
@@ -71167,7 +71132,7 @@ var render = function() {
               [_vm._v("\n            編集する\n        ")]
             ),
             _vm._v(" "),
-            _c("p", { staticClass: "p-success__message" }, [
+            _c("p", { staticClass: "p-message__success" }, [
               _vm._v(_vm._s(_vm.success_message.profile))
             ])
           ]
@@ -71190,7 +71155,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "old_password",
                     type: "password",
@@ -71230,7 +71194,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "password",
                     type: "password",
@@ -71270,7 +71233,6 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  staticClass: "c-form__input",
                   attrs: {
                     id: "password_confirm",
                     type: "password",
@@ -71296,24 +71258,22 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "c-form__button" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "c-button",
-                  attrs: { type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.changePassword($event)
-                    }
+            _c(
+              "button",
+              {
+                staticClass: "c-button",
+                attrs: { type: "submit" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.changePassword($event)
                   }
-                },
-                [_vm._v("\n                パスワードを変更する\n            ")]
-              )
-            ]),
+                }
+              },
+              [_vm._v("\n            パスワードを変更する\n        ")]
+            ),
             _vm._v(" "),
-            _c("p", { staticClass: "p-success__message" }, [
+            _c("p", { staticClass: "p-message__success" }, [
               _vm._v(_vm._s(_vm.success_message.password))
             ])
           ]
@@ -71344,7 +71304,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("コンビニ名")]),
+      _c("label", [_vm._v("コンビニ名")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71356,7 +71316,6 @@ var render = function() {
               expression: "convini_name"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "convini_name", type: "text", name: "convini_name" },
           domProps: { value: _vm.convini_name },
           on: {
@@ -71378,7 +71337,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("支店名")]),
+      _c("label", [_vm._v("支店名")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71390,7 +71349,6 @@ var render = function() {
               expression: "branch_name"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "branch_name", type: "text", name: "branch_name" },
           domProps: { value: _vm.branch_name },
           on: {
@@ -71412,7 +71370,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("E-mail")]),
+      _c("label", [_vm._v("E-mail")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71424,7 +71382,6 @@ var render = function() {
               expression: "email"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
@@ -71446,7 +71403,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("都道府県")]),
+      _c("label", [_vm._v("都道府県")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c(
@@ -71460,7 +71417,6 @@ var render = function() {
                 expression: "prefecture"
               }
             ],
-            staticClass: "c-form__input",
             attrs: { id: "prefectures", type: "text", name: "prefectures" },
             on: {
               change: function($event) {
@@ -71496,7 +71452,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("住所")]),
+      _c("label", [_vm._v("住所")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71508,7 +71464,6 @@ var render = function() {
               expression: "address"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "address", type: "text", name: "address" },
           domProps: { value: _vm.address },
           on: {
@@ -71530,7 +71485,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("パスワード")]),
+      _c("label", [_vm._v("パスワード")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71542,7 +71497,6 @@ var render = function() {
               expression: "password"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "password", type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
@@ -71564,9 +71518,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [
-        _vm._v("パスワード（再入力）")
-      ]),
+      _c("label", [_vm._v("パスワード（再入力）")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71578,7 +71530,6 @@ var render = function() {
               expression: "password_confirm"
             }
           ],
-          staticClass: "c-form__input",
           attrs: {
             id: "password_confirm",
             type: "password",
@@ -71603,17 +71554,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.login }
-        },
-        [_vm._v("\n            新規登録\n        ")]
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.login }
+      },
+      [_vm._v("\n        新規登録\n    ")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -71645,7 +71594,7 @@ var render = function() {
     }),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("Email")]),
+      _c("label", [_vm._v("Email")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71657,7 +71606,6 @@ var render = function() {
               expression: "email"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
@@ -71685,7 +71633,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("パスワード")]),
+      _c("label", [_vm._v("パスワード")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71697,7 +71645,6 @@ var render = function() {
               expression: "password"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
@@ -71719,9 +71666,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [
-        _vm._v("パスワード（再入力)")
-      ]),
+      _c("label", [_vm._v("パスワード（再入力)")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71733,7 +71678,6 @@ var render = function() {
               expression: "password_confirmation"
             }
           ],
-          staticClass: "c-form__input",
           attrs: {
             type: "password",
             name: "password_confirm",
@@ -71758,17 +71702,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.resetPassword }
-        },
-        [_vm._v("\n            パスワードを再設定する\n        ")]
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.resetPassword }
+      },
+      [_vm._v("\n        パスワードを再設定する\n    ")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -71795,7 +71737,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("Email")]),
+      _c("label", [_vm._v("Email")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -71807,7 +71749,6 @@ var render = function() {
               expression: "email"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
@@ -71828,20 +71769,18 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.resetPassword }
-        },
-        [_vm._v("\n            パスワードを再設定する\n        ")]
-      )
-    ]),
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.resetPassword }
+      },
+      [_vm._v("\n        パスワードを再設定する\n    ")]
+    ),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success__message" }, [
+      ? _c("p", { staticClass: "p-message__success" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()
@@ -72220,41 +72159,37 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          class: { "p-button__saled": this.product.saled_flg },
-          attrs: { type: "submit" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.productRegister($event)
-            }
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        class: { "p-button__saled": this.product.saled_flg },
+        attrs: { type: "submit" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.productRegister($event)
           }
-        },
-        [_vm._v("\n            編集する\n        ")]
-      )
-    ]),
+        }
+      },
+      [_vm._v("\n        編集する\n    ")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          class: { "p-button__saled": this.product.saled_flg },
-          attrs: { type: "submit" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.showModal($event)
-            }
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        class: { "p-button__saled": this.product.saled_flg },
+        attrs: { type: "submit" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.showModal($event)
           }
-        },
-        [_vm._v("\n            削除する\n        ")]
-      )
-    ]),
+        }
+      },
+      [_vm._v("\n        削除する\n    ")]
+    ),
     _vm._v(" "),
     _vm.success_message
       ? _c("p", { staticClass: "p-success__message" }, [
@@ -72869,7 +72804,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("Email")]),
+      _c("label", [_vm._v("Email")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -72881,7 +72816,6 @@ var render = function() {
               expression: "email"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
@@ -72903,7 +72837,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__group" }, [
-      _c("label", { staticClass: "c-form__label" }, [_vm._v("パスワード")]),
+      _c("label", [_vm._v("パスワード")]),
       _vm._v(" "),
       _c("div", { staticClass: "c-form__item" }, [
         _c("input", {
@@ -72915,7 +72849,6 @@ var render = function() {
               expression: "password"
             }
           ],
-          staticClass: "c-form__input",
           attrs: { id: "password", type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
@@ -72936,17 +72869,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.login }
-        },
-        [_vm._v("\n            ログイン\n        ")]
-      )
-    ]),
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.login }
+      },
+      [_vm._v("\n        ログイン\n    ")]
+    ),
     _vm._v(" "),
     _vm._m(0)
   ])
@@ -72960,7 +72891,7 @@ var staticRenderFns = [
       _c(
         "a",
         { staticClass: "btn btn-link", attrs: { href: "password/reset" } },
-        [_vm._v("\n        パスワードを忘れた方\n        ")]
+        [_vm._v("\n            パスワードを忘れた方\n        ")]
       )
     ])
   }
@@ -73444,7 +73375,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "p-page_title-wrapper" }, [
+    _c("div", { staticClass: "p-page__title-wrapper" }, [
       _c(
         "div",
         {
@@ -73719,22 +73650,20 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "c-form__button" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "c-button",
-                  attrs: { type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      return _vm.changePassword($event)
-                    }
+            _c(
+              "button",
+              {
+                staticClass: "c-button",
+                attrs: { type: "submit" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.changePassword($event)
                   }
-                },
-                [_vm._v("\n                パスワードを変更する\n            ")]
-              )
-            ]),
+                }
+              },
+              [_vm._v("\n            パスワードを変更する\n        ")]
+            ),
             _vm._v(" "),
             _c("p", { staticClass: "p-success__message" }, [
               _vm._v(_vm._s(_vm.success_message.password))
@@ -73903,17 +73832,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.login }
-        },
-        [_vm._v("\n            新規登録\n        ")]
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.login }
+      },
+      [_vm._v("\n        新規登録\n    ")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -74053,17 +73980,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.resetPassword }
-        },
-        [_vm._v("\n            パスワードを再設定する\n        ")]
-      )
-    ])
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.resetPassword }
+      },
+      [_vm._v("\n        パスワードを再設定する\n    ")]
+    )
   ])
 }
 var staticRenderFns = []
@@ -74122,17 +74047,15 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "c-form__button" }, [
-      _c(
-        "button",
-        {
-          staticClass: "c-button",
-          attrs: { type: "submit" },
-          on: { click: _vm.resetPassword }
-        },
-        [_vm._v("\n            パスワードを再設定する\n        ")]
-      )
-    ]),
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.resetPassword }
+      },
+      [_vm._v("\n        パスワードを再設定する\n    ")]
+    ),
     _vm._v(" "),
     _vm.success_message
       ? _c("p", { staticClass: "p-success__message" }, [

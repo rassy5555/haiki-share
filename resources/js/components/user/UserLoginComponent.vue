@@ -1,27 +1,25 @@
 <template>
     <div>
         <div class="c-form__group">
-            <label class="c-form__label">Email</label>
+            <label>Email</label>
             <div class="c-form__item">
-                <input id="email" type="text" class="c-form__input" v-model="email" name="email">
+                <input id="email" type="text"  v-model="email" name="email">
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">パスワード</label>
+            <label>パスワード</label>
             <div class="c-form__item">
-                <input id="password" type="password" class="c-form__input" v-model="password" name="password">
+                <input id="password" type="password"  v-model="password" name="password">
                 <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
             </div>
         </div> 
-        <div class="c-form__button">
-            <button type="submit" class="c-button" v-on:click="login">
-                ログイン
-            </button>
-        </div>
+        <button type="submit" class="c-button" v-on:click="login">
+            ログイン
+        </button>
         <div class="c-form__group">
             <a class="btn btn-link" href="password/reset">
-            パスワードを忘れた方
+                パスワードを忘れた方
             </a>
         </div>
     </div>

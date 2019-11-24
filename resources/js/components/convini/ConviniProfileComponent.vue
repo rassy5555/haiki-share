@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="p-page_title-wrapper">
+        <div class="p-page__title-wrapper">
             <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'profile'}" v-on:click="profile_mode">プロフィール編集</div>
             <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'password'}" v-on:click="password_mode">パスワード変更</div>
         </div>
@@ -16,21 +16,21 @@
             <div class="c-form__group">
                 <label>コンビニ名</label>
                 <div class="c-form__item">
-                    <input id="convini_name" type="text" class="c-form__input" name="convini_name" v-model:value="convini.convini_name" autocomplete="convini_name" >
+                    <input id="convini_name" type="text"  name="convini_name" v-model:value="convini.convini_name" autocomplete="convini_name" >
                     <div v-if="errors.convini_name" class="c-invalid__feedback">{{ errors.convini_name }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>支店名</label>
                 <div class="c-form__item">
-                    <input id="branch_name" type="text" class="c-form__input" name="branch_name" v-model:value="convini.branch_name"  autocomplete="branch_name" >
+                    <input id="branch_name" type="text"  name="branch_name" v-model:value="convini.branch_name"  autocomplete="branch_name" >
                     <div v-if="errors.branch_name" class="c-invalid__feedback">{{ errors.branch_name }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>都道府県</label>
                 <div class="c-form__item">
-                    <select id="prefectures" type="text" class="c-form__input" name="prefectures" v-model:value="convini.prefectures" autocomplete="prefectures" >
+                    <select id="prefectures" type="text"  name="prefectures" v-model:value="convini.prefectures" autocomplete="prefectures" >
                         <option v-for="(prefecture,index) in prefectures" :value="index" v-text="prefecture"></option>
                     </select> 
                     <div v-if="errors.prefectures" class="c-invalid__feedback">{{ errors.prefectures }}</div>
@@ -39,50 +39,48 @@
             <div class="c-form__group">
                 <label>住所</label>
                 <div class="c-form__item">
-                    <input id="address" type="text" class="c-form__input" name="address" v-model:value="convini.address"  autocomplete="address" >
+                    <input id="address" type="text"  name="address" v-model:value="convini.address"  autocomplete="address" >
                     <div v-if="errors.address" class="c-invalid__feedback">{{ errors.address }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>Eメール</label>
                 <div class="c-form__item">
-                    <input id="email" type="text" class="c-form__input" name="email" v-model:value="convini.email"  autocomplete="email" >
+                    <input id="email" type="text"  name="email" v-model:value="convini.email"  autocomplete="email" >
                     <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
                 </div>
             </div>
             <button type="submit" class="c-button" v-on:click.prevent="profileEdit">
                 編集する
             </button>
-            <p class="p-success__message">{{ success_message.profile }}</p>
+            <p class="p-message__success">{{ success_message.profile }}</p>
         </form>
         <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
                 <label>現在のパスワード</label>
                 <div class="c-form__item">
-                    <input id="old_password" type="password" class="c-form__input" name="old_password" v-model:value="old_password" autocomplete="password" >
+                    <input id="old_password" type="password"  name="old_password" v-model:value="old_password" autocomplete="password" >
                     <div v-if="errors.old_password" class="c-invalid__feedback">{{ errors.old_password }}</div>
                 </div>
             </div> 
             <div class="c-form__group">
                 <label>新しいパスワード</label>
                 <div class="c-form__item">
-                    <input id="password" type="password" class="c-form__input" name="password" v-model:value="convini.password" autocomplete="password" >
+                    <input id="password" type="password"  name="password" v-model:value="convini.password" autocomplete="password" >
                     <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
                 </div>
             </div> 
             <div class="c-form__group">
                 <label>新しいパスワード(再入力)</label>
                 <div class="c-form__item">
-                    <input id="password_confirm" type="password" class="c-form__input" name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
+                    <input id="password_confirm" type="password"  name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
             </div>    
-            <div class="c-form__button">
-                <button type="submit" class="c-button" v-on:click.prevent="changePassword">
-                    パスワードを変更する
-                </button>
-            </div>
-            <p class="p-success__message">{{ success_message.password }}</p>
+            <button type="submit" class="c-button" v-on:click.prevent="changePassword">
+                パスワードを変更する
+            </button>
+            <p class="p-message__success">{{ success_message.password }}</p>
         </form>
     </div>
 </template>

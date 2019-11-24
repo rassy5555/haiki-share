@@ -1,20 +1,21 @@
-.p-page_title-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.p-page__title-switch {
-    font-size: $font-size_l;
-    color: #999999;
-    border-bottom: 1px solid #999999;
-    padding:5px 10px;
-    margin-right: 3px;
-    cursor: pointer;
-    &.active {
-        color: $main-color;
-        border-bottom:1px solid $main-color;
+.p-page__title {
+    &-wrapper {
+        display: flex;
+        justify-content: center;
     }
-    @include mq($breakpoint: md) {
-        font-size: $font-size_m;
+    &-switch {
+        font-size: $font-size_l;
+        color: #999999;
+        border-bottom: 1px solid #999999;
+        padding:5px 10px;
+        margin-right: 3px;
+        cursor: pointer;
+        &.active {
+            color: $main-color;
+            border-bottom:1px solid $main-color;
+        }
+        @include mq($breakpoint: md) {
+            font-size: $font-size_m;
+        }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="p-page_title-wrapper">
+        <div class="p-page__title-wrapper">
             <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'profile'}" v-on:click="profile_mode">プロフィール編集</div>
             <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'password'}" v-on:click="password_mode">パスワード変更</div>
         </div>
@@ -54,11 +54,9 @@
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
             </div>   
-            <div class="c-form__button">
-                <button type="submit" class="c-button" v-on:click.prevent="changePassword">
-                    パスワードを変更する
-                </button>
-            </div>
+            <button type="submit" class="c-button" v-on:click.prevent="changePassword">
+                パスワードを変更する
+            </button>
             <p class="p-success__message">{{ success_message.password }}</p>
         </form>
     </div>

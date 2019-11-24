@@ -1,20 +1,21 @@
-.p-filter__wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    @include mq($breakpoint: md) {
-        display: block;
-        width: 65%;
-        margin: 0 auto;
+.p-filter {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
         margin-bottom: 30px;
+        @include mq($breakpoint: md) {
+            display: block;
+            width: 65%;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
     }
-}
-
-.p-filter__item {
-    margin-right: 30px;
-    @include mq($breakpoint: md) {
-        height: 35px;
-        width: 100%;
-        margin-bottom: 10px;
+    &__item {
+        margin-right: 30px;
+        @include mq($breakpoint: md) {
+            height: 35px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
     }
 }

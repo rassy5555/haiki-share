@@ -8,18 +8,17 @@
     @include mq($breakpoint: md) {
         width: 90%;
         margin-bottom: 15px;
-      }
-}
-
-.c-form__label {
-    text-align: right;
-    display: block;
-    width: 40%;
-    margin-right: 25px;
-    line-height: 40px;
-    @include mq($breakpoint: md) {
-        text-align: left;
-        width: 100%;
+    }
+    label {
+        text-align: right;
+        display: block;
+        width: 40%;
+        margin-right: 25px;
+        line-height: 40px;
+        @include mq($breakpoint: md) {
+            text-align: left;
+            width: 100%;
+        }
     }
 }
 
@@ -29,29 +28,17 @@
     @include mq($breakpoint: md) {
         width: 100%;
     }
-    input,select,textarea {
+    input,select {
         width: 100%;
         height: 40px;
         border: 1px solid #ced4da;
         border-radius: 5px;
     }
-}
-
-.c-form-check {
-    margin-left: 185px;
-    @include mq($breakpoint: md) {
-        margin-left: 0;
-    }
-}
-
-.c-form__button {
-    margin: 0 auto;
-}
-
-.c-form__forget {
-    @include mq($breakpoint: md) {
-        display: block;
-        margin-top: 10px;
+    textarea {
+        width: 100%;
+        height: 150px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
     }
 }
 
@@ -67,7 +54,6 @@
 .c-is-invalid {
     border-color: $red;
 }
-
 
 
 .c-image__group {

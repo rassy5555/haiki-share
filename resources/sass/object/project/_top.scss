@@ -1,29 +1,29 @@
-.p-page__title-large {
-    margin: 30px 0;
-    font-size: $font-size_3l;
-    text-align: center;
-    @include mq($breakpoint: md) {
-        font-size: $font-size_xl;
+.p-page {
+    &__title-large {
+        margin: 30px 0;
+        font-size: $font-size_3l;
+        text-align: center;
+        @include mq($breakpoint: md) {
+            font-size: $font-size_xl;
+        }
     }
-}
-
-.p-page__text-wrapper {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    @include mq($breakpoint: md) {
-        width: 90%
+    &__text-wrapper {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        @include mq($breakpoint: md) {
+            width: 90%
+        }
     }
-}
-
-.p-page__text {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: $font-size_l;
-    font-weight: 600;
-    @include mq($breakpoint: md) {
-        font-size: $font-size_m;
-        text-align: left;
+    &__text {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: $font-size_l;
+        font-weight: 600;
+        @include mq($breakpoint: md) {
+            font-size: $font-size_m;
+            text-align: left;
+        }
     }
 }

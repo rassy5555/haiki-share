@@ -1,10 +1,10 @@
-.p-productList {
-    display: flex;
-  }
+// .p-productList {
+//     display: flex;
+//   }
   
-.p-more {
-    margin-left: 5px;
-}
+// .p-more {
+//     margin-left: 5px;
+// }
 
 .p-product__detail {
     width: 280px;
@@ -12,13 +12,6 @@
     text-align: center;
     margin-top: 30px;
     font-size: $font-size_l;
-}
-
-.p-text {
-  text-align: left;
-  &:first-line  {
-    text-align: center;
-  }
 }
 
 .p-comment__detail {
@@ -31,3 +24,9 @@
   }
 }
 
+// .p-text {
+//   text-align: left;
+//   &:first-line  {
+//     text-align: center;
+//   }
+// }
