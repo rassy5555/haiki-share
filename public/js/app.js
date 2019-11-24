@@ -70190,7 +70190,7 @@ var render = function() {
       _c(
         "button",
         {
-          staticClass: "c-button p-button__flex",
+          staticClass: "c-button",
           attrs: { type: "submit" },
           on: { click: _vm.profileEdit }
         },
@@ -70200,7 +70200,7 @@ var render = function() {
       _c(
         "button",
         {
-          staticClass: "c-button p-button__flex",
+          staticClass: "c-button",
           attrs: { type: "submit" },
           on: { click: _vm.productRegister }
         },
@@ -70771,7 +70771,7 @@ var render = function() {
         "ul",
         { staticClass: "c-itemlist" },
         _vm._l(_vm.getItems, function(product) {
-          return _c("li", { staticClass: "c-card" }, [
+          return _c("li", { staticClass: "c-card p-card__small" }, [
             _c("img", {
               staticClass: "p-pic__card",
               attrs: {
@@ -72242,7 +72242,7 @@ var render = function() {
         "button",
         {
           staticClass: "c-button",
-          class: { "p-button_saled": this.product.saled_flg },
+          class: { "p-button__saled": this.product.saled_flg },
           attrs: { type: "submit" },
           on: {
             click: function($event) {
@@ -72260,7 +72260,7 @@ var render = function() {
         "button",
         {
           staticClass: "c-button",
-          class: { "p-button_saled": this.product.saled_flg },
+          class: { "p-button__saled": this.product.saled_flg },
           attrs: { type: "submit" },
           on: {
             click: function($event) {
@@ -72301,7 +72301,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "c-button p-button__small p-button__flex",
+                  staticClass: "c-button p-button__small",
                   attrs: { type: "submit" },
                   on: { click: _vm.productDelete }
                 },
@@ -72311,7 +72311,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "c-button p-button__small p-button__flex",
+                  staticClass: "c-button p-button__small",
                   attrs: { type: "submit" },
                   on: { click: _vm.closeModal }
                 },
@@ -72826,8 +72826,7 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass:
-                            "c-button p-button__small p-button__flex",
+                          staticClass: "c-button p-button__small",
                           attrs: { type: "submit" },
                           on: {
                             click: function($event) {
@@ -72845,8 +72844,7 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass:
-                            "c-button p-button__small p-button__flex",
+                          staticClass: "c-button p-button__small",
                           attrs: { type: "submit" },
                           on: { click: _vm.closeModal }
                         },
@@ -73062,7 +73060,7 @@ var render = function() {
             "button",
             {
               staticClass: "c-button",
-              class: { "p-button_saled": this.saled_flg },
+              class: { "p-button__saled": this.saled_flg },
               attrs: { type: "submit" },
               on: {
                 click: function($event) {
@@ -73109,7 +73107,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "c-button p-button__small  p-button__flex",
+                  staticClass: "c-button p-button__small",
                   attrs: { type: "submit" },
                   on: { click: _vm.productPurchase }
                 },
@@ -73119,7 +73117,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "c-button p-button__small  p-button__flex",
+                  staticClass: "c-button p-button__small",
                   attrs: { type: "submit" },
                   on: { click: _vm.closeModal }
                 },
@@ -73135,7 +73133,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "c-button p-button__small p-button__flex",
+                  staticClass: "c-button p-button__small",
                   attrs: { type: "submit" },
                   on: { click: _vm.productPurchase }
                 },
@@ -73145,7 +73143,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "c-button p-button__small p-button__flex",
+                  staticClass: "c-button p-button__small",
                   attrs: { type: "submit" },
                   on: { click: _vm.closeModal }
                 },

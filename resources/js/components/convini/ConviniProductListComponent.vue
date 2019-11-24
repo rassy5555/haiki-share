@@ -13,7 +13,7 @@
             <label class="p-filter__item"><input type="checkbox" v-model="showExpiration">賞味期限以内のもの</label>
         </div>
         <ul class="c-itemlist">
-            <li class="c-card" v-for="product in getItems">
+            <li class="c-card p-card__small" v-for="product in getItems">
                     <img class="p-pic__card" v-bind:src="'../storage/' + product.product_pic"  alt="" width="300" height="200">
                     <label class="p-saled" v-if="product.saled_flg==true">購入済</label>
                     <dt class="c-card__description p-card__name">{{ product.product_name }}</dt>

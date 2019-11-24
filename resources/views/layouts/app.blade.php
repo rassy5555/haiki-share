@@ -32,23 +32,23 @@
         @else
             <a class="p-header__title" href="{{ route('home')}}">haiki share</a>
         @endguest
-        <div class="p-header__menu-trigger js-toggle-sp-menu">
+        <div class="p-menu__trigger js-toggle-sp-menu">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <nav class="l-header__menu p-header__menu js-toggle-sp-menu-target">
+        <nav class="p-menu js-toggle-sp-menu-target">
             <ul>
                 @guest
-                    <li><a class="p-menu" href="{{ route('login')}}">{{  __('Login') }}</a></li>
-                    <li><a class="p-menu" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                    <li><a class="p-menu" href="{{ route('convini.login') }}">{{ __('Convini') }}</a></li>
+                    <li><a class="p-menu__item" href="{{ route('login')}}">{{  __('Login') }}</a></li>
+                    <li><a class="p-menu__item" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    <li><a class="p-menu__item" href="{{ route('convini.login') }}">{{ __('Convini') }}</a></li>
                 @else
-                    <li><a class="p-menu" href="{{ route('home') }}">{{ __('My Page') }}</a></li>
-                    <li><a class="p-menu" href="{{ route('profileEdit') }}">{{ __('Profile Edit') }}</a></li>
-                    <li><a class="p-menu" href="{{ route('productList') }}">{{ __('Product List') }}</a></li>
+                    <li><a class="p-menu__item" href="{{ route('home') }}">{{ __('My Page') }}</a></li>
+                    <li><a class="p-menu__item" href="{{ route('profileEdit') }}">{{ __('Profile Edit') }}</a></li>
+                    <li><a class="p-menu__item" href="{{ route('productList') }}">{{ __('Product List') }}</a></li>
                     <li>
-                        <a class="p-menu" href="{{ route('logout') }}"
+                        <a class="p-menu__item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

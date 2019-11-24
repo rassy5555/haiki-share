@@ -48,12 +48,12 @@
             </div>
         </div>
         <div class="c-form__button">
-            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.product.saled_flg }" v-on:click.prevent="productRegister">
+            <button type="submit" class="c-button" v-bind:class="{ 'p-button__saled': this.product.saled_flg }" v-on:click.prevent="productRegister">
                 編集する
             </button>
         </div>
         <div class="c-form__button">
-            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.product.saled_flg }"  v-on:click.prevent="showModal">
+            <button type="submit" class="c-button" v-bind:class="{ 'p-button__saled': this.product.saled_flg }"  v-on:click.prevent="showModal">
                 削除する
             </button>
         </div>
@@ -64,10 +64,10 @@
             <div class="l-modal__container p-modal__container" v-if="confirm_mode=='delete'">
                 <p>商品を削除しますか?</p>
                 <div class="p-button__wrapper">
-                    <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="productDelete">
+                    <button type="submit" class="c-button p-button__small" v-on:click="productDelete">
                         はい
                     </button>    
-                    <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="closeModal">
+                    <button type="submit" class="c-button p-button__small" v-on:click="closeModal">
                         いいえ
                     </button> 
                 </div>

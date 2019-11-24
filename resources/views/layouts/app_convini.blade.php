@@ -32,24 +32,24 @@
         @else
             <a class="p-header__title" href="{{ route('convini.home')}}">haiki share</a>
         @endguest        
-        <div class="p-header__menu-trigger js-toggle-sp-menu">
+        <div class="p-menu__trigger js-toggle-sp-menu">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <nav class="l-header__menu p-header__menu js-toggle-sp-menu-target">
+        <nav class="l-menu p-menu js-toggle-sp-menu-target">
             <ul>
                 @guest
-                    <li ><a class="p-menu" href="{{ route('convini.login')}}">{{  __('Login') }}</a></li>
-                    <li ><a class="p-menu" href="{{ route('convini.register') }}">{{ __('Register') }}</a></li>
-                    <li ><a class="p-menu" href="{{ route('login') }}">{{ __('User') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('convini.login')}}">{{  __('Login') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('convini.register') }}">{{ __('Register') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('login') }}">{{ __('User') }}</a></li>
                 @else
-                    <li><a class="p-menu" href="{{ route('convini.home') }}">{{ __('My Page') }}</a></li>
-                    <li ><a class="p-menu" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
-                    <li ><a class="p-menu" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
-                    <li ><a class="p-menu" href="{{ route('convini.productList') }}">{{ __('Product List') }}</a></li>
-                    <li class="p-menu">
-                        <a class="p-menu" href="{{ route('logout') }}"
+                    <li><a class="p-menu__item" href="{{ route('convini.home') }}">{{ __('My Page') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('convini.productList') }}">{{ __('Product List') }}</a></li>
+                    <li class="p-menu__item">
+                        <a class="p-menu__item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

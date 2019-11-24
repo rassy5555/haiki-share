@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="p-button__wrapper">
-            <button type="submit" class="c-button p-button__flex" v-on:click="profileEdit">
+            <button type="submit" class="c-button" v-on:click="profileEdit">
                 プロフィール編集
             </button>    
-            <button type="submit" class="c-button p-button__flex" v-on:click="productRegister">
+            <button type="submit" class="c-button" v-on:click="productRegister">
                 商品登録
             </button> 
         </div>

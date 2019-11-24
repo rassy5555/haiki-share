@@ -1,0 +1,6 @@
+.l-menu {
+    @include mq($breakpoint: md){
+      width: 100%;
+      height: 100vh;
+    }
+  }

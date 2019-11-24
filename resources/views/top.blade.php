@@ -11,12 +11,12 @@
         </div>
         <div class="p-button__wrapper">
             <a href="register">
-                <button type="submit" class="c-button p-button__flex">
+                <button type="submit" class="c-button">
                     一般の方はこちら
                 </button>    
             </a>
             <a href="convini/register">
-                <button type="submit" class="c-button p-button__flex">
+                <button type="submit" class="c-button">
                     お店の方はこちら
                 </button>
             </a> 

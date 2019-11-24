@@ -1,24 +1,24 @@
-.p-button__small {
-    width: 120px;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
-.p-button_saled {
-    background-color: #ccc;
-    pointer-events: none;
-}
-
-.p-button__flex {
-    margin-right: 10px;
-    margin-left: 10px;
-	@include mq($breakpoint: md) {
+.p-button {
+    &__small {
         width: 120px;
-        font-size: $font-size_s;
-	}
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    &__saled {
+        background-color: #ccc;
+        pointer-events: none;
+    }
 }
 
 .p-button__wrapper {
     display: flex;
     justify-content: center;
+    button {
+        margin-right: 10px;
+        margin-left: 10px;
+        @include mq($breakpoint: md) {
+            width: 120px;
+            font-size: $font-size_s;
+        }
+    }
 }

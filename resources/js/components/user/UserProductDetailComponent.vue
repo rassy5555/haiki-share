@@ -14,7 +14,7 @@
             <button type="submit" class="c-button" v-on:click.prevent="showModal" v-if="this.saled_flg==true && product.user_id === user.id ">
                 購入をキャンセルする
             </button>
-            <button type="submit" class="c-button" v-bind:class="{ 'p-button_saled': this.saled_flg }" v-on:click.prevent="showModal" v-else>
+            <button type="submit" class="c-button" v-bind:class="{ 'p-button__saled': this.saled_flg }" v-on:click.prevent="showModal" v-else>
                 購入する
             </button>
             <p class="p-success__message" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
@@ -26,10 +26,10 @@
             <div class="l-modal__container p-modal__container" v-if="confirm_mode=='purchase'">
                 <p>購入しますか?</p>
                 <div class="p-button__wrapper">
-                    <button type="submit" class="c-button p-button__small  p-button__flex" v-on:click="productPurchase">
+                    <button type="submit" class="c-button p-button__small" v-on:click="productPurchase">
                         はい
                     </button>    
-                    <button type="submit" class="c-button p-button__small  p-button__flex" v-on:click="closeModal">
+                    <button type="submit" class="c-button p-button__small" v-on:click="closeModal">
                         いいえ
                     </button> 
                 </div>
@@ -37,10 +37,10 @@
             <div class="l-modal__container p-modal__container" v-else-if="confirm_mode=='cancel'">
                 <p>購入をキャンセルしますか?</p>
                 <div class="p-button__wrapper">
-                    <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="productPurchase">
+                    <button type="submit" class="c-button p-button__small" v-on:click="productPurchase">
                         はい
                     </button>    
-                    <button type="submit" class="c-button p-button__small p-button__flex" v-on:click="closeModal">
+                    <button type="submit" class="c-button p-button__small" v-on:click="closeModal">
                         いいえ
                     </button> 
                 </div>
