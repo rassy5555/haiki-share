@@ -23,9 +23,11 @@
                 <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirmation }}</div>
             </div>
         </div>  
-        <button type="submit" class="c-button" v-on:click="resetPassword">
-            パスワードを再設定する
-        </button>
+        <div class="c-form__button">
+            <button type="submit" class="c-button" v-on:click="resetPassword">
+                パスワードを再設定する
+            </button>
+        </div>
     </div>
 </template>
 <script>

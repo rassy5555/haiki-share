@@ -14,9 +14,11 @@
                 <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
             </div>
         </div> 
-        <button type="submit" class="c-button" v-on:click="login">
-            ログイン
-        </button>
+        <div class="c-form__button">
+            <button type="submit" class="c-button" v-on:click="login">
+                ログイン
+            </button>
+        </div>
         <div class="c-form__group">
             <a class="btn btn-link" href="password/reset">
             パスワードを忘れた方

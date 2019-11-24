@@ -10,16 +10,16 @@
             <div v-if="errors.product_pic" class="c-invalid__feedback">{{ errors.product_pic }}</div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">商品名</label>
+            <label>商品名</label>
             <div class="c-form__item">
-                <input id="product_name" type="text" class="c-form__input" name="product_name" v-model:value="product.product_name">
+                <input id="product_name" type="text"  name="product_name" v-model:value="product.product_name">
                 <div v-if="errors.product_name" class="c-invalid__feedback">{{ errors.product_name }}</div>
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">カテゴリー</label>
+            <label>カテゴリー</label>
             <div class="c-form__item">
-                <select id="category" type="text" class="c-form__input" name="category" v-model:value="product.category_id">
+                <select id="category" type="text"  name="category" v-model:value="product.category_id">
                     <option disabled selected value>選択してください</option>
                     <option v-for="(category,index) in categories" v-bind:value="category.id">{{ category.category_name }}</option>
                 </select>
@@ -27,30 +27,30 @@
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">価格(円)</label>
+            <label>価格(円)</label>
             <div class="c-form__item">
-                <input id="price" type="number" class="c-form__input" name="price" v-model:value="product.price">
+                <input id="price" type="number"  name="price" v-model:value="product.price">
                 <div v-if="errors.price" class="c-invalid__feedback">{{ errors.price }}</div>
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">賞味期限</label>
+            <label>賞味期限</label>
             <div class="c-form__item">
                 <datetime format="YYYY-MM-DD H:i" width="200px" name="expiration_date" v-model="product.expiration_date"></datetime>
                 <div v-if="errors.expiration_date" class="c-invalid__feedback">{{ errors.expiration_date }}</div>
             </div>
         </div>
         <div class="c-form__group">
-            <label class="c-form__label">コメント</label>
+            <label>コメント</label>
             <div class="c-form__item">
-                <textarea type="text" class="c-form__input p-form__comment" name="comment" v-model:value="product.comment"></textarea>
+                <textarea type="text" class="p-form__comment" name="comment" v-model:value="product.comment"></textarea>
                 <div v-if="errors.comment" class="c-invalid__feedback">{{ errors.comment }}</div>
             </div>
         </div>
         <button type="submit" class="c-button"  v-on:click="productRegister">
             登録する
         </button>
-        <p class="p-message__success" v-if="success_message" >{{ success_message }}</p>
+        <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>
