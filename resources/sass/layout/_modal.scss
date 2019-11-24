@@ -1,9 +1,10 @@
-.l-modal__wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.l-modal__container {
-    height: 120px;
-    width: 300px;
+.l-modal {
+    &__wrappper {
+        width: 100%;
+        height: 100%;
+    }
+    &__container {
+        height: 120px;
+        width: 300px;
+    }
 }

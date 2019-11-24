@@ -51,11 +51,9 @@
                 <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
             </div>
         </div>  
-        <div class="c-form__button">
-            <button type="submit" class="c-button" v-on:click="login">
-                新規登録
-            </button>
-        </div>
+        <button type="submit" class="c-button" v-on:click="login">
+            新規登録
+        </button>
     </div>
 </template>
 <script>

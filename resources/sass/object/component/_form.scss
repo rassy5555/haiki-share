@@ -8,7 +8,7 @@
     @include mq($breakpoint: md) {
         width: 90%;
         margin-bottom: 15px;
-      }
+    }
 }
 
 .c-form__label {
@@ -45,10 +45,6 @@
     }
 }
 
-.c-form__button {
-    margin: 0 auto;
-}
-
 .c-form__forget {
     @include mq($breakpoint: md) {
         display: block;
@@ -68,8 +64,6 @@
 .c-is-invalid {
     border-color: $red;
 }
-
-
 
 .c-image__group {
     width: 140px;

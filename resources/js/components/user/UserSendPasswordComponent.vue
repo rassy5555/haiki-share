@@ -7,12 +7,10 @@
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
-        <div class="c-form__button">
-            <button type="submit" class="c-button" v-on:click="resetPassword">
-                パスワードを再設定する
-            </button>
-        </div>
-        <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
+        <button type="submit" class="c-button" v-on:click="resetPassword">
+            パスワードを再設定する
+        </button>
+        <p class="p-message__success" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>

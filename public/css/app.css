@@ -10879,7 +10879,13 @@ img {
   height: 160px;
 }
 
-.l-modal__wrapper {
+@media screen and (max-width: 768px) {
+  .l-message {
+    height: 120px;
+  }
+}
+
+.l-modal__wrappper {
   width: 100%;
   height: 100%;
 }
@@ -10922,7 +10928,7 @@ img {
   }
 }
 
-.c-page__subtitle {
+.c-page__title-sub {
   margin: 30px 0;
   line-height: 40px;
   font-size: 24px;
@@ -10991,10 +10997,6 @@ img {
   .c-form-check {
     margin-left: 0;
   }
-}
-
-.c-form__button {
-  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -11354,12 +11356,19 @@ img {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  .p-message {
+    padding-top: 60px;
+    line-height: 60px;
+  }
+}
+
 .p-message__no-product {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.p-success__message {
+.p-message__success {
   color: #e37b89;
   margin-bottom: 30px;
   text-align: center;

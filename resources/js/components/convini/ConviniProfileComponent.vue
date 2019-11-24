@@ -53,7 +53,7 @@
             <button type="submit" class="c-button" v-on:click.prevent="profileEdit">
                 編集する
             </button>
-            <p class="p-success__message">{{ success_message.profile }}</p>
+            <p class="p-message__success">{{ success_message.profile }}</p>
         </form>
         <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
@@ -77,12 +77,10 @@
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
             </div>    
-            <div class="c-form__button">
-                <button type="submit" class="c-button" v-on:click.prevent="changePassword">
-                    パスワードを変更する
-                </button>
-            </div>
-            <p class="p-success__message">{{ success_message.password }}</p>
+            <button type="submit" class="c-button" v-on:click.prevent="changePassword">
+                パスワードを変更する
+            </button>
+            <p class="p-message__success">{{ success_message.password }}</p>
         </form>
     </div>
 </template>

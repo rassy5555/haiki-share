@@ -3,7 +3,7 @@
         <button type="submit" class="c-button" v-on:click="profileEdit">
             プロフィール編集
         </button>    
-        <h3 class="c-page__subtitle">購入した商品一覧</h3>
+        <h3 class="c-page__title-sub">購入した商品一覧</h3>
         <p class="p-message__no-product" v-show="purchased_list.length==0">対象商品は現在ありません</p>
         <ul class="c-itemlist">
             <li class="c-card" v-for="product in purchased_list">
