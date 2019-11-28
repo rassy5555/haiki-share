@@ -1,7 +1,7 @@
 .p-page-title {
     &__large {
         margin: 30px 0;
-        font-size: $font-size_3l;
+        font-size: $font-size_4l;
         text-align: center;
         @include mq($breakpoint: md) {
             font-size: $font-size_xl;
