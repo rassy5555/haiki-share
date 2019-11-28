@@ -16,48 +16,48 @@
             <div class="c-form__group">
                 <label>名前</label>
                 <div class="c-form__item">
-                    <input id="name" type="text"  name="name" v-model:value="user.name"  autocomplete="name" >
+                    <input id="name" type="text"  name="name" v-model:value="user.name" v-on:keyup.enter="profileEdit" autocomplete="name" >
                     <div v-if="errors.name" class="c-invalid__feedback">{{ errors.name }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>Eメール</label>
                 <div class="c-form__item">
-                    <input id="email" type="text"  name="email" v-model:value="user.email"  autocomplete="email" >
+                    <input id="email" type="text"  name="email" v-model:value="user.email" v-on:keyup.enter="profileEdit">
                     <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
                 </div>
             </div>
             <button type="submit" class="c-button" v-on:click.prevent="profileEdit">
                 編集する
             </button>
-            <p class="p-success__message" v-if="success_message.profile" >{{ success_message.profile }}</p>
+            <p class="p-message__success" v-if="success_message.profile" >{{ success_message.profile }}</p>
         </form>
         <form method="POST" enctype="multipart/form-data" v-else>
             <div class="c-form__group">
                 <label>現在のパスワード</label>
                 <div class="c-form__item">
-                    <input id="old_password" type="password"  name="old_password" v-model:value="old_password" autocomplete="password" >
+                    <input id="old_password" type="password"  name="old_password" v-model:value="old_password" v-on:keyup.enter="changePassword">
                     <div v-if="errors.old_password" class="c-invalid__feedback">{{ errors.old_password }}</div>
                 </div>
             </div> 
             <div class="c-form__group">
                 <label>新しいパスワード</label>
                 <div class="c-form__item">
-                    <input id="password" type="password"  name="password" v-model:value="user.password" autocomplete="password" >
+                    <input id="password" type="password"  name="password" v-model:value="user.password" v-on:keyup.enter="changePassword">
                     <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
                 </div>
             </div> 
             <div class="c-form__group">
                 <label>新しいパスワード(再入力)</label>
                 <div class="c-form__item">
-                    <input id="password_confirm" type="password"  name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
+                    <input id="password_confirm" type="password"  name="password_confirm" v-model:value="password_confirm" v-on:keyup.enter="changePassword">
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
             </div>   
             <button type="submit" class="c-button" v-on:click.prevent="changePassword">
                 パスワードを変更する
             </button>
-            <p class="p-success__message">{{ success_message.password }}</p>
+            <p class="p-message__success">{{ success_message.password }}</p>
         </form>
     </div>
 </template>

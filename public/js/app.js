@@ -2594,7 +2594,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     //ログイン処理
-    login: function login(e) {
+    register: function register(e) {
       var self = this;
       this.errors = {
         convini_name: '',
@@ -3885,7 +3885,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     //新規登録処理
-    login: function login(e) {
+    register: function register(e) {
       var self = this;
       this.errors = {
         name: '',
@@ -70554,6 +70554,15 @@ var render = function() {
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.login($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -70587,6 +70596,15 @@ var render = function() {
           attrs: { id: "password", type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.login($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71078,6 +71096,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.convini.convini_name },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.profileEdit($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71117,6 +71144,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.convini.branch_name },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.profileEdit($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71157,6 +71193,21 @@ var render = function() {
                       autocomplete: "prefectures"
                     },
                     on: {
+                      keyup: function($event) {
+                        if (
+                          !$event.type.indexOf("key") &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.profileEdit($event)
+                      },
                       change: function($event) {
                         var $$selectedVal = Array.prototype.filter
                           .call($event.target.options, function(o) {
@@ -71217,6 +71268,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.convini.address },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.profileEdit($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71256,6 +71316,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.convini.email },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.profileEdit($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71319,6 +71388,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.old_password },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.changePassword($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71358,6 +71436,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.convini.password },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.changePassword($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71397,6 +71484,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.password_confirm },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.changePassword($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -71475,6 +71571,15 @@ var render = function() {
           attrs: { id: "convini_name", type: "text", name: "convini_name" },
           domProps: { value: _vm.convini_name },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71508,6 +71613,15 @@ var render = function() {
           attrs: { id: "branch_name", type: "text", name: "branch_name" },
           domProps: { value: _vm.branch_name },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71541,6 +71655,15 @@ var render = function() {
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71575,6 +71698,15 @@ var render = function() {
             ],
             attrs: { id: "prefectures", type: "text", name: "prefectures" },
             on: {
+              keyup: function($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                return _vm.register($event)
+              },
               change: function($event) {
                 var $$selectedVal = Array.prototype.filter
                   .call($event.target.options, function(o) {
@@ -71623,6 +71755,15 @@ var render = function() {
           attrs: { id: "address", type: "text", name: "address" },
           domProps: { value: _vm.address },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71656,6 +71797,15 @@ var render = function() {
           attrs: { id: "password", type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71693,6 +71843,15 @@ var render = function() {
           },
           domProps: { value: _vm.password_confirm },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71715,7 +71874,7 @@ var render = function() {
       {
         staticClass: "c-button",
         attrs: { type: "submit" },
-        on: { click: _vm.login }
+        on: { click: _vm.register }
       },
       [_vm._v("\n        新規登録\n    ")]
     )
@@ -71765,6 +71924,15 @@ var render = function() {
           attrs: { type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71804,6 +71972,15 @@ var render = function() {
           attrs: { type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71841,6 +72018,15 @@ var render = function() {
           },
           domProps: { value: _vm.password_confirmation },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -71908,6 +72094,15 @@ var render = function() {
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -72348,7 +72543,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success__message" }, [
+      ? _c("p", { staticClass: "p-message__success" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e(),
@@ -72652,7 +72847,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success__message" }, [
+      ? _c("p", { staticClass: "p-message__success" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()
@@ -72975,6 +73170,15 @@ var render = function() {
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.login($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -73008,6 +73212,15 @@ var render = function() {
           attrs: { id: "password", type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.login($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -73140,13 +73353,13 @@ var render = function() {
           ),
       _vm._v(" "),
       _vm.success_message.cancel
-        ? _c("p", { staticClass: "p-success__message" }, [
+        ? _c("p", { staticClass: "p-message__success" }, [
             _vm._v(_vm._s(_vm.success_message.cancel))
           ])
         : _vm._e(),
       _vm._v(" "),
       _vm.success_message.purchase
-        ? _c("p", { staticClass: "p-success__message" }, [
+        ? _c("p", { staticClass: "p-message__success" }, [
             _vm._v(_vm._s(_vm.success_message.purchase))
           ])
         : _vm._e()
@@ -73607,6 +73820,15 @@ var render = function() {
                   },
                   domProps: { value: _vm.user.name },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.profileEdit($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -73638,14 +73860,18 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  attrs: {
-                    id: "email",
-                    type: "text",
-                    name: "email",
-                    autocomplete: "email"
-                  },
+                  attrs: { id: "email", type: "text", name: "email" },
                   domProps: { value: _vm.user.email },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.profileEdit($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -73679,7 +73905,7 @@ var render = function() {
             ),
             _vm._v(" "),
             _vm.success_message.profile
-              ? _c("p", { staticClass: "p-success__message" }, [
+              ? _c("p", { staticClass: "p-message__success" }, [
                   _vm._v(_vm._s(_vm.success_message.profile))
                 ])
               : _vm._e()
@@ -73706,11 +73932,19 @@ var render = function() {
                   attrs: {
                     id: "old_password",
                     type: "password",
-                    name: "old_password",
-                    autocomplete: "password"
+                    name: "old_password"
                   },
                   domProps: { value: _vm.old_password },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.changePassword($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -73742,14 +73976,18 @@ var render = function() {
                       arg: "value"
                     }
                   ],
-                  attrs: {
-                    id: "password",
-                    type: "password",
-                    name: "password",
-                    autocomplete: "password"
-                  },
+                  attrs: { id: "password", type: "password", name: "password" },
                   domProps: { value: _vm.user.password },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.changePassword($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -73784,11 +74022,19 @@ var render = function() {
                   attrs: {
                     id: "password_confirm",
                     type: "password",
-                    name: "password_confirm",
-                    autocomplete: "password"
+                    name: "password_confirm"
                   },
                   domProps: { value: _vm.password_confirm },
                   on: {
+                    keyup: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.changePassword($event)
+                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -73821,7 +74067,7 @@ var render = function() {
               [_vm._v("\n            パスワードを変更する\n        ")]
             ),
             _vm._v(" "),
-            _c("p", { staticClass: "p-success__message" }, [
+            _c("p", { staticClass: "p-message__success" }, [
               _vm._v(_vm._s(_vm.success_message.password))
             ])
           ]
@@ -73867,6 +74113,15 @@ var render = function() {
           attrs: { id: "name", type: "text", name: "name" },
           domProps: { value: _vm.name },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -73900,6 +74155,15 @@ var render = function() {
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -73933,6 +74197,15 @@ var render = function() {
           attrs: { id: "password", type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -73966,11 +74239,19 @@ var render = function() {
           attrs: {
             id: "password_confirm",
             type: "password",
-            name: "password_confirm",
-            autocomplete: "password"
+            name: "password_confirm"
           },
           domProps: { value: _vm.password_confirm },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.register($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -73993,7 +74274,7 @@ var render = function() {
       {
         staticClass: "c-button",
         attrs: { type: "submit" },
-        on: { click: _vm.login }
+        on: { click: _vm.register }
       },
       [_vm._v("\n        新規登録\n    ")]
     )
@@ -74043,6 +74324,15 @@ var render = function() {
           attrs: { type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -74082,6 +74372,15 @@ var render = function() {
           attrs: { type: "password", name: "password" },
           domProps: { value: _vm.password },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -74119,6 +74418,15 @@ var render = function() {
           },
           domProps: { value: _vm.password_confirmation },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -74186,6 +74494,15 @@ var render = function() {
           attrs: { id: "email", type: "text", name: "email" },
           domProps: { value: _vm.email },
           on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.resetPassword($event)
+            },
             input: function($event) {
               if ($event.target.composing) {
                 return
@@ -74214,7 +74531,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm.success_message
-      ? _c("p", { staticClass: "p-success__message" }, [
+      ? _c("p", { staticClass: "p-message__success" }, [
           _vm._v(_vm._s(_vm.success_message))
         ])
       : _vm._e()

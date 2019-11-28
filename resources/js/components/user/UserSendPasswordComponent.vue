@@ -3,14 +3,14 @@
         <div class="c-form__group">
             <label>Email</label>
             <div class="c-form__item">
-                <input id="email" type="text" v-model="email" name="email">
+                <input id="email" type="text" v-model="email"  v-on:keyup.enter="resetPassword" name="email">
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
         <button type="submit" class="c-button" v-on:click="resetPassword">
             パスワードを再設定する
         </button>
-        <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
+        <p class="p-message__success" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>

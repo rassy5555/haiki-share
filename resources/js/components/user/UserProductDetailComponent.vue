@@ -17,8 +17,8 @@
             <button type="submit" class="c-button" v-bind:class="{ 'p-button__saled': this.saled_flg }" v-on:click.prevent="showModal" v-else>
                 購入する
             </button>
-            <p class="p-success__message" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
-            <p class="p-success__message" v-if="success_message.purchase" >{{ success_message.purchase }}</p>
+            <p class="p-message__success" v-if="success_message.cancel" >{{ success_message.cancel }}</p>
+            <p class="p-message__success" v-if="success_message.purchase" >{{ success_message.purchase }}</p>
         </div>
         <div class="p-modal__cover" v-show='confirm_mode' v-on:click="closeModal">
         </div>

@@ -3,14 +3,14 @@
         <div class="c-form__group">
             <label>Email</label>
             <div class="c-form__item">
-                <input id="email" type="text"  v-model="email" name="email">
+                <input id="email" type="text"  v-model="email" name="email" v-on:keyup.enter="login">
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
         <div class="c-form__group">
             <label>パスワード</label>
             <div class="c-form__item">
-                <input id="password" type="password"  v-model="password" name="password">
+                <input id="password" type="password"  v-model="password" name="password"  v-on:keyup.enter="login">
                 <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
             </div>
         </div> 

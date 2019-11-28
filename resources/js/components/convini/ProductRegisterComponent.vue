@@ -50,7 +50,7 @@
         <button type="submit" class="c-button"  v-on:click="productRegister">
             登録する
         </button>
-        <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
+        <p class="p-message__success" v-if="success_message" >{{ success_message }}</p>
     </div>
 </template>
 <script>

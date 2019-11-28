@@ -16,21 +16,21 @@
             <div class="c-form__group">
                 <label>コンビニ名</label>
                 <div class="c-form__item">
-                    <input id="convini_name" type="text"  name="convini_name" v-model:value="convini.convini_name" autocomplete="convini_name" >
+                    <input id="convini_name" type="text"  name="convini_name" v-model:value="convini.convini_name" v-on:keyup.enter="profileEdit" autocomplete="convini_name" >
                     <div v-if="errors.convini_name" class="c-invalid__feedback">{{ errors.convini_name }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>支店名</label>
                 <div class="c-form__item">
-                    <input id="branch_name" type="text"  name="branch_name" v-model:value="convini.branch_name"  autocomplete="branch_name" >
+                    <input id="branch_name" type="text"  name="branch_name" v-model:value="convini.branch_name" v-on:keyup.enter="profileEdit"  autocomplete="branch_name" >
                     <div v-if="errors.branch_name" class="c-invalid__feedback">{{ errors.branch_name }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>都道府県</label>
                 <div class="c-form__item">
-                    <select id="prefectures" type="text"  name="prefectures" v-model:value="convini.prefectures" autocomplete="prefectures" >
+                    <select id="prefectures" type="text"  name="prefectures" v-model:value="convini.prefectures" v-on:keyup.enter="profileEdit" autocomplete="prefectures" >
                         <option v-for="(prefecture,index) in prefectures" :value="index" v-text="prefecture"></option>
                     </select> 
                     <div v-if="errors.prefectures" class="c-invalid__feedback">{{ errors.prefectures }}</div>
@@ -39,14 +39,14 @@
             <div class="c-form__group">
                 <label>住所</label>
                 <div class="c-form__item">
-                    <input id="address" type="text"  name="address" v-model:value="convini.address"  autocomplete="address" >
+                    <input id="address" type="text"  name="address" v-model:value="convini.address" v-on:keyup.enter="profileEdit"  autocomplete="address" >
                     <div v-if="errors.address" class="c-invalid__feedback">{{ errors.address }}</div>
                 </div>
             </div>
             <div class="c-form__group">
                 <label>Eメール</label>
                 <div class="c-form__item">
-                    <input id="email" type="text"  name="email" v-model:value="convini.email"  autocomplete="email" >
+                    <input id="email" type="text"  name="email" v-model:value="convini.email" v-on:keyup.enter="profileEdit"  autocomplete="email" >
                     <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
                 </div>
             </div>
@@ -59,21 +59,21 @@
             <div class="c-form__group">
                 <label>現在のパスワード</label>
                 <div class="c-form__item">
-                    <input id="old_password" type="password"  name="old_password" v-model:value="old_password" autocomplete="password" >
+                    <input id="old_password" type="password"  name="old_password" v-model:value="old_password" v-on:keyup.enter="changePassword" autocomplete="password" >
                     <div v-if="errors.old_password" class="c-invalid__feedback">{{ errors.old_password }}</div>
                 </div>
             </div> 
             <div class="c-form__group">
                 <label>新しいパスワード</label>
                 <div class="c-form__item">
-                    <input id="password" type="password"  name="password" v-model:value="convini.password" autocomplete="password" >
+                    <input id="password" type="password"  name="password" v-model:value="convini.password" v-on:keyup.enter="changePassword" autocomplete="password" >
                     <div v-if="errors.password" class="c-invalid__feedback">{{ errors.password }}</div>
                 </div>
             </div> 
             <div class="c-form__group">
                 <label>新しいパスワード(再入力)</label>
                 <div class="c-form__item">
-                    <input id="password_confirm" type="password"  name="password_confirm" v-model:value="password_confirm" autocomplete="password" >
+                    <input id="password_confirm" type="password"  name="password_confirm" v-model:value="password_confirm" v-on:keyup.enter="changePassword" autocomplete="password" >
                     <div v-if="errors.password_confirm" class="c-invalid__feedback">{{ errors.password_confirm }}</div>
                 </div>
             </div>    

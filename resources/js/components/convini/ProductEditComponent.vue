@@ -53,7 +53,7 @@
         <button type="submit" class="c-button" v-bind:class="{ 'p-button__saled': this.product.saled_flg }"  v-on:click.prevent="showModal">
             削除する
         </button>
-        <p class="p-success__message" v-if="success_message" >{{ success_message }}</p>
+        <p class="p-message__success" v-if="success_message" >{{ success_message }}</p>
         <div class="p-modal__cover" v-show='confirm_mode' v-on:click="closeModal">
         </div>
         <div class="l-modal__wrapper p-modal__wrapper">

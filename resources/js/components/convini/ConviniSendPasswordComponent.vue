@@ -3,7 +3,7 @@
         <div class="c-form__group">
             <label>Email</label>
             <div class="c-form__item">
-                <input id="email" type="text"  v-model="email" name="email">
+                <input id="email" type="text"  v-model="email" v-on:keyup.enter="resetPassword" name="email">
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
