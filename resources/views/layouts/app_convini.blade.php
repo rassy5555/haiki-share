@@ -28,7 +28,7 @@
 <div id="app">
 <header class="l-header p-header js-float-menu">
         @guest
-            <a class="p-header__title" href="{{ route('convini.login')}}">haiki share</a>
+            <a class="p-header__title" href="{{ route('top')}}">haiki share</a>
         @else
             <a class="p-header__title" href="{{ route('convini.home')}}">haiki share</a>
         @endguest        
@@ -47,6 +47,7 @@
                     <li><a class="p-menu__item" href="{{ route('convini.home') }}">{{ __('My Page') }}</a></li>
                     <li ><a class="p-menu__item" href="{{ route('convini.profileEdit') }}">{{ __('Profile Edit') }}</a></li>
                     <li ><a class="p-menu__item" href="{{ route('convini.productRegister') }}">{{ __('Product Register') }}</a></li>
+                    <li ><a class="p-menu__item" href="{{ route('convini.categoryRegister') }}">{{ __('Category Register') }}</a></li>
                     <li ><a class="p-menu__item" href="{{ route('convini.productList') }}">{{ __('Product List') }}</a></li>
                     <li class="p-menu__item">
                         <a class="p-menu__item" href="{{ route('logout') }}"

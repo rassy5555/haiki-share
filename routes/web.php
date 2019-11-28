@@ -78,6 +78,8 @@ Route::group(['prefix' => 'convini', 'middleware' => 'auth:convini'], function()
     Route::post('profileEdit', 'Convini\ProfileController@profileEdit');
     Route::post('changePassword', 'Convini\ProfileController@changePassword');
     Route::get('profileEdit', 'Convini\ProfileController@profileEditShow')->name('convini.profileEdit');
+    Route::get('categoryRegister','Convini\ProductController@categoryRegisterShow')->name('convini.categoryRegister');
+    Route::post('categoryRegister','Convini\ProductController@categoryRegister');
     Route::get('productRegister','Convini\ProductController@productRegisterShow')->name('convini.productRegister');
     Route::post('productRegister','Convini\ProductController@productRegister');
     Route::get('productEdit/{product_id}','Convini\ProductController@productEditShow')->name('convini.productEdit');

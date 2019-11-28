@@ -11268,6 +11268,13 @@ img {
   height: 150px;
 }
 
+.p-notes {
+  text-align: left;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .p-page__title-wrapper {
   display: flex;
   justify-content: center;

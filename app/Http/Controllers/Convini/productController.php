@@ -32,6 +32,13 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+    //カテゴリー登録バリデーション処理
+    public function categoryValidator(array $data){
+        return Validator::make($data, [
+            'category_name' => ['required', 'string', 'max:15',"category_check"],
+        ]);
+    }
+
     //商品登録バリデーション処理
     public function productValidator(array $data){
         return Validator::make($data, [
@@ -42,6 +49,21 @@ class ProductController extends Controller
             'comment' => ['string','max:200'],
             'product_pic' => ['file','image','mimes:png,jpeg,jpg,gif'],
         ]);
+    }
+
+    //カテゴリー登録画面へ遷移
+    public function categoryRegisterShow() {
+        $categories = Category::where('delete_flg',false)->get();
+        return view('convini.categoryRegister',['categories'=>$categories]);
+    }
+
+    //カテゴリー登録処理
+    public function categoryRegister(Request $request) {
+        $this->categoryValidator($request->all())->validate();
+        $category = new Category;
+        $category->fill($request->all());
+        $category->delete_flg = false;
+        $category->save();
     }
 
     //商品登録画面へ遷移

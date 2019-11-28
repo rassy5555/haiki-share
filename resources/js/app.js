@@ -35,6 +35,7 @@ Vue.component('convini_home-component', require('./components/convini/ConviniHom
 Vue.component('convini_login-component', require('./components/convini/ConviniLoginComponent.vue').default); //ログイン
 Vue.component('convini_register-component', require('./components/convini/ConviniRegisterComponent.vue').default); //新規登録
 Vue.component('convini_profile-component', require('./components/convini/ConviniProfileComponent.vue').default); //プロフィール編集
+Vue.component('category_register-component', require('./components/convini/CategoryRegisterComponent.vue').default); //カテゴリー登録
 Vue.component('product_register-component', require('./components/convini/ProductRegisterComponent.vue').default); //商品登録
 Vue.component('product_edit-component', require('./components/convini/ProductEditComponent.vue').default); //商品編集
 Vue.component('convini_product_detail-component', require('./components/convini/ConviniProductDetailComponent.vue').default); //商品詳細

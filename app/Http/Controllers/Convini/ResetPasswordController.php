@@ -112,7 +112,6 @@ class ResetPasswordController extends Controller
      //バリデーション
     protected function rules($reset_data)
     {
-
         return [
             'token' => "required|token_exist:$reset_data->token|token_limit:$reset_data->created_at",
             'email' => "required|email|max:30",

@@ -117,6 +117,7 @@ return [
     'password_hash_check'         => ':attributeと一致しません', 
     'token_exist'         => 'メールアドレスが間違っているか対象のメールアドレスが存在しません', 
     'token_limit'         => '60分経ちました。有効期限切れです。', 
+    'category_check'         => 'そのカテゴリーはすでに存在します', 
 
     /*
     |--------------------------------------------------------------------------
@@ -150,6 +151,7 @@ return [
         'email' => 'E-mail',
         'name' => '名前',
         'password' => 'パスワード',
+        'category_name' => 'カテゴリー',
         'convini_name' => 'コンビニ名',
         'branch_name' => '支店名',
         'prefectures' => '都道府県',

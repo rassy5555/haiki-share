@@ -1893,6 +1893,73 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['categories'],
+  data: function data() {
+    return {
+      category_name: '',
+      errors: {
+        category_name: ''
+      }
+    };
+  },
+  methods: {
+    categoryRegister: function categoryRegister(e) {
+      var self = this;
+      this.errors = {
+        category_name: ''
+      };
+      axios.post('categoryRegister', {
+        category_name: this.category_name
+      }).then(function () {
+        self.success_message = 'カテゴリーを登録しました';
+        self.erros = [];
+        location.href = "home?flash_message=categoryRegister";
+      }).catch(function (error) {
+        self.success_message = '';
+
+        for (var key in error.response.data.errors) {
+          self.errors[key] = error.response.data.errors[key][0];
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/convini/ConviniHomeComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/convini/ConviniHomeComponent.vue?vue&type=script&lang=js& ***!
@@ -3061,7 +3128,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('product_name', this.product.product_name), formData.append('category_id', this.product.category_id), formData.append('price', this.product.price), formData.append('expiration_date', this.product.expiration_date), formData.append('comment', this.product.comment), formData.append('product_pic', this.file_info), axios.post('productRegister', formData).then(function () {
         self.success_message = '商品を登録しました';
         self.erros = [];
-        location.href = "home?flash_message=register";
+        location.href = "home?flash_message=productRegister";
       }).catch(function (error) {
         self.success_message = '';
 
@@ -70144,6 +70211,95 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "c-form__group" }, [
+      _c("label", [_vm._v("登録済カテゴリー")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "c-form__item" }, [
+        _c(
+          "select",
+          { attrs: { id: "category", type: "text", name: "category" } },
+          _vm._l(_vm.categories, function(category, index) {
+            return _c("option", { domProps: { value: category.id } }, [
+              _vm._v(_vm._s(category.category_name))
+            ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-notes" }, [
+          _vm._v("＊同様のカテゴリーがないか確認してください。")
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "c-form__group" }, [
+      _c("label", [_vm._v("登録するカテゴリー")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "c-form__item" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model:value",
+              value: _vm.category_name,
+              expression: "category_name",
+              arg: "value"
+            }
+          ],
+          attrs: { id: "category_name", type: "text", name: "product_name" },
+          domProps: { value: _vm.category_name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.category_name = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _vm.errors.category_name
+          ? _c("div", { staticClass: "c-invalid__feedback" }, [
+              _vm._v(_vm._s(_vm.errors.category_name))
+            ])
+          : _vm._e()
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "c-button",
+        attrs: { type: "submit" },
+        on: { click: _vm.categoryRegister }
+      },
+      [_vm._v("\n        登録する\n    ")]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/convini/ConviniHomeComponent.vue?vue&type=template&id=1d094878&":
 /*!*******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/convini/ConviniHomeComponent.vue?vue&type=template&id=1d094878& ***!
@@ -86359,6 +86515,8 @@ Vue.component('convini_register-component', __webpack_require__(/*! ./components
 
 Vue.component('convini_profile-component', __webpack_require__(/*! ./components/convini/ConviniProfileComponent.vue */ "./resources/js/components/convini/ConviniProfileComponent.vue").default); //プロフィール編集
 
+Vue.component('category_register-component', __webpack_require__(/*! ./components/convini/CategoryRegisterComponent.vue */ "./resources/js/components/convini/CategoryRegisterComponent.vue").default); //カテゴリー登録
+
 Vue.component('product_register-component', __webpack_require__(/*! ./components/convini/ProductRegisterComponent.vue */ "./resources/js/components/convini/ProductRegisterComponent.vue").default); //商品登録
 
 Vue.component('product_edit-component', __webpack_require__(/*! ./components/convini/ProductEditComponent.vue */ "./resources/js/components/convini/ProductEditComponent.vue").default); //商品編集
@@ -86429,6 +86587,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/convini/CategoryRegisterComponent.vue":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/convini/CategoryRegisterComponent.vue ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CategoryRegisterComponent_vue_vue_type_template_id_0060e3c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2& */ "./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2&");
+/* harmony import */ var _CategoryRegisterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CategoryRegisterComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CategoryRegisterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CategoryRegisterComponent_vue_vue_type_template_id_0060e3c2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CategoryRegisterComponent_vue_vue_type_template_id_0060e3c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/convini/CategoryRegisterComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryRegisterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CategoryRegisterComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryRegisterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2& ***!
+  \******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryRegisterComponent_vue_vue_type_template_id_0060e3c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/convini/CategoryRegisterComponent.vue?vue&type=template&id=0060e3c2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryRegisterComponent_vue_vue_type_template_id_0060e3c2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CategoryRegisterComponent_vue_vue_type_template_id_0060e3c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

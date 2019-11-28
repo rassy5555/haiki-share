@@ -39,10 +39,13 @@ class HomeController extends Controller
         //GETパラメータがあればセッションメッセージを表示
         if(!empty($_GET['flash_message'])){
             switch($_GET['flash_message']){
-                case 'register': 
+                case 'productRegister': 
                     session()->now('flash_message', '商品を登録しました');
                     break;
-                case 'delete': 
+                case 'categoryRegister': 
+                    session()->now('flash_message', 'カテゴリーを登録しました');
+                break;           
+                 case 'delete': 
                     session()->now('flash_message', '商品を削除しました');
                     break;
             }
