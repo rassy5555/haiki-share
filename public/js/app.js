@@ -3501,7 +3501,13 @@ __webpack_require__.r(__webpack_exports__);
         saled_flg: this.saled_flg,
         user_id: this.user_id,
         convini_id: this.product.convini_id
-      }).then(function () {});
+      }).then(function () {
+        if (self.saled_flg) {
+          location.href = "../home?flash_message=purchase";
+        } else {
+          location.href = "../home?flash_message=cancel";
+        }
+      });
     }
   },
   computed: {

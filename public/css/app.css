@@ -10898,7 +10898,7 @@ img {
 
 .c-page-title {
   margin: 30px 0;
-  font-size: 24px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -10913,6 +10913,12 @@ img {
   line-height: 40px;
   font-size: 20px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .c-page-subtitle {
+    font-size: 18px;
+  }
 }
 
 .c-more {
@@ -11107,7 +11113,7 @@ img {
 
 .p-header__title {
   color: white;
-  font-size: 24px;
+  font-size: 30px;
   font-family: "Amatic SC", cursive;
   font-weight: bold;
 }

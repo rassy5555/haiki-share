@@ -1,6 +1,6 @@
 .c-page-title {
     margin: 30px 0;
-    font-size: $font-size_xxl;
+    font-size: $font-size_3l;
     text-align: center;
     @include mq($breakpoint: md) {
         font-size: $font-size_xl;
@@ -11,6 +11,9 @@
     line-height: 40px;
     font-size: $font-size_xl;
     text-align: center;
+    @include mq($breakpoint: md) {
+        font-size: $font-size_l;
+    }
 }
 
 .c-more{
