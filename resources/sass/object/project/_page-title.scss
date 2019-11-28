@@ -1,9 +1,17 @@
-.p-page__title {
-    &-wrapper {
+.p-page-title {
+    &__large {
+        margin: 30px 0;
+        font-size: $font-size_3l;
+        text-align: center;
+        @include mq($breakpoint: md) {
+            font-size: $font-size_xl;
+        }
+    }
+    &__wrapper {
         display: flex;
         justify-content: center;
     }
-    &-switch {
+    &__switch {
         font-size: $font-size_l;
         color: #999999;
         border-bottom: 1px solid #999999;

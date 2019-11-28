@@ -10896,22 +10896,22 @@ img {
   border-bottom: none;
 }
 
-.c-page__title {
+.c-page-title {
   margin: 30px 0;
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-  .c-page__title {
-    font-size: 24px;
+  .c-page-title {
+    font-size: 20px;
   }
 }
 
-.c-page__subtitle {
+.c-page-subtitle {
   margin: 30px 0;
   line-height: 40px;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -11050,16 +11050,12 @@ img {
 
 /* Project ------------ */
 
-.p-page__title-large {
-  margin: 30px 0;
-  font-size: 38px;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .p-page__title-large {
-    font-size: 24px;
-  }
+.p-page__wrapper {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .p-page__text-wrapper {
@@ -11111,7 +11107,7 @@ img {
 
 .p-header__title {
   color: white;
-  font-size: 30px;
+  font-size: 24px;
   font-family: "Amatic SC", cursive;
   font-weight: bold;
 }
@@ -11154,7 +11150,7 @@ img {
 @media screen and (max-width: 768px) {
   .p-menu__item {
     color: #777;
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -11227,14 +11223,6 @@ img {
   }
 }
 
-.p-page__wrapper {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  margin: 0 auto;
-  margin-bottom: 80px;
-}
-
 .p-product__detail {
   width: 280px;
   margin: 0 auto;
@@ -11275,12 +11263,24 @@ img {
   margin-bottom: 10px;
 }
 
-.p-page__title-wrapper {
+.p-page-title__large {
+  margin: 30px 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .p-page-title__large {
+    font-size: 20px;
+  }
+}
+
+.p-page-title__wrapper {
   display: flex;
   justify-content: center;
 }
 
-.p-page__title-switch {
+.p-page-title__switch {
   font-size: 18px;
   color: #999999;
   border-bottom: 1px solid #999999;
@@ -11289,13 +11289,13 @@ img {
   cursor: pointer;
 }
 
-.p-page__title-switch.active {
+.p-page-title__switch.active {
   color: #13b1c0;
   border-bottom: 1px solid #13b1c0;
 }
 
 @media screen and (max-width: 768px) {
-  .p-page__title-switch {
+  .p-page-title__switch {
     font-size: 14px;
   }
 }

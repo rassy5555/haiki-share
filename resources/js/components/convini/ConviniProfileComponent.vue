@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="p-page__title-wrapper">
-            <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'profile'}" v-on:click="profile_mode">プロフィール編集</div>
-            <div class="c-page__title p-page__title-switch" v-bind:class="{'active': edit_mode == 'password'}" v-on:click="password_mode">パスワード変更</div>
+        <div class="p-page-title__wrapper">
+            <div class="c-page-title  p-page-title__switch" v-bind:class="{'active': edit_mode == 'profile'}" v-on:click="profile_mode">プロフィール編集</div>
+            <div class="c-page-title  p-page-title__switch" v-bind:class="{'active': edit_mode == 'password'}" v-on:click="password_mode">パスワード変更</div>
         </div>
         <form method="POST" enctype="multipart/form-data" v-if="edit_mode == 'profile'">
             <div class="c-image__group">

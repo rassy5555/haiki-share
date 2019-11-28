@@ -70338,7 +70338,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("h3", { staticClass: "c-page__subtitle" }, [
+    _c("h3", { staticClass: "c-page-subtitle" }, [
       _vm._v("出品した商品一覧"),
       _c("label", [
         _c(
@@ -70436,7 +70436,7 @@ var render = function() {
       0
     ),
     _vm._v(" "),
-    _c("h3", { staticClass: "c-page__subtitle" }, [
+    _c("h3", { staticClass: "c-page-subtitle" }, [
       _vm._v("購入済商品一覧"),
       _c("label", [
         _c(
@@ -70671,7 +70671,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "c-page__title" }, [
+    _c("h2", { staticClass: "c-page-title " }, [
       _vm._v(_vm._s(_vm.product.product_name))
     ]),
     _vm._v(" "),
@@ -71020,11 +71020,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "p-page__title-wrapper" }, [
+    _c("div", { staticClass: "p-page-title__wrapper" }, [
       _c(
         "div",
         {
-          staticClass: "c-page__title p-page__title-switch",
+          staticClass: "c-page-title  p-page-title__switch",
           class: { active: _vm.edit_mode == "profile" },
           on: { click: _vm.profile_mode }
         },
@@ -71034,7 +71034,7 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "c-page__title p-page__title-switch",
+          staticClass: "c-page-title  p-page-title__switch",
           class: { active: _vm.edit_mode == "password" },
           on: { click: _vm.password_mode }
         },
@@ -72995,7 +72995,7 @@ var render = function() {
       [_vm._v("\n        プロフィール編集\n    ")]
     ),
     _vm._v(" "),
-    _c("h3", { staticClass: "c-page__subtitle" }, [_vm._v("購入した商品一覧")]),
+    _c("h3", { staticClass: "c-page-subtitle" }, [_vm._v("購入した商品一覧")]),
     _vm._v(" "),
     _c(
       "p",
@@ -73287,7 +73287,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "c-page__title" }, [
+    _c("h2", { staticClass: "c-page-title" }, [
       _vm._v(_vm._s(_vm.product.product_name))
     ]),
     _vm._v(" "),
@@ -73744,11 +73744,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "p-page__title-wrapper" }, [
+    _c("div", { staticClass: "p-page-title__wrapper" }, [
       _c(
         "div",
         {
-          staticClass: "c-page__title p-page__title-switch",
+          staticClass: "c-page-title  p-page-title__switch",
           class: { active: _vm.edit_mode == "profile" },
           on: { click: _vm.profile_mode }
         },
@@ -73758,7 +73758,7 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "c-page__title p-page__title-switch",
+          staticClass: "c-page-title  p-page-title__switch",
           class: { active: _vm.edit_mode == "password" },
           on: { click: _vm.password_mode }
         },

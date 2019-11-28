@@ -1,11 +1,10 @@
 .p-page {
-    &__title-large {
-        margin: 30px 0;
-        font-size: $font-size_3l;
-        text-align: center;
-        @include mq($breakpoint: md) {
-            font-size: $font-size_xl;
-        }
+    &__wrapper {
+        background-color: white;
+        border: 1px solid rgba(0,0,0,0.125);
+        border-radius: 0.25rem;
+        margin: 0 auto;
+        margin-bottom: 80px;
     }
     &__text-wrapper {
         width: 60%;

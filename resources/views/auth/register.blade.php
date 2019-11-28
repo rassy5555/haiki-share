@@ -6,7 +6,7 @@
 <section class="main">
     <div class="l-container p-container">
         <div class="l-page__wrapper p-page__wrapper">
-            <h2 class="c-page__title">{{ __('Register User')}}</h2>
+            <h2 class="c-page-title">{{ __('Register User')}}</h2>
             <user_register-component></user_register-component>
         </div>
 

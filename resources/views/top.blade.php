@@ -3,7 +3,7 @@
 @section('content')
 <section class="main">  
     <div class="l-container__large p-container">
-        <h1 class="c-page__title p-page__title-large">廃棄商品を安く買おう</h1>
+        <h1 class="c-page-title p-page-title__large">廃棄商品を安く買おう</h1>
         <div class="p-page__text-wrapper">
             <p class="p-page__text">haiki shareではコンビニの廃棄商品を安く買うことができます。</p>
             <p class="p-page__text">使い方は簡単！アプリ上で購入してお店に取りに行くだけ！</p>

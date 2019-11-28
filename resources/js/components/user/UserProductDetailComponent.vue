@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="c-page__title">{{ product.product_name }}</h2>
+        <h2 class="c-page-title">{{ product.product_name }}</h2>
         <img class="p-pic" v-bind:src="'../storage/' + product.product_pic">
         <div class="p-product__detail">
             <p>{{ product.convini_name }}</p>
