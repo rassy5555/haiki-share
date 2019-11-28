@@ -35,8 +35,6 @@ class AppServiceProvider extends ServiceProvider
             foreach ($categories as $category){
                 //入力されたカテゴリーがすでに登録されていないか確認
                 if($value === $category->category_name){
-                    \Debugbar::addMessage($category->category_name);
-                    \Debugbar::addMessage($value);
                     return false;
                 }
                 return true;
