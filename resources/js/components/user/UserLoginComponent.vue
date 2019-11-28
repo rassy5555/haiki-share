@@ -25,7 +25,6 @@
     </div>
 </template>
 <script>
-    import '@babel/polyfill'
     export default {
         data: function(){
             return{
