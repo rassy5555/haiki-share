@@ -35,7 +35,7 @@ return [
     'date_equals'          => ':attributeには、:dateと同じ日付けを指定してください。',
     'date_format'          => ':attributeは:日時で指定してください。',
     'different'            => ':otherとは、異なった内容を指定してください。',
-    'digits'               => ':attributeは:digits桁で指定してください。',
+    'digits'               => ':attributeは:digits桁以下で指定してください。',
     'digits_between'       => ':attributeは:min桁から:max桁の間で指定してください。',
     'dimensions'           => ':attributeの図形サイズが正しくありません。',
     'distinct'             => ':attributeには異なった値を指定してください。',

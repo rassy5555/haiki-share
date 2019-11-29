@@ -11244,6 +11244,14 @@ img {
 }
 
 .p-comment__detail {
+  text-align: left;
+}
+
+.p-comment__detail:first-line {
+  text-align: center;
+}
+
+.p-comment__detail {
   width: 280px;
   text-align: left;
   margin-top: 10px;

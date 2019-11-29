@@ -5,7 +5,7 @@
         <div class="p-product__detail">
             <p>{{ product.convini_name }}</p>
             <p>{{ product.branch_name }}</p>
-            <p>{{ product.address }}</p>
+            <p class="p-address__detail">{{ product.address }}</p>
             <p>賞味期限: {{ product.expiration_date| date_time }}</p>
             <p><span>¥</span>{{ product.price | number_format }}</p>
             <p class="p-comment__detail">{{ product.comment }}</p>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
 </template>
 <script>

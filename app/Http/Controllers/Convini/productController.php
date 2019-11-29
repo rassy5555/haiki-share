@@ -44,9 +44,9 @@ class ProductController extends Controller
         return Validator::make($data, [
             'product_name' => ['required', 'string', 'max:20'],
             'category_id' => ['required'],
-            'price' => ['required','integer'],
+            'price' => ['required','integer','digits:6'],
             'expiration_date' => ['required','date_format:"Y-m-d H:i"'],
-            'comment' => ['string','max:200'],
+            'comment' => ['required','string','max:200'],
             'product_pic' => ['file','image','mimes:png,jpeg,jpg,gif'],
         ]);
     }

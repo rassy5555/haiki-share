@@ -10,7 +10,7 @@
         <button type="submit" class="c-button" v-on:click="productEdit"  v-if="product.convini_id == convini.id">
             編集する
         </button>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/haiki-share/public/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
 </template>
 <script>

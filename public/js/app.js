@@ -60558,8 +60558,7 @@ var render = function() {
         staticClass: "twitter-share-button",
         attrs: {
           href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
-          "data-url":
-            "https://haiki-share.com/haiki-share/public/convini/productDetail/1",
+          "data-url": "https://haiki-share.com/convini/productDetail/1",
           "data-text": _vm.tweetMessage,
           "data-show-count": "false"
         }
@@ -63143,7 +63142,9 @@ var render = function() {
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.product.branch_name))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.product.address))]),
+      _c("p", { staticClass: "p-address__detail" }, [
+        _vm._v(_vm._s(_vm.product.address))
+      ]),
       _vm._v(" "),
       _c("p", [
         _vm._v(
@@ -63282,8 +63283,7 @@ var render = function() {
         staticClass: "twitter-share-button",
         attrs: {
           href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
-          "data-url":
-            "https://haiki-share.com/haiki-share/public/productDetail/1",
+          "data-url": "https://haiki-share.com/productDetail/1",
           "data-text": _vm.tweetMessage,
           "data-show-count": "false"
         }
