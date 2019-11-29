@@ -11245,6 +11245,8 @@ img {
 
 .p-address__detail {
   text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .p-address__detail:first-line {

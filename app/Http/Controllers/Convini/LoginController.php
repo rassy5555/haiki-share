@@ -30,6 +30,15 @@ class LoginController extends Controller
         $this->middleware('guest:convini')->except('logout');
         $this->middleware('guest:user')->except('logout');
     }
+
+    //バリデーション処理
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string|max:30',
+            'password' => 'required|string|max:50',
+        ]);
+    }
     
     //ログイン画面を表示
     public function showLoginForm()
