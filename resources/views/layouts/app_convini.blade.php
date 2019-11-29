@@ -26,7 +26,7 @@
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <body>
 <div id="app">
-<header class="l-header p-header js-float-menu">
+    <header class="l-header p-header js-float-menu">
         @guest
             <a class="p-header__title" href="{{ route('top')}}">haiki share</a>
         @else
@@ -60,18 +60,18 @@
                         </form>
                     </li>
                 @endguest
-          </ul>
+        </ul>
         </nav> 
     </header>
-        <!-- フラッシュメッセージ -->
-        @if (session('flash_message'))
-            <div class="l-message p-message" role="alert">
-                {{ session('flash_message') }}
-            </div>
-        @endif
-        <main>
-            @yield('content')
-        </main>
+<!-- フラッシュメッセージ -->
+@if (session('flash_message'))
+    <div class="l-message p-message" role="alert">
+        {{ session('flash_message') }}
+    </div>
+@endif
+<main>
+    @yield('content')
+</main>
 </div>
 
 </body>

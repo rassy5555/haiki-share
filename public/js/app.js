@@ -2634,7 +2634,7 @@ __webpack_require__.r(__webpack_exports__);
         token: this.token
       }).then(function () {
         self.erros = [];
-        location.href = '../../../home';
+        location.href = '../../home';
       }).catch(function (error) {
         for (var key in error.response.data.errors) {
           self.errors[key] = error.response.data.errors[key][0];

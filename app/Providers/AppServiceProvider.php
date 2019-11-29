@@ -37,8 +37,8 @@ class AppServiceProvider extends ServiceProvider
                 if($value === $category->category_name){
                     return false;
                 }
-                return true;
             }
+            return true;
         });   
         Validator::extend('password_hash_check', function($attribute, $value, $parameters, $validator) {
             return Hash::check($value , $parameters[0]);

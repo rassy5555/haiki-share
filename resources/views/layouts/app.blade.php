@@ -37,7 +37,7 @@
             <span></span>
             <span></span>
         </div>
-        <nav class="p-menu js-toggle-sp-menu-target">
+        <nav class="l-menu p-menu js-toggle-sp-menu-target">
             <ul>
                 @guest
                     <li><a class="p-menu__item" href="{{ route('login')}}">{{  __('Login') }}</a></li>
@@ -50,7 +50,7 @@
                     <li>
                         <a class="p-menu__item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
+                                    document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

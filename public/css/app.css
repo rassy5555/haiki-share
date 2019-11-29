@@ -10865,6 +10865,12 @@ img {
   height: 160px;
 }
 
+@media screen and (max-width: 768px) {
+  .l-message {
+    height: 120px;
+  }
+}
+
 .l-modal__wrapper {
   width: 100%;
   height: 100%;
@@ -11312,6 +11318,13 @@ img {
   text-align: center;
   line-height: 80px;
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .p-message {
+    padding-top: 60px;
+    line-height: 60px;
+  }
 }
 
 .p-message__no-product {
