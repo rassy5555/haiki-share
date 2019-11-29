@@ -10,7 +10,7 @@
         <button type="submit" class="c-button" v-on:click="productEdit"  v-if="product.convini_id == convini.id">
             編集する
         </button>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/convini/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" v-bind:data-url="tweetURL" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
 </template>
 <script>
@@ -27,6 +27,7 @@
         props:['categories','product','convini'],
         data: function() {
             return { 
+                tweetURL: 'https://haiki-share.com/convini/productDetail/' + this.product.id,
             }
         },
         methods: {

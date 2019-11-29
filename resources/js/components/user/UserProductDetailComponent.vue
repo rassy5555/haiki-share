@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://haiki-share.com/productDetail/1" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" v-bind:data-url="tweetURL" v-bind:data-text="tweetMessage" data-show-count="false">Tweet</a>
     </div>
 </template>
 <script>
@@ -55,6 +55,7 @@ export default {
     props:['categories','product','user'],
     data: function() {
         return { 
+            tweetURL: 'https://haiki-share.com/convini/productDetail/' + this.product.id,
             saled_flg: this.product.saled_flg,
             user_id: this.product.user_id,
             confirm_mode:'',

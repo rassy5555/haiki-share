@@ -2079,7 +2079,9 @@ Vue.filter('date_time', function (val) {
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['categories', 'product', 'convini'],
   data: function data() {
-    return {};
+    return {
+      tweetURL: 'https://haiki-share.com/convini/productDetail/' + this.product.id
+    };
   },
   methods: {
     //商品編集画面へ遷移
@@ -3394,6 +3396,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['categories', 'product', 'user'],
   data: function data() {
     return {
+      tweetURL: 'https://haiki-share.com/convini/productDetail/' + this.product.id,
       saled_flg: this.product.saled_flg,
       user_id: this.product.user_id,
       confirm_mode: '',
@@ -60558,7 +60561,7 @@ var render = function() {
         staticClass: "twitter-share-button",
         attrs: {
           href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
-          "data-url": "https://haiki-share.com/convini/productDetail/1",
+          "data-url": _vm.tweetURL,
           "data-text": _vm.tweetMessage,
           "data-show-count": "false"
         }
@@ -63283,7 +63286,7 @@ var render = function() {
         staticClass: "twitter-share-button",
         attrs: {
           href: "https://twitter.com/share?ref_src=twsrc%5Etfw",
-          "data-url": "https://haiki-share.com/productDetail/1",
+          "data-url": _vm.tweetURL,
           "data-text": _vm.tweetMessage,
           "data-show-count": "false"
         }
