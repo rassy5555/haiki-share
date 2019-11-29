@@ -11243,11 +11243,11 @@ img {
   font-size: 18px;
 }
 
-.p-comment__detail {
+.p-address__detail {
   text-align: left;
 }
 
-.p-comment__detail:first-line {
+.p-address__detail:first-line {
   text-align: center;
 }
 
