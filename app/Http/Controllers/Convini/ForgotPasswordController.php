@@ -76,9 +76,11 @@ class ForgotPasswordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return void
      */
+
+     //バリデーション処理
     protected function validateEmail(Request $request)
     {
-        $request->validate(['email' => 'required|email:rfc,filter']);
+        $request->validate(['email' => 'required|max:30|email:rfc,filter']);
     }
 
     /**

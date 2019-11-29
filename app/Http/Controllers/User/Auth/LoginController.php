@@ -26,5 +26,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest:convini')->except('logout');
         $this->middleware('guest:user')->except('logout');        
-    }
+    }   
 }

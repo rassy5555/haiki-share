@@ -38,6 +38,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+     //バリデーション
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -54,6 +56,8 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
+    //ユーザー登録処理
     protected function create(array $data)
     {
         return User::create([
