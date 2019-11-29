@@ -11,6 +11,7 @@
             <label>支店名</label>
             <div class="c-form__item">
                 <input id="branch_name" type="text"  name="branch_name" v-model="branch_name" v-on:keyup.enter="register">
+                <div class="p-notes">●●支店、▲▲本店となるように記入してください</div>
                 <div v-if="errors.branch_name" class="c-invalid__feedback">{{ errors.branch_name }}</div>
             </div>
         </div>

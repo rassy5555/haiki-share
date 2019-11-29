@@ -2334,6 +2334,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['props_convini'],
@@ -2449,6 +2450,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _master_prefectures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../master/prefectures */ "./resources/js/master/prefectures.js");
+//
 //
 //
 //
@@ -3396,7 +3398,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['categories', 'product', 'user'],
   data: function data() {
     return {
-      tweetURL: 'https://haiki-share.com/convini/productDetail/' + this.product.id,
+      tweetURL: 'https://haiki-share.com/productDetail/' + this.product.id,
       saled_flg: this.product.saled_flg,
       user_id: this.product.user_id,
       confirm_mode: '',
@@ -60958,6 +60960,10 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
+                _c("div", { staticClass: "p-notes" }, [
+                  _vm._v("＊●●支店、▲▲本店となるように記入してください")
+                ]),
+                _vm._v(" "),
                 _vm.errors.convini_name
                   ? _c("div", { staticClass: "c-invalid__feedback" }, [
                       _vm._v(_vm._s(_vm.errors.convini_name))
@@ -61474,6 +61480,10 @@ var render = function() {
             }
           }
         }),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-notes" }, [
+          _vm._v("●●支店、▲▲本店となるように記入してください")
+        ]),
         _vm._v(" "),
         _vm.errors.branch_name
           ? _c("div", { staticClass: "c-invalid__feedback" }, [

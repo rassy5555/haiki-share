@@ -55,7 +55,7 @@ export default {
     props:['categories','product','user'],
     data: function() {
         return { 
-            tweetURL: 'https://haiki-share.com/convini/productDetail/' + this.product.id,
+            tweetURL: 'https://haiki-share.com/productDetail/' + this.product.id,
             saled_flg: this.product.saled_flg,
             user_id: this.product.user_id,
             confirm_mode:'',

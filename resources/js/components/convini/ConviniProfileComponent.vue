@@ -17,6 +17,7 @@
                 <label>コンビニ名</label>
                 <div class="c-form__item">
                     <input id="convini_name" type="text"  name="convini_name" v-model:value="convini.convini_name" v-on:keyup.enter="profileEdit" autocomplete="convini_name" >
+                    <div class="p-notes">＊●●支店、▲▲本店となるように記入してください</div>
                     <div v-if="errors.convini_name" class="c-invalid__feedback">{{ errors.convini_name }}</div>
                 </div>
             </div>
