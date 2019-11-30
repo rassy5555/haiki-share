@@ -1,9 +1,29 @@
 .p-product__detail {
-    width: 280px;
+    width: 70%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     margin-top: 30px;
+    margin-bottom: 30px;
     font-size: $font-size_l;
+    @include mq($breakpoint: md) {
+      width: 90%;
+      font-size: $font-size_m;
+    }
+    tr {
+      border: solid 1px;
+      // &:first-child {
+      // }
+    }
+    th {
+      border-radius: 5px;
+      padding: 3px;
+      font-weight: normal;
+      background-color: #eee;
+    }
+    td {
+      border-radius: 5px;
+      padding: 3px;
+    }
 }
 
 .p-address__detail {

@@ -11236,11 +11236,35 @@ img {
 }
 
 .p-product__detail {
-  width: 280px;
+  width: 70%;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .p-product__detail {
+    width: 90%;
+    font-size: 14px;
+  }
+}
+
+.p-product__detail tr {
+  border: solid 1px;
+}
+
+.p-product__detail th {
+  border-radius: 5px;
+  padding: 3px;
+  font-weight: normal;
+  background-color: #eee;
+}
+
+.p-product__detail td {
+  border-radius: 5px;
+  padding: 3px;
 }
 
 .p-address__detail {

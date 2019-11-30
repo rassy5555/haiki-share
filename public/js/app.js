@@ -2068,6 +2068,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 Vue.filter('number_format', function (val) {
@@ -3343,6 +3346,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -60527,22 +60536,27 @@ var render = function() {
       attrs: { src: "../../storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
-    _c("div", { staticClass: "p-product__detail" }, [
-      _c("p", [
-        _c("span", [_vm._v("¥")]),
-        _vm._v(_vm._s(_vm._f("number_format")(_vm.product.price)))
+    _c("table", { staticClass: "p-product__detail" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td", [
+          _vm._v(_vm._s(_vm._f("date_time")(_vm.product.expiration_date)))
+        ])
       ]),
       _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "賞味期限: " +
-            _vm._s(_vm._f("date_time")(_vm.product.expiration_date))
-        )
+      _vm._m(1),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td", [
+          _c("span", [_vm._v("¥")]),
+          _vm._v(_vm._s(_vm._f("number_format")(_vm.product.price)))
+        ])
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "p-comment__detail" }, [
-        _vm._v(_vm._s(_vm.product.comment))
-      ])
+      _vm._m(2),
+      _vm._v(" "),
+      _c("tr", [_c("td", [_vm._v(_vm._s(_vm.product.comment))])])
     ]),
     _vm._v(" "),
     _vm.product.convini_id == _vm.convini.id
@@ -60572,7 +60586,26 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("賞味期限")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("価格")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("コメント")])])
+  }
+]
 render._withStripped = true
 
 
@@ -63150,30 +63183,39 @@ var render = function() {
       attrs: { src: "../storage/" + _vm.product.product_pic }
     }),
     _vm._v(" "),
-    _c("div", { staticClass: "p-product__detail" }, [
-      _c("p", [_vm._v(_vm._s(_vm.product.convini_name))]),
+    _c("table", { staticClass: "p-product__detail" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.product.branch_name))]),
+      _c("tr", [_c("td", [_vm._v(_vm._s(_vm.product.convini_name))])]),
       _vm._v(" "),
-      _c("p", { staticClass: "p-address__detail" }, [
-        _vm._v(_vm._s(_vm.product.address))
+      _vm._m(1),
+      _vm._v(" "),
+      _c("tr", [_c("td", [_vm._v(_vm._s(_vm.product.branch_name))])]),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c("tr", [_c("td", [_vm._v(_vm._s(_vm.product.address))])]),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td", [
+          _vm._v(_vm._s(_vm._f("date_time")(_vm.product.expiration_date)))
+        ])
       ]),
       _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "賞味期限: " +
-            _vm._s(_vm._f("date_time")(_vm.product.expiration_date))
-        )
+      _vm._m(4),
+      _vm._v(" "),
+      _c("tr", [
+        _c("td", [
+          _c("span", [_vm._v("¥")]),
+          _vm._v(_vm._s(_vm._f("number_format")(_vm.product.price)))
+        ])
       ]),
       _vm._v(" "),
-      _c("p", [
-        _c("span", [_vm._v("¥")]),
-        _vm._v(_vm._s(_vm._f("number_format")(_vm.product.price)))
-      ]),
+      _vm._m(5),
       _vm._v(" "),
-      _c("p", { staticClass: "p-comment__detail" }, [
-        _vm._v(_vm._s(_vm.product.comment))
-      ])
+      _c("tr", [_c("td", [_vm._v(_vm._s(_vm.product.comment))])])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "c-form__button" }, [
@@ -63305,7 +63347,44 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("コンビニ名")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("支店名")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("住所")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("賞味期限")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("価格")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("th", [_vm._v("コメント")])])
+  }
+]
 render._withStripped = true
 
 

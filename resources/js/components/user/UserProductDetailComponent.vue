@@ -2,14 +2,20 @@
     <div>
         <h2 class="c-page-title">{{ product.product_name }}</h2>
         <img class="p-pic" v-bind:src="'../storage/' + product.product_pic">
-        <div class="p-product__detail">
-            <p>{{ product.convini_name }}</p>
-            <p>{{ product.branch_name }}</p>
-            <p class="p-address__detail">{{ product.address }}</p>
-            <p>賞味期限: {{ product.expiration_date| date_time }}</p>
-            <p><span>¥</span>{{ product.price | number_format }}</p>
-            <p class="p-comment__detail">{{ product.comment }}</p>
-        </div>
+        <table class="p-product__detail">
+            <tr><th>コンビニ名</th></tr>
+            <tr><td>{{ product.convini_name }}</td></tr>
+            <tr><th>支店名</th></tr>
+            <tr><td>{{ product.branch_name }}</td></tr>
+            <tr><th>住所</th></tr>
+            <tr><td>{{ product.address }}</td></tr>
+            <tr><th>賞味期限</th></tr>
+            <tr><td>{{ product.expiration_date| date_time }}</td></tr>
+            <tr><th>価格</th></tr>
+            <tr><td><span>¥</span>{{ product.price | number_format }}</td></tr>
+            <tr><th>コメント</th></tr>
+            <tr><td>{{ product.comment }}</td></tr>
+        </table>
         <div class="c-form__button">
             <button type="submit" class="c-button" v-on:click.prevent="showModal" v-if="this.saled_flg==true && product.user_id === user.id ">
                 購入をキャンセルする
