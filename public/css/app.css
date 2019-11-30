@@ -11419,7 +11419,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .p-button__wrapper button {
-    width: 120px;
+    width: 125px;
     font-size: 12px;
   }
 }

@@ -17,7 +17,7 @@
         margin-right: 10px;
         margin-left: 10px;
         @include mq($breakpoint: md) {
-            width: 120px;
+            width: 125px;
             font-size: $font-size_s;
         }
     }

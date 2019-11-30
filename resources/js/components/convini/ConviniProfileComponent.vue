@@ -24,7 +24,7 @@
             <div class="c-form__group">
                 <label>支店名</label>
                 <div class="c-form__item">
-                    <input id="branch_name" type="text"  name="branch_name" v-model:value="convini.branch_name" v-on:keyup.enter="profileEdit"  autocomplete="branch_name" >
+                    <input id="branch_name" type="text"  name="branch_name" v-model:value="convini.branch_name" v-on:keyup.enter="profileEdit" autocomplete="branch_name" >
                     <div v-if="errors.branch_name" class="c-invalid__feedback">{{ errors.branch_name }}</div>
                 </div>
             </div>
