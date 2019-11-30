@@ -4,11 +4,12 @@
             <label>Email</label>
             <div class="c-form__item">
                 <input id="email" type="text" v-model="email"  v-on:keyup.enter="resetPassword" name="email">
+                <div class="p-notes">入力したメールアドレスにリセットするためのメールが送信されます。</div>
                 <div v-if="errors.email" class="c-invalid__feedback">{{ errors.email }}</div>
             </div>
         </div>
         <button type="submit" class="c-button" v-on:click="resetPassword">
-            パスワードを再設定する
+            メールを送信する
         </button>
         <p class="p-message__success" v-if="success_message" >{{ success_message }}</p>
     </div>

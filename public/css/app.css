@@ -11256,14 +11256,12 @@ img {
 }
 
 .p-product__detail th {
-  border-radius: 5px;
   padding: 3px;
   font-weight: normal;
   background-color: #eee;
 }
 
 .p-product__detail td {
-  border-radius: 5px;
   padding: 3px;
 }
 

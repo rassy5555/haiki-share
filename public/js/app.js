@@ -2677,6 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3957,6 +3958,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -61938,7 +61940,7 @@ var render = function() {
         attrs: { type: "submit" },
         on: { click: _vm.resetPassword }
       },
-      [_vm._v("\n        パスワードを再設定する\n    ")]
+      [_vm._v("\n        リセットする\n    ")]
     )
   ])
 }
@@ -61999,6 +62001,12 @@ var render = function() {
           }
         }),
         _vm._v(" "),
+        _c("div", { staticClass: "p-notes" }, [
+          _vm._v(
+            "入力したメールアドレスにリセットするためのメールが送信されます。"
+          )
+        ]),
+        _vm._v(" "),
         _vm.errors.email
           ? _c("div", { staticClass: "c-invalid__feedback" }, [
               _vm._v(_vm._s(_vm.errors.email))
@@ -62014,7 +62022,7 @@ var render = function() {
         attrs: { type: "submit" },
         on: { click: _vm.resetPassword }
       },
-      [_vm._v("\n        パスワードを再設定する\n    ")]
+      [_vm._v("\n        メールを送信する\n    ")]
     ),
     _vm._v(" "),
     _vm.success_message
@@ -64385,7 +64393,7 @@ var render = function() {
         attrs: { type: "submit" },
         on: { click: _vm.resetPassword }
       },
-      [_vm._v("\n        パスワードを再設定する\n    ")]
+      [_vm._v("\n        リセットする\n    ")]
     )
   ])
 }
@@ -64446,6 +64454,12 @@ var render = function() {
           }
         }),
         _vm._v(" "),
+        _c("div", { staticClass: "p-notes" }, [
+          _vm._v(
+            "入力したメールアドレスにリセットするためのメールが送信されます。"
+          )
+        ]),
+        _vm._v(" "),
         _vm.errors.email
           ? _c("div", { staticClass: "c-invalid__feedback" }, [
               _vm._v(_vm._s(_vm.errors.email))
@@ -64461,7 +64475,7 @@ var render = function() {
         attrs: { type: "submit" },
         on: { click: _vm.resetPassword }
       },
-      [_vm._v("\n        パスワードを再設定する\n    ")]
+      [_vm._v("\n        メールを送信する\n    ")]
     ),
     _vm._v(" "),
     _vm.success_message

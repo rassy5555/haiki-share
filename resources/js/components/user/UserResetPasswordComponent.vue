@@ -24,7 +24,7 @@
             </div>
         </div>  
         <button type="submit" class="c-button" v-on:click="resetPassword">
-            パスワードを再設定する
+            リセットする
         </button>
     </div>
 </template>
