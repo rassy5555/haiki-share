@@ -60961,7 +60961,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "p-notes" }, [
-                  _vm._v("＊●●支店、▲▲本店となるように記入してください")
+                  _vm._v("●●支店、▲▲本店となるように記入してください")
                 ]),
                 _vm._v(" "),
                 _vm.errors.convini_name

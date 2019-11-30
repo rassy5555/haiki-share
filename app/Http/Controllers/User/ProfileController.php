@@ -31,9 +31,10 @@ class ProfileController extends Controller
 
     //プロフィール編集バリデーション処理
     public function profileValidator(array $data){
+        $user_id = Auth::id();
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:20'],
-            'email' => [ 'required','string', 'email:rfc,filter', 'max:30'],
+            'email' => [ 'required','string', 'email:rfc,filter', 'max:30',"unique:users,email,$user_id"],
             'user_pic' => ['file','image','mimes:png,jpeg,jpg,gif'],
         ]);
     }

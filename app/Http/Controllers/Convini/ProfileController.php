@@ -31,12 +31,13 @@ class ProfileController extends Controller
 
     //プロフィール編集バリデーション処理
     public function profileValidator(array $data){
+        $convini_id = Auth::id();
         return Validator::make($data, [
             'convini_name' => ['required', 'string', 'max:20'],
             'branch_name' => ['required', 'string', 'max:20'],
             'prefectures' => ['required'],
             'address' => ['required', 'string', 'max:50'],
-            'email' => [ 'required','string', 'email:rfc,filter', 'max:30'],
+            'email' => [ 'required','string', 'email:rfc,filter', 'max:30',"unique:convinis,email,$convini_id"],
             'convini_pic' => ['file','image','mimes:png,jpeg,jpg,gif'],
         ]);
     }
