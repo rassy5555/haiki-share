@@ -11259,10 +11259,12 @@ img {
   padding: 3px;
   font-weight: normal;
   background-color: #eee;
+  word-break: break-all;
 }
 
 .p-product__detail td {
   padding: 3px;
+  word-break: break-all;
 }
 
 .p-address__detail {
