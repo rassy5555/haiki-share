@@ -54,7 +54,7 @@ class ProductController extends Controller
     public function productDetailShow($product_id) {
         $product = Product::join('convinis','products.convini_id','=','convinis.id')
         ->select('products.*','convinis.convini_name','convinis.branch_name','convinis.email','convinis.prefectures','convinis.address','convinis.delete_flg')
-        ->where('products.id',$product_id)->first();
+        ->where('products.id',$product_id)->where('products.delete_flg',false)->first();
         //パラメータから検索し、該当の商品が登録されていない場合マイページに遷移
         if(empty($product)){
             return redirect()->action('User\HomeController@index')->with('flash_message', '不正な値が入力されました');
